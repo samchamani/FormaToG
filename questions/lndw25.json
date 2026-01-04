@@ -1,0 +1,814 @@
+[
+    {
+        "question": "Welche URL hat die Veranstaltung mit der Adresse 'Haus der Physik (ER), Hardenbergstraße 36a (Zugang campusseitig), 10623 Berlin, Raum ER 169'?",
+        "answer": "https://www.langenachtderwissenschaften.de/programm/detail/51327",
+        "seed_entities": [
+            "7f4efd7a-5441-4ec4-a288-e093f5fd7b0c"
+        ]
+    },
+    {
+        "question": "Worum geht es bei der Veranstaltung mit der URL 'https://www.langenachtderwissenschaften.de/programm/detail/51450'?",
+        "answer": "Im Kleinsten wird unsere Welt durch die Quantentheorie beschrieben, wie sie vor 100 Jahren formuliert wurde. Ihre Gesetze faszinieren heute nicht weniger als damals, denn sie widersprechen unserer Alltagserfahrung auf bizarre Weise: Teilchen können an verschiedenen Orten gleichzeitig sein sowie durch Barrieren „tunneln“. Und bei der Messung des einen Quantensystems verändert sich auch der Zustand eines anderen, wenn dieses mit dem ersten „verschränkt“ ist. Erkunden Sie die faszinierenden Eigenschaften der Quantenwelt mit Hilfe interaktiver Simulationen und Visualisierungen.",
+        "seed_entities": [
+            "fc381815-5b9e-465f-bd9c-8240724dcb0a",
+            "931c4a7b-8ea4-4663-bf05-0490eae65be8",
+            "8bad81e5-aadf-4038-b44d-ae51bcc4e6d1"
+        ]
+    },
+    {
+        "question": "Um was geht es bei der Veranstaltung mit der URL 'https://www.langenachtderwissenschaften.de/programm/detail/51305'?",
+        "answer": "Wie kann man Dinge zum Schweben bringen? Student:innen des Projektlabors Physik zeigen euch physikalische Zaubertricks, die Alltagsgegenstände schwerelos machen können. Auch lebendige Flüssigkeiten und optische Täuschungen laden zum Mitmachen und Anfassen ein. Geeignet für Kinder ab 6 Jahren.",
+        "seed_entities": [
+            "d3a45ab3-0b75-4ce7-8b0f-74443e6ce9b4",
+            "931c4a7b-8ea4-4663-bf05-0490eae65be8",
+            "364db06b-5caf-49f3-96f1-220ffabd32a0"
+        ]
+    },
+    {
+        "question": "Welche Veranstaltung hat die gleiche Kategorie wie die Privatsphäre-im-Internet-Veranstaltung?",
+        "answer": "Programmieren lernen für Kinder und Einsteiger:innen",
+        "seed_entities": [
+            "d7edb0c5-29a6-451c-9ef1-ccc4e480f84e"
+        ]
+    },
+    {
+        "question": "Worum geht es bei der Veranstaltung 'Erkunden Sie die Welt der Quantenphysik mit interaktiven Simulationen'?",
+        "answer": "Im Kleinsten wird unsere Welt durch die Quantentheorie beschrieben, wie sie vor 100 Jahren formuliert wurde. Ihre Gesetze faszinieren heute nicht weniger als damals, denn sie widersprechen unserer Alltagserfahrung auf bizarre Weise: Teilchen können an verschiedenen Orten gleichzeitig sein sowie durch Barrieren „tunneln“. Und bei der Messung des einen Quantensystems verändert sich auch der Zustand eines anderen, wenn dieses mit dem ersten „verschränkt“ ist. Erkunden Sie die faszinierenden Eigenschaften der Quantenwelt mit Hilfe interaktiver Simulationen und Visualisierungen.",
+        "seed_entities": [
+            "6024387d-4c8c-4519-aa20-bfff3e49e990"
+        ]
+    },
+    {
+        "question": "Welche URL hat die Veranstaltung 'Science Slam – Brainpower mit Entertainment-Faktor'?",
+        "answer": "https://www.langenachtderwissenschaften.de/programm/detail/51248",
+        "seed_entities": [
+            "7b48e734-3672-42ad-9ce9-bb2befff3de2"
+        ]
+    },
+    {
+        "question": "Was ist das Thema der Veranstaltung 'Organe auf dem Chip: Anwendung von kombinierten Organmodellen als Alternative zu Tierversuchen'?",
+        "answer": "Unsere Forschungsgruppe baut Organoide, organähnliche Strukturen, aus humanen Stammzellen, um Tierexperimente in der Forschung zu reduzieren. Durch die Kombination von Organoiden simulieren wir in sogenannten Organ-Chips die komplexen Organ-Interaktionen des menschlichen Körpers. Wir erklären Konzept und Funktionsweise solcher Organ-Chips. Es werden Anwendungsgebiete in der Aufklärung pathologischer Prozesse und in der Medikamenten-Entwicklung zur Reduktion von Tierexperimenten dargestellt. Besucher:innen können Organ-Chips zusammenbauen und die magnetische Zellsortierung ausprobieren.",
+        "seed_entities": [
+            "351a5b86-7758-47dc-a3ac-c410415c0d30",
+            "45e6c164-263c-4945-ba0e-82407bd322ef"
+        ]
+    },
+    {
+        "question": "Welche URL enthält Informationen über die Veranstaltung 'FaSTTUBe – das elektrische Rennauto des Formula Student Team TU Berlin'?",
+        "answer": "https://www.langenachtderwissenschaften.de/programm/detail/51514",
+        "seed_entities": [
+            "a6d943d4-1f4e-4701-802d-9234b8d7589f",
+            "55f581cc-6488-4343-b68a-7ea4afe72cfa",
+            "92a3e59e-1590-42af-88ef-b80366213cee"
+        ]
+    },
+    {
+        "question": "Was ist VW SimCity?",
+        "answer": "Gestalte Straßen, Radwege, Brücken und mehr mit Klemmbausteinen, und lerne spielerisch, wie moderne Verkehrsplanung funktioniert. Ihr lernt die Funktionen von Straßen kennen, die passenden Verkehrsmittel, um verschiedene Orte zu erreichen, sowie ein Konzept, wie Verkehr nachhaltiger werden kann. Für Kinder ab 6 Jahren und Erwachsene – für alle Altersgruppen ist etwas dabei! Jeder Gast erhält Bausteine, um unsere Stadt wachsen zu lassen. Komm vorbei, und werde Verkehrsplaner:in für einen Abend!",
+        "seed_entities": [
+            "624c8ae1-b30a-4561-8d8e-b48c5733470e",
+            "170bf4dd-33cf-4dc5-9639-bf484c160acc"
+        ]
+    },
+    {
+        "question": "Was ist das Thema der Veranstaltung \"Astro-Quiz\"?",
+        "answer": "Testen Sie Ihr Wissen über das Universum, und gewinnen Sie kleine Preise – solange der Vorrat reicht! Geeignet ab 6 Jahren.",
+        "seed_entities": [
+            "fc381815-5b9e-465f-bd9c-8240724dcb0a"
+        ]
+    },
+    {
+        "question": "Welche Veranstaltung findet im Haus des Lernens statt?",
+        "answer": "Chatbots zur Stärkung der Demokratie",
+        "seed_entities": [
+            "931c4a7b-8ea4-4663-bf05-0490eae65be8",
+            "7b6ce852-93dd-4541-bede-943ad068375c",
+            "c3283b95-1deb-4fd5-b75f-cbe9c086a07c"
+        ]
+    },
+    {
+        "question": "Was für eine Art von Veranstaltung ist 'Kreiere deinen Song im Musik-Makerspace „m3“'?",
+        "answer": "Live-Musik",
+        "seed_entities": [
+            "30f5da85-ba82-4b24-9685-ead7785e8731",
+            "f1b91dc5-9b57-4db8-bb48-3e2beb056e78"
+        ]
+    },
+    {
+        "question": "Wann findet 'Küchentagebuch – der digitale Schlüssel für weniger Lebensmittelverschwendung' statt?",
+        "answer": "17:00-21:30 Uhr",
+        "seed_entities": [
+            "b72e3d73-aef1-46c8-b2bc-6ba7d4b1f642"
+        ]
+    },
+    {
+        "question": "Wie lautet die URL der Veranstaltung 'Quantum Walks vs. Drunkard’s Walk – wie Quantenteilchen schneller ans Ziel kommen’?",
+        "answer": "https://www.langenachtderwissenschaften.de/programm/detail/51498",
+        "seed_entities": [
+            "fc381815-5b9e-465f-bd9c-8240724dcb0a"
+        ]
+    },
+    {
+        "question": "Welches Jubiläum hat die Veranstaltung, zu der auch 'Flüssiger Stickstoff und seine erstaunlichen Eigenschaften' gehört?",
+        "answer": "25",
+        "seed_entities": [
+            "e10a5e33-8c2e-4552-ba51-a64da909ecb8"
+        ]
+    },
+    {
+        "question": "Welche URL hat die Veranstaltung mit der Adresse Haus der Luft- und Raumfahrt (F), Institut für Luft- und Raumfahrt, Marchstraße 12-14, 10587 Berlin, Raum F 032?",
+        "answer": "https://www.langenachtderwissenschaften.de/programm/detail/51151",
+        "seed_entities": [
+            "49947b47-518c-475d-9af5-40f7de917f7f"
+        ]
+    },
+    {
+        "question": "Wer ist die Kontaktperson für die Medien für die Veranstaltung, zu der auch die Veranstaltung \"Geheime Orte der Universitätsbibliothek\" gehört?",
+        "answer": "Juri Mertens",
+        "seed_entities": [
+            "d0473e8c-5e88-4620-90a9-ae47fa41114e"
+        ]
+    },
+    {
+        "question": "Wo findet die Veranstaltung 'Greening Africa Together – Klimapartnerschaft mit afrikanischen Hochschulen und Communitys' statt?",
+        "answer": "Wissensmarkt (HZA)\nVerlängerte Hertzallee\n10623 Berlin\n",
+        "seed_entities": [
+            "9f396c48-eb2f-472f-9249-4e48171a1899"
+        ]
+    },
+    {
+        "question": "Welche Webseite hat Informationen zur Veranstaltung 'Kühlen durch Wärme? Kühles Bier aus einem heißen Fass'?",
+        "answer": "https://www.langenachtderwissenschaften.de/programm/detail/51348",
+        "seed_entities": [
+            "5d7c0d65-37a8-45ac-868b-b2b45b52f2fc"
+        ]
+    },
+    {
+        "question": "Wann findet die Veranstaltung 'Aerodynamik zum Anfassen' statt?",
+        "answer": "17:30-23:15 Uhr",
+        "seed_entities": [
+            "c1cb2e6e-f740-4e65-accb-52ef7fe995ad"
+        ]
+    },
+    {
+        "question": "Worum geht es bei 'Open Battery - Open-Source-Hardware-Plattform für kostengünstige Energie- und Speichersysteme'?",
+        "answer": "Das Open-Battery-Projekt bietet eine offene Transferplattform für Software- und Hardwarekomponenten, die um ein batteriegestütztes Photovoltaiksystem mit Netzanschluss angesiedelt sind. Dieser quelloffene Ansatz des Projekts ermöglicht es Privatpersonen, Vereinen, Communitys oder Unternehmen auf der ganzen Welt, an der Energiewende teilzunehmen und sie mitzugestalten. Aktuell befindet sich das Open-Battery-Projekt in der Entwicklungsphase. Hardware- und Softwarekomponenten werden zusammen mit Student:innen ausgelegt, aufgebaut und getestet.",
+        "seed_entities": [
+            "8a15aa95-dba8-4023-be54-6c75e20f5822"
+        ]
+    },
+    {
+        "question": "Um wie viel Uhr findet die letzte Veranstaltung von 'Lokfahren für Anfänger:innen' statt?",
+        "answer": "23:30-00:00 Uhr",
+        "seed_entities": [
+            "d14c8758-bc36-4cfc-8eee-65d1f8b48475"
+        ]
+    },
+    {
+        "question": "Welche Veranstaltung findet an der gleichen Adresse statt wie FaSTTUBe und Lkw mit Batteriewechselsystem?",
+        "answer": "Studentisches Projekt „Automatisiertes Fahren“",
+        "seed_entities": [
+            "d9297ad3-39db-4853-85d8-9f484dc3efd9",
+            "16be4a81-5783-4f8f-a410-ffa21010dcab"
+        ]
+    },
+    {
+        "question": "Welches Late-Night-Highlight hat einen barrierefreien Rollstuhlzugang?",
+        "answer": "Science Slam – Brainpower mit Entertainment-Faktor",
+        "seed_entities": [
+            "7f5e6b58-b365-4baf-99fb-55044d405269",
+            "ee4bee10-e68a-41b2-a250-299e0743785f"
+        ]
+    },
+    {
+        "question": "Welches Late-Night-Highlight ist kürzer?",
+        "answer": "Turbulentes Chaos: Wie können numerische Simulationen helfen?",
+        "seed_entities": [
+            "7f5e6b58-b365-4baf-99fb-55044d405269"
+        ]
+    },
+    {
+        "question": "Welches Late-Night-Highlight bietet Speisen und Getränke?",
+        "answer": "Science Slam – Brainpower mit Entertainment-Faktor",
+        "seed_entities": [
+            "7f5e6b58-b365-4baf-99fb-55044d405269",
+            "6e32397d-2f30-4675-9e3d-f0c69e10e0f0",
+            "77283ebc-f1d0-4da1-a7f6-53ebbfb74ec6"
+        ]
+    },
+    {
+        "question": "Welches Late-Night-Highlight ist für Kinder geeignet?",
+        "answer": "Turbulentes Chaos: Wie können numerische Simulationen helfen?",
+        "seed_entities": [
+            "7f5e6b58-b365-4baf-99fb-55044d405269",
+            "0d65b036-8c76-4d66-8db0-90b1369b4e3d",
+            "195bdd9a-add5-44ba-a3b7-155492975916"
+        ]
+    },
+    {
+        "question": "Was findet außer dem Science Slam noch im Audimax statt?",
+        "answer": "⚡ Blitztastisch! Die elektrisierende Energieshow für Kinder",
+        "seed_entities": [
+            "88e30d9e-4825-4125-b8de-c6921a77edde",
+            "9c6870e5-656d-4831-ba13-0631c49a586e",
+            "3bf41bd4-205d-40be-b854-c1df4b9a6a46"
+        ]
+    },
+    {
+        "question": "Welche Veranstaltung findet im 1. OG der Universitätsbibliothek statt?",
+        "answer": "Papier macht kreativ – Blumen basteln in der Gartenbaubibliothek",
+        "seed_entities": [
+            "fc381815-5b9e-465f-bd9c-8240724dcb0a"
+        ]
+    },
+    {
+        "question": "Welche Veranstaltung hat eine Veranstaltung um 23:30 Uhr und ist im Haus der Physik?",
+        "answer": "Quantum Walks vs. Drunkard‘s Walk – wie Quantenteilchen schneller ans Ziel kommen",
+        "seed_entities": [
+            "364db06b-5caf-49f3-96f1-220ffabd32a0",
+            "9df67ce1-98c8-451d-80ef-df4767ef38a6",
+            "988da422-86ab-4163-b2c2-315fd3296d31"
+        ]
+    },
+    {
+        "question": "Welche Veranstaltung findet im Haus der Eisenbahn statt?",
+        "answer": "Lokfahren für Anfänger:innen",
+        "seed_entities": [
+            "1c3dd4b9-4fd9-4a2e-aa25-460792d09546",
+            "a0cb548f-4aa8-4bbb-81ce-85eee3d4f766"
+        ]
+    },
+    {
+        "question": "Welche Veranstaltung ist eine Lesung und ein Spiel?",
+        "answer": "Leseabenteuer im Zelt: altersgerechte Bücherwelten für kleine Entdecker:innen",
+        "seed_entities": [
+            "f52ec98e-5ed0-4816-916a-260769ef9088",
+            "f7d64d0a-361d-4c88-a917-b165c8675e4d",
+            "3bf41bd4-205d-40be-b854-c1df4b9a6a46"
+        ]
+    },
+    {
+        "question": "Welche Lesung findet im Erdgeschoss der Uni-Bibliothek statt?",
+        "answer": "Leseabenteuer im Zelt: altersgerechte Bücherwelten für kleine Entdecker:innen",
+        "seed_entities": [
+            "f52ec98e-5ed0-4816-916a-260769ef9088",
+            "e8f2b243-3eef-4413-aa33-521781a0c641",
+            "2b3ac527-1c39-4636-9701-6865a18c24ac",
+            "d188342e-918d-46c6-a785-e561451c9821",
+            "b15c7f76-e404-4428-ba1c-16df8462749b"
+        ]
+    },
+    {
+        "question": "Welche Lesung bietet auch ein Mitmachexperiment an?",
+        "answer": "Eine „Lesepfote“ zu Gast in der Bibliothek",
+        "seed_entities": [
+            "f52ec98e-5ed0-4816-916a-260769ef9088",
+            "f74c7e14-41ec-4caa-9868-695b3da49c6b"
+        ]
+    },
+    {
+        "question": "Welche Veranstaltung ist sowohl Spiel als aus Wettbewerb?",
+        "answer": "Kopf trifft Körper: Teste deine Fitness und Motorik im TU-SportLab!",
+        "seed_entities": [
+            "3227ff6a-4155-4269-b13d-ae0c5729356c",
+            "236973c7-7084-464e-ab04-2961abd2e5c6",
+            "bcb24cdb-f7d6-43c4-98af-f039e2804c85"
+        ]
+    },
+    {
+        "question": "In welchem Haus findet die Podiumsdiskussion statt?",
+        "answer": "Haus des Lernens (MAR)\nMarchstraße 23\n10587 Berlin\nRaum MAR 0.011 (EG)",
+        "seed_entities": [
+            "9fbb8ed3-16c1-4c90-af3d-052724989467",
+            "eaecb212-3763-48f4-80d8-0613a6f8bc58",
+            "895884a9-8cd0-4226-aaed-b9a96ced249f"
+        ]
+    },
+    {
+        "question": "Welche Diskussion findet im gleichen Haus statt wie 'Ist das schon ein Roboter'?",
+        "answer": "Roboter im öffentlichen Raum: Mensch und Maschine mitten im Leben",
+        "seed_entities": [
+            "f9e39878-4d3d-403c-972b-8603a20e98a6",
+            "60eb4c0c-fcf3-4502-aff2-928855aac61c"
+        ]
+    },
+    {
+        "question": "Welche Aufführung findet nicht im Kindercampus statt?",
+        "answer": "Tourismushistorischer Dia- und Filmabend",
+        "seed_entities": [
+            "1b15e2e7-b13b-435f-8755-f2e34b069fe4",
+            "a09dd40d-7c29-4d67-ac0d-1bf5aa4aaf4a",
+            "d9321353-13d3-4bea-8cd6-737f42f2011a"
+        ]
+    },
+    {
+        "question": "Was kostet die Lange Nacht der Wissenschaften?",
+        "answer": "5 Euro",
+        "seed_entities": [
+            "fc381815-5b9e-465f-bd9c-8240724dcb0a",
+            "3a236402-3793-44d8-b907-09572daa65fc",
+            "5821e0bf-8742-4bf7-84e0-fc099336d957"
+        ]
+    },
+    {
+        "question": "Für welches Alter ist LNDW geeignet?",
+        "answer": "jedes Alter",
+        "seed_entities": [
+            "8c6c2284-977a-4ee6-8ce0-b1041fdc3e61",
+            "a603b008-163b-4d7a-bc69-1eace956a7c3",
+            "5d86a101-ce38-49a0-a56e-755b2e7422a3"
+        ]
+    },
+    {
+        "question": "Welche Einrichtung nimmt an LNDW teil?",
+        "answer": "Technische Universität Berlin",
+        "seed_entities": [
+            "5821e0bf-8742-4bf7-84e0-fc099336d957"
+        ]
+    },
+    {
+        "question": "Wer organisiert die LNDW Veranstaltung?",
+        "answer": "Lange Nacht der Wissenschaften e. V. (LNDW e. V.)",
+        "seed_entities": [
+            "8c6c2284-977a-4ee6-8ce0-b1041fdc3e61",
+            "5821e0bf-8742-4bf7-84e0-fc099336d957"
+        ]
+    },
+    {
+        "question": "Welche Veranstaltung geht genau von 19 bis 21 Uhr?",
+        "answer": "New Practice in Art and Technology / Workshops",
+        "seed_entities": [
+            "3a236402-3793-44d8-b907-09572daa65fc",
+            "364db06b-5caf-49f3-96f1-220ffabd32a0"
+        ]
+    },
+    {
+        "question": "Auf welcher Sprache ist die Veranstaltung, die von 19 bis 21 Uhr geht?",
+        "answer": "Veranstaltung auf Englisch",
+        "seed_entities": [
+            "364db06b-5caf-49f3-96f1-220ffabd32a0",
+            "b94443f3-a874-4654-8edb-94a7b23b0f59",
+            "a603b008-163b-4d7a-bc69-1eace956a7c3"
+        ]
+    },
+    {
+        "question": "Welche Live-Musik-Veranstaltung fängt erst um 19:30 Uhr an?",
+        "answer": "Unterhaltsame Live-Show – Sport und Musik für Kopf und Körper",
+        "seed_entities": [
+            "2191d7e9-ad9c-488c-b34a-8d1230a7d074",
+            "0cd31f6d-6cd4-40cb-a054-2a23f4e66b07",
+            "ff95898c-943d-445c-9821-14e15293e4e8",
+            "bd4fcbac-dfb6-4c6d-b0c1-c38ca641d014",
+            "348c4092-7ea3-4d88-ad05-b6e4216c10d5",
+            "d37625f7-d002-40c0-aae8-f18bc37a7e3b",
+            "e7e54755-5cdf-4016-8e25-5c3bb86b76ea"
+        ]
+    },
+    {
+        "question": "Wann ist die letzte Veranstaltung von 'Livemusik im Fahrstuhl'?",
+        "answer": "21:00-21:20 Uhr",
+        "seed_entities": [
+            "a76139c7-cf3d-48ab-86aa-ffff935ddbac"
+        ]
+    },
+    {
+        "question": "Welche Live-Musik-Veranstaltung findet auf dem Kindercampus statt?",
+        "answer": "Unterhaltsame Live-Show – Sport und Musik für Kopf und Körper",
+        "seed_entities": [
+            "0243416d-5d78-467e-8f2b-1c2720202165",
+            "9329f39f-41fe-475a-8006-dd45678eed00"
+        ]
+    },
+    {
+        "question": "An welcher Führung im Südwesten kann ich um 17 Uhr teilnehmen?",
+        "answer": "Historisch-ökologische Exkursion über den Steglitzer Fichtenberg",
+        "seed_entities": [
+            "8a971094-a156-46e7-8f17-c859626b3e9e",
+            "9f8cf50f-5003-431f-885e-d157caa47197"
+        ]
+    },
+    {
+        "question": "Welchen Infostand gibt es im Südwesten?",
+        "answer": "Als Eichhörnchen-Detektiv:innen auf den Spuren kleiner Persönlichkeiten der Natur",
+        "seed_entities": [
+            "1405c8a9-3290-4212-a9ca-d2aee29b8f64"
+        ]
+    },
+    {
+        "question": "Welche Demonstrationen gibt es im Südwesten?",
+        "answer": "Die verborgene Welt der Wurzeln: schätzen, messen, staunen",
+        "seed_entities": [
+            "b8863a1a-3d5e-489b-9ac3-a55d46627faa",
+            "a4a59f08-1695-4b89-b7f9-292515f2c9ec",
+            "9f8cf50f-5003-431f-885e-d157caa47197"
+        ]
+    },
+    {
+        "question": "Welche Veranstaltung im Haus der Erlebbaren KI ist nicht geeignet für Kinder?",
+        "answer": "Zukunft der Energie: nachhaltig durch KI",
+        "seed_entities": [
+            "1abd2346-031e-4ed4-aab4-6e238ed21003",
+            "931c4a7b-8ea4-4663-bf05-0490eae65be8",
+            "92602048-3ac7-40d0-b187-5aa49c657f59"
+        ]
+    },
+    {
+        "question": "Wie viele Veranstaltungen gibt es an der LNDW?",
+        "answer": "über 1000",
+        "seed_entities": [
+            "8c6c2284-977a-4ee6-8ce0-b1041fdc3e61",
+            "3a236402-3793-44d8-b907-09572daa65fc",
+            "5821e0bf-8742-4bf7-84e0-fc099336d957"
+        ]
+    },
+    {
+        "question": "Wie viele wissenschaftliche Einrichtungen nehmen an der LNDW teil?",
+        "answer": "etwa 50",
+        "seed_entities": [
+            "3a236402-3793-44d8-b907-09572daa65fc",
+            "8c6c2284-977a-4ee6-8ce0-b1041fdc3e61",
+            "5821e0bf-8742-4bf7-84e0-fc099336d957"
+        ]
+    },
+    {
+        "question": "Welche Sciencetainment-Veranstaltung ist ein Late-Night-Highlight",
+        "answer": "Science Slam – Brainpower mit Entertainment-Faktor",
+        "seed_entities": [
+            "7f5e6b58-b365-4baf-99fb-55044d405269"
+        ]
+    },
+    {
+        "question": "Wo findet die LNDW statt?",
+        "answer": "Berlin",
+        "seed_entities": [
+            "8c6c2284-977a-4ee6-8ce0-b1041fdc3e61",
+            "3a236402-3793-44d8-b907-09572daa65fc"
+        ]
+    },
+    {
+        "question": "Bei welcher Demonstration geht es um Formula-Rennautos?",
+        "answer": "FaSTTUBe – das elektrische Rennauto des Formula Student Team TU Berlin",
+        "seed_entities": [
+            "fc381815-5b9e-465f-bd9c-8240724dcb0a"
+        ]
+    },
+    {
+        "question": "Welcher englische Workshop bietet keine Speisen und Getränke?",
+        "answer": "Wie moderne Mobilfunknetze funktionieren – Identitätsmanagement in 6G-Netzwerken",
+        "seed_entities": [
+            "fc381815-5b9e-465f-bd9c-8240724dcb0a"
+        ]
+    },
+    {
+        "question": "Was ist die Veranstaltung 'Lange Nacht der Wissenschaften 2025'?",
+        "answer": "Die Lange Nacht der Wissenschaften in Berlin ist ein Gemeinschaftsprojekt wissenschaftlicher sowie wissenschaftsnaher Einrichtungen der Region und findet einmal jährlich statt. Veranstalter ist der Lange Nacht der Wissenschaften e. V. (LNDW e. V.), in dem sich wissenschaftliche Einrichtungen zusammengeschlossen haben. Finanziert wird die Lange Nacht der Wissenschaften weitgehend von den beteiligten wissenschaftlichen Einrichtungen selbst. Auch die Ticketeinnahmen werden vollständig für die Finanzierung der Gesamtveranstaltung verwendet. Die Lange Nacht der Wissenschaften wird von zahlreichen Partnern aus der Region unterstützt. Über den Einsatz der Mittel entscheidet die Mitgliederversammlung des LNDW e. V.",
+        "seed_entities": [
+            "fc381815-5b9e-465f-bd9c-8240724dcb0a",
+            "3a236402-3793-44d8-b907-09572daa65fc",
+            "5821e0bf-8742-4bf7-84e0-fc099336d957"
+        ]
+    },
+    {
+        "question": "Wo findet die Veranstaltung 'Exzellentes Pub-Quiz für Teamplayer, Rätselbegeisterte und Wissenschaftsfans' statt?",
+        "answer": "Haus der Ideen (H)\nStraße des 17. Juni 135\n10623 Berlin\nWangari Maathai-Foyer (Foyer links, ehem. Cafébar, Bereich 0 H)",
+        "seed_entities": [
+            "3275b76a-d617-4181-8da1-fbcfea20b3da"
+        ]
+    },
+    {
+        "question": "Wann beginnt und endet die Veranstaltung 'Stich für Stich nachhaltig – Sticken fürs Klima' statt?",
+        "answer": "17:30-23:20 Uhr",
+        "seed_entities": [
+            "7b6a561d-4274-4bed-82f3-33e37b042d16"
+        ]
+    },
+    {
+        "question": "Welchen Zugang hat 'Fluoreszierender Wärmeübertrager'?",
+        "answer": "Barrierefreier Rollstuhlzugang",
+        "seed_entities": [
+            "20e820c0-cef3-42a7-97c5-bf1d5aa1a437"
+        ]
+    },
+    {
+        "question": "Zur welcher anderen Kategorie außer 'Demonstration' ist 'Fluoreszierender Wärmeübertrager' zuzuordnen?",
+        "answer": "Experiment",
+        "seed_entities": [
+            "20e820c0-cef3-42a7-97c5-bf1d5aa1a437",
+            "94fa1aae-63ac-4c14-9270-ee545aefbabe",
+            "ca7a026c-6506-4c72-966f-c162dcc85627",
+            "76266f9b-3a8e-43a5-8fdf-040c6b344965",
+            "b8863a1a-3d5e-489b-9ac3-a55d46627faa",
+            "a4a59f08-1695-4b89-b7f9-292515f2c9ec",
+            "236973c7-7084-464e-ab04-2961abd2e5c6"
+        ]
+    },
+    {
+        "question": "Zur welcher anderen Kategorie außer 'Experiment' ist 'Fluoreszierender Wärmeübertrager' zuzuordnen?",
+        "answer": "Demonstration",
+        "seed_entities": [
+            "20e820c0-cef3-42a7-97c5-bf1d5aa1a437",
+            "a6b97c51-d252-41ad-af7b-a3c4e1ff9bcf"
+        ]
+    },
+    {
+        "question": "Welche Veranstaltung hat Adresse 'Haus der Energie (KT)\nMarchstraße 18\n10587 Berlin\nHalle' und Website 'https://www.langenachtderwissenschaften.de/programm/detail/51512'?",
+        "answer": "Fluoreszierender Wärmeübertrager",
+        "seed_entities": [
+            "8f5e1416-6332-413f-b432-66c8b51179a6",
+            "fc381815-5b9e-465f-bd9c-8240724dcb0a",
+            "7a7da15c-1a89-47ae-885d-8d29421e8f1d"
+        ]
+    },
+    {
+        "question": "Welche wissenschaftliche Einrichtung veranstaltet 'Fluoreszierender Wärmeübertrager'?",
+        "answer": "Technische Universität Berlin",
+        "seed_entities": [
+            "20e820c0-cef3-42a7-97c5-bf1d5aa1a437",
+            "3a236402-3793-44d8-b907-09572daa65fc",
+            "a58b89d2-0732-4f69-a29d-350c4dc7dbd1"
+        ]
+    },
+    {
+        "question": "Welche wissenschaftliche Einrichtung nimmt teil an der LNDW?",
+        "answer": "Technische Universität Berlin",
+        "seed_entities": [
+            "5821e0bf-8742-4bf7-84e0-fc099336d957"
+        ]
+    },
+    {
+        "question": "In welcher Gegend findet 'Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management' statt?",
+        "answer": "Zentrum (u.a. Mitte, Wedding, Moabit, Tiergarten)",
+        "seed_entities": [
+            "4dbf093a-d000-4649-b19b-1034e5ebd868",
+            "ff67e562-97e4-43f7-8613-5a65354690b0"
+        ]
+    },
+    {
+        "question": "Ist 'Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management' ein Mitmachexperiment oder ein Film?",
+        "answer": "Mitmachexperiment",
+        "seed_entities": [
+            "4dbf093a-d000-4649-b19b-1034e5ebd868",
+            "f74c7e14-41ec-4caa-9868-695b3da49c6b",
+            "6127f82a-1d0b-4f6d-8cd8-c9654a78fe51"
+        ]
+    },
+    {
+        "question": "Ist 'Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management' eine Diskussion oder eine Ausstellung?",
+        "answer": "Ausstellung",
+        "seed_entities": [
+            "4dbf093a-d000-4649-b19b-1034e5ebd868",
+            "f9e39878-4d3d-403c-972b-8603a20e98a6",
+            "fead8e38-d900-4e66-a722-45bdb4a28cc2"
+        ]
+    },
+    {
+        "question": "Welche Veranstaltung wird hier beschrieben?\n\nDas Information Management gibt Auskunft darüber, welche Rolle digitale Informations- Infrastrukturen in der Wissenschaft bei der digitalen Transformation spielen. Am Institut für Bibliotheks- und Informationswissenschaft (IBI) der HU zu Berlin wird untersucht, wie Ergebnisse der Forschung organisiert, langfristig offen zugänglich gemacht und damit nachgenutzt werden können – ganz im Sinne von Open Science. Besucher:innen können mit Hilfe eines animierten Forschungspuzzles offene Wissenspraktiken in der Forschung erkunden. Ab 10 Jahren.",
+        "answer": "Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management",
+        "seed_entities": [
+            "ff67e562-97e4-43f7-8613-5a65354690b0"
+        ]
+    },
+    {
+        "question": "Von wann bis wann geht die Veranstaltung 'Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management'?",
+        "answer": "17:00-00:00 Uhr",
+        "seed_entities": [
+            "4dbf093a-d000-4649-b19b-1034e5ebd868"
+        ]
+    },
+    {
+        "question": "Für wen ist die Veranstaltung 'Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management' geeignet?",
+        "answer": "Geeignet für Kinder",
+        "seed_entities": [
+            "4dbf093a-d000-4649-b19b-1034e5ebd868",
+            "ff67e562-97e4-43f7-8613-5a65354690b0"
+        ]
+    },
+    {
+        "question": "Wann ist die frühste Veranstaltung von 'Realistisches Fahrgefühl im dynamischen Fahrsimulator des KFZB-Versuchszentrums'?",
+        "answer": "17:00-17:15 Uhr",
+        "seed_entities": [
+            "fc381815-5b9e-465f-bd9c-8240724dcb0a"
+        ]
+    },
+    {
+        "question": "Worum geht es bei 'Realistisches Fahrgefühl im dynamischen Fahrsimulator des KFZB-Versuchszentrums'?",
+        "answer": "Im Fahrsimulator erleben fahrende Personen realitätsnahes Fahrverhalten mit Rundumsicht. Eine Fahrdynamiksimulation erzeugt das realistische Lenkgefühl, die aktive Pedalerie ermöglicht zum Beispiel das bekannte ABS-Ruckeln. Beim Bremsen und Beschleunigen nickt das Fahrzeug, in Kurven wankt es. Kenngrößen der Mensch-Fahrzeug-Interaktion und des Fahrzustands werden aufgezeichnet und ermöglichen eine Bewertung von Fahrfunktionen und Fahrleistung. So können sicherheitskritische Situationen und deren Beherrschbarkeit bis in den Grenzbereich erprobt und untersucht werden. Geeignet ab 15 Jahren.",
+        "seed_entities": [
+            "1f81fe24-7026-4517-9173-abb11645b015",
+            "65382849-0b42-4cde-be83-ea1aaf1fa252"
+        ]
+    },
+    {
+        "question": "Wann ist die letzte Veranstaltung von 'Realistisches Fahrgefühl im dynamischen Fahrsimulator des KFZB-Versuchszentrums'?",
+        "answer": "21:45-22:00 Uhr",
+        "seed_entities": [
+            "1f81fe24-7026-4517-9173-abb11645b015",
+            "65382849-0b42-4cde-be83-ea1aaf1fa252",
+            "5c5af2ac-bc1e-4d8f-b124-7d49907f294f"
+        ]
+    },
+    {
+        "question": "Ist die Veranstaltung 'Realistisches Fahrgefühl im dynamischen Fahrsimulator des KFZB-Versuchszentrums' eine Demonstration oder eine Podiumsdiskussion?",
+        "answer": "Demonstration",
+        "seed_entities": [
+            "1f81fe24-7026-4517-9173-abb11645b015",
+            "65382849-0b42-4cde-be83-ea1aaf1fa252",
+            "76266f9b-3a8e-43a5-8fdf-040c6b344965"
+        ]
+    },
+    {
+        "question": "Welche Art Zugang hat Veranstltung INGenius?",
+        "answer": "Barrierefreier Rollstuhlzugang",
+        "seed_entities": [
+            "75a276ad-aa8e-4f3c-9383-f91c7c3b4934",
+            "aeca551b-9d40-4dd0-98ba-c26d39ef24d0"
+        ]
+    },
+    {
+        "question": "Wie lautet die Veranstaltungzeit von INGenius?",
+        "answer": "17:00-22:00 Uhr",
+        "seed_entities": [
+            "75a276ad-aa8e-4f3c-9383-f91c7c3b4934",
+            "aeca551b-9d40-4dd0-98ba-c26d39ef24d0"
+        ]
+    },
+    {
+        "question": "In welchem Bezirk findet INGenius statt?",
+        "answer": "Westen (u.a. Charlottenburg, Schöneberg, Spandau)",
+        "seed_entities": [
+            "75a276ad-aa8e-4f3c-9383-f91c7c3b4934",
+            "aeca551b-9d40-4dd0-98ba-c26d39ef24d0"
+        ]
+    },
+    {
+        "question": "INGenius ist ein Workshop. Welche andere Kategorie hat die Veranstaltung außerdem?",
+        "answer": "Mitmachexperiment",
+        "seed_entities": [
+            "75a276ad-aa8e-4f3c-9383-f91c7c3b4934",
+            "aeca551b-9d40-4dd0-98ba-c26d39ef24d0",
+            "364db06b-5caf-49f3-96f1-220ffabd32a0"
+        ]
+    },
+    {
+        "question": "Für wen ist INGeniues geeignet?",
+        "answer": "Geeignet für Kinder",
+        "seed_entities": [
+            "fc381815-5b9e-465f-bd9c-8240724dcb0a"
+        ]
+    },
+    {
+        "question": "Welcher Infostand hat die folgende Adresse? Haus der Energie (KT)\nMarchstraße 18\n10587 Berlin\nHalle",
+        "answer": "Detektive im Heizungskeller: intelligente Messtechnik für die Wärmewende von „Delta Heat“",
+        "seed_entities": [
+            "adb4a6a2-34d4-474e-9a4d-a95d3814f518",
+            "1405c8a9-3290-4212-a9ca-d2aee29b8f64",
+            "8f5e1416-6332-413f-b432-66c8b51179a6"
+        ]
+    },
+    {
+        "question": "Welches Event wird hier beschrieben?\n\nWie sieht die Zukunft der Sicherheit aus? Klimawandel, Überwachung, resiliente Städte: Anschaulich und innovativ präsentiert das Future Security Lab im Einstein Center Digital Future (ECDF) von TU Berlin, FU Berlin, HU zu Berlin und Charité – Universitätsmedizin Berlin aktuelle Projekte aus der Sicherheitsforschung. Interaktive Szenarien laden zum Mitmachen ein. Das Projekt „Zukunftslabor des Forschungsforums Öffentliche Sicherheit“ der FU Berlin wird vom Bundesforschungsministerium gefördert. Geeignet ab 5 Jahren.",
+        "answer": "Future Security Lab – Sicherheitsforschung zum Anfassen",
+        "seed_entities": [
+            "4f4459f4-b409-459f-a718-1efe198e0728",
+            "735d5397-2bd0-408e-a783-8698a74a380b"
+        ]
+    },
+    {
+        "question": "Wo in Berlin findet das Future Security Lab statt?",
+        "answer": "Zentrum (u.a. Mitte, Wedding, Moabit, Tiergarten)",
+        "seed_entities": [
+            "4f4459f4-b409-459f-a718-1efe198e0728",
+            "735d5397-2bd0-408e-a783-8698a74a380b",
+            "d0e1114e-b92f-4fea-938b-89860186d06a"
+        ]
+    },
+    {
+        "question": "Von wann bis wann geht das Future Security Lab?",
+        "answer": "17:00-00:00 Uhr",
+        "seed_entities": [
+            "4f4459f4-b409-459f-a718-1efe198e0728",
+            "735d5397-2bd0-408e-a783-8698a74a380b"
+        ]
+    },
+    {
+        "question": "Ist das Future Security Lab eine Veranstaltung für Erwachsene oder für Kinder geeignet?",
+        "answer": "Geeignet für Kinder",
+        "seed_entities": [
+            "4f4459f4-b409-459f-a718-1efe198e0728",
+            "735d5397-2bd0-408e-a783-8698a74a380b"
+        ]
+    },
+    {
+        "question": "Ist das Future Security Lab eine Ausstellung oder eine Installation?",
+        "answer": "Installation",
+        "seed_entities": [
+            "4f4459f4-b409-459f-a718-1efe198e0728",
+            "735d5397-2bd0-408e-a783-8698a74a380b",
+            "b199f0ff-351e-415a-b19a-3d222e33f793"
+        ]
+    },
+    {
+        "question": "Welche Installation findet im Haus der erlebbaren KI statt?",
+        "answer": "Zukunft der Energie: nachhaltig durch KI",
+        "seed_entities": [
+            "50bda853-d6d4-41ba-b52b-76b0a29eda09",
+            "1abd2346-031e-4ed4-aab4-6e238ed21003"
+        ]
+    },
+    {
+        "question": "Welche Installation findet bei ZEKI statt?",
+        "answer": "Zukunft der Energie: nachhaltig durch KI",
+        "seed_entities": [
+            "a24449ba-df30-4e47-9628-60881956d66f",
+            "de141757-28dc-4cd3-a890-88d56b286177",
+            "b199f0ff-351e-415a-b19a-3d222e33f793"
+        ]
+    },
+    {
+        "question": "Welche Installation gibt es in Berlin Zentrum statt?",
+        "answer": "Future Security Lab – Sicherheitsforschung zum Anfassen",
+        "seed_entities": [
+            "10eeff09-c975-44f5-b15b-c93c9ee8c60e",
+            "b199f0ff-351e-415a-b19a-3d222e33f793"
+        ]
+    },
+    {
+        "question": "Welche Veranstaltung findet in der Textilwerkstatt des Haus des Lernens statt?",
+        "answer": "Stich für Stich nachhaltig – Sticken fürs Klima",
+        "seed_entities": [
+            "fc381815-5b9e-465f-bd9c-8240724dcb0a"
+        ]
+    },
+    {
+        "question": "Welche Veranstaltung findet in der Metallwerkstatt des Haus des Lernens statt?",
+        "answer": "Notfallpfeife aus Aluminium – dein Signal in der Wildnis",
+        "seed_entities": [
+            "9ceee2ee-e477-45d3-b15f-d72522b66060"
+        ]
+    },
+    {
+        "question": "Was für eine Art Veranstaltung ist 'Notfallpfeife aus Aluminium – dein Signal in der Wildnis'?",
+        "answer": "Mitmachexperiment",
+        "seed_entities": [
+            "e20f707f-7188-4880-8bed-24480472a419",
+            "06b96859-8071-458e-bf09-116961088f0e"
+        ]
+    },
+    {
+        "question": "Wann fängt 'Notfallpfeife aus Aluminium – dein Signal in der Wildnis' an und wann hört die Veranstaltung auf?",
+        "answer": "17:30-21:30 Uhr",
+        "seed_entities": [
+            "fc381815-5b9e-465f-bd9c-8240724dcb0a"
+        ]
+    },
+    {
+        "question": "Findet 'Neue Sprachen, neue Welten' im Osten oder Westen Berlin statt?",
+        "answer": "Westen (u.a. Charlottenburg, Schöneberg, Spandau)",
+        "seed_entities": [
+            "e0f40f9c-5ec5-46ca-a609-2599c431c392",
+            "be15b39c-60a7-4b84-87ef-1c88a4b32a50",
+            "0d74c019-e477-40f5-a931-71db5ba61a94"
+        ]
+    },
+    {
+        "question": "Ist 'Neue Sprachen, neue Welten' eine Veranstaltung der Art Spiel oder Diskussion?",
+        "answer": "Spiel",
+        "seed_entities": [
+            "e0f40f9c-5ec5-46ca-a609-2599c431c392",
+            "be15b39c-60a7-4b84-87ef-1c88a4b32a50",
+            "f7d64d0a-361d-4c88-a917-b165c8675e4d"
+        ]
+    },
+    {
+        "question": "Für wen ist 'Neue Sprachen, neue Welten' geeignet?",
+        "answer": "Geeignet für Kinder",
+        "seed_entities": [
+            "fc381815-5b9e-465f-bd9c-8240724dcb0a"
+        ]
+    },
+    {
+        "question": "Wann beginnt und endet die Veranstaltung 'Neue Sprachen, neue Welten'?",
+        "answer": "17:00-22:00 Uhr",
+        "seed_entities": [
+            "e0f40f9c-5ec5-46ca-a609-2599c431c392"
+        ]
+    },
+    {
+        "question": "Welche Mitmachexperiment im Haus der Luft- und Raumfahrt hat Speisen, ist geignet für Kinder, zugänglich für Rollstuhlfahrer und auf Englisch?",
+        "answer": "Saturday SatelLight Fever – wofür braucht der Satellit Licht?",
+        "seed_entities": [
+            "f74c7e14-41ec-4caa-9868-695b3da49c6b",
+            "5b11b9ae-ed38-4fae-9180-9d84c6788b4c",
+            "b94443f3-a874-4654-8edb-94a7b23b0f59"
+        ]
+    },
+    {
+        "question": "Welche Veranstaltung im Haus der Ideen ist nur der Kategorie 'Infostand' zuzuordnen?",
+        "answer": "Karriere und Jobs an der TU Berlin",
+        "seed_entities": [
+            "eaecb212-3763-48f4-80d8-0613a6f8bc58",
+            "adb4a6a2-34d4-474e-9a4d-a95d3814f518",
+            "1405c8a9-3290-4212-a9ca-d2aee29b8f64"
+        ]
+    }
+]

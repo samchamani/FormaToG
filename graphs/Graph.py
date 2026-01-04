@@ -1,32 +1,53 @@
 from abc import ABC, abstractmethod
-from typing import List
+from typing import List, Tuple
 
 
-class Graph(ABC):
+class Entity(ABC):
+    """The entity model of the graph."""
 
     def __init__(self):
         pass
 
     @abstractmethod
-    def read(self, data_list: List[dict], labels: List[str] = []) -> list:
+    def get_label(self) -> str:
+        pass
+
+
+class Relationship(ABC):
+    """The relationship model of the graph."""
+
+    def __init__(self):
         pass
 
     @abstractmethod
-    def find(self, data_list: List[str], labels: List[str] = []) -> list:
+    def get_label(self) -> str:
+        pass
+
+
+GraphTriplet = Tuple[Entity, Relationship, Entity]
+GraphTuple = Tuple[Entity, Relationship]
+
+
+class Graph(ABC):
+
+    @abstractmethod
+    def get_entities(self, entities: List[str], **kwargs) -> List[Entity]:
+        """Fetches entities from the graph based on ID"""
         pass
 
     @abstractmethod
-    def read_link(
-        self,
-        from_list: List[dict] = [],
-        relation: str | dict = "",
-        to_list: List[dict] = [],
-        ignore_direction=False,
-    ) -> list:
+    def get_relationships(self, entity: Entity, **kwargs) -> List[Relationship]:
+        """Returns all ingoing and outgoing relationships of a given entity."""
         pass
 
     @abstractmethod
-    def read_neighbors(
-        self, data_list: List[dict], rel_type="", ignore_direction=True
-    ) -> list:
+    def get_triplets(
+        self, enitity: Entity, relationship: Relationship, **kwargs
+    ) -> List[GraphTriplet]:
+        """Returns all triplets containing the given entity and relationship.
+        Triplets are returned in the format
+        ```
+        (head_entity, outgoing_relationship, tail_entity)
+        ```.
+        """
         pass

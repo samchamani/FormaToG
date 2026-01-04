@@ -1,58 +1,89 @@
 from abc import ABC, abstractmethod
-from typing import Dict, List, Literal
+from typing import List, TypedDict, Protocol, Any, Literal, Type
+from pydantic import BaseModel
+from common import get_logger
+import json
+
+
+class PromptBuilder(Protocol):
+    def __call__(self, **kwargs: Any) -> str: ...
+
+
+class InstructionDict(TypedDict):
+    pick_relationships: PromptBuilder
+    pick_triplets: PromptBuilder
+    reflect: PromptBuilder
+    answer: PromptBuilder
+    retrieve_queries: PromptBuilder
+    pick_seed_entities: PromptBuilder
+
+
+InstructionKey = Literal[
+    "pick_relationships",
+    "pick_triplets",
+    "reflect",
+    "answer",
+    "retrieve_queries",
+    "pick_seed_entities",
+]
+
+
+class InstructionConfig(TypedDict):
+    system: InstructionDict
+    user: InstructionDict
+
+
+ResponseFormat = BaseModel | str | None
+
+
+class InstructionResponseSchema(TypedDict):
+    pick_relationships: ResponseFormat
+    pick_triplets: ResponseFormat
+    reflect: ResponseFormat
+    answer: ResponseFormat
+    retrieve_queries: ResponseFormat
+    pick_seed_entities: ResponseFormat
+
+
+class Message(TypedDict):
+    role: str
+    content: str
+    instruction: InstructionKey
 
 
 class Agent(ABC):
-    def __init__(self):
-        pass
+    def __init__(
+        self,
+        model: str,
+        instructions: InstructionConfig,
+        response_schema: InstructionResponseSchema = None,
+        log_path: str = None,
+        use_context: bool = False,
+    ):
+        self.model = model
+        self.instructions = instructions
+        self.logger = get_logger(__name__, log_path)
+        self.use_context = use_context
+        self.response_schema = response_schema
 
     @abstractmethod
-    def retrieve_queries(self, prompt: str) -> Dict[Literal["entities"], List[str]]:
-        """
-        The agent extracts key words or related words from the prompt\\
-        and returns them as json in the format
-
-        ```
-        {
-            "entities": [str]
-        }
-        ```
-        """
-        pass
-
-    @abstractmethod
-    def rate_relationships(
-        self, prompt: str, entity: dict, relationships: List[dict]
-    ) -> List[float]:
-        """
-        The agent will rate the relationships based on the given prompt and the originating entity,\\
-        by assigning a score to each relationship and return a list of scores of size `len(paths)`\\
-        where each index represents the score of the relationship with the same index.
+    def run(self, instruction: InstructionKey, prompt: str, **kwargs) -> str:
+        """Prompts the llm to perform a task based on the instructions defined in
+        `self.instructions`
         """
         pass
 
     @abstractmethod
-    def rate_entities(self, prompt: str, entities: List[dict]) -> List[float]:
+    def flush_context(self):
         """
-        The agent will rate the entities based on the given prompt, by assigning a score\\
-        to each entity and return a list of scores of size `len(paths)` where each index\\
-        represents the score of the entity with the same index.
+        Resets the context of the agent.
         """
         pass
 
-    @abstractmethod
-    def judge_path(self, prompt: str, path: List[dict]) -> dict:
-        """
-        The agent reasons over the prompt and path and decides whether it has\\
-        enough information to answer the prompt based on the path data.\\
-        If the agent can answer, then this will return `True`.
-        """
+    def log(self, messages: List[Message]):
+        for message in messages:
+            self.logger.info(json.dumps(message, ensure_ascii=False))
 
-    @abstractmethod
-    def answer(self, prompt: str, path: List[dict] | None) -> dict:
-        """
-        The agent answers the given prompt. If `path` is given, it will attempt\\
-        to use the path data to answer the question, otherwise it will solely use\\
-        its encoded knowledge.
-        """
-        pass
+    def get_format(self, instruction: InstructionKey) -> ResponseFormat:
+        """Retrieves the corresponding format definition from the `self.schema` dict"""
+        return self.response_schema.get(instruction) if self.response_schema else None

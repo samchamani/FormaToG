@@ -1,40 +1,100 @@
-import requests
+from .Graph import (
+    Graph,
+    Entity as AbstractEntity,
+    Relationship as AbstractRelationship,
+)
+from typing import List, Tuple
+import graphs.queries.SPARQL as queries
+from SPARQLWrapper import SPARQLWrapper
+import os
+from dotenv import load_dotenv
 
 
-class GraphWikidata:
+class Entity(AbstractEntity):
 
-    def __init__(
-        self,
-        endpoint_url="https://query.wikidata.org/sparql",
-        user_agent="MyApp/1.0 (https://mydomain.example; contact@example.com)",
-    ):
-        self.endpoint_url = endpoint_url
-        self.headers = {
-            "Accept": "application/sparql-results+json",
-            "User-Agent": user_agent,
-        }
+    def __init__(self, qid: str, value: str):
+        self.qid = qid
+        self.value = value
 
-    def query(self, sparql: str, params: dict = None) -> dict:
-        """Executes a SPARQL query string and returns JSON results."""
-        response = requests.get(
-            self.endpoint_url,
-            params={"query": sparql, **(params or {})},
-            headers=self.headers,
+    def get_label(self):
+        return self.value
+
+
+class Relationship(AbstractRelationship):
+
+    def __init__(self, pid: str, value: str):
+        self.pid = pid
+        self.value = value
+
+    def get_label(self):
+        return self.value
+
+
+class GraphWikidata(Graph):
+
+    def __init__(self):
+        load_dotenv()
+        self.url = os.getenv("WIKIDATA_URL")
+        self.user_agent = os.getenv("WIKIDATA_USER_AGENT")
+        self.sparql = SPARQLWrapper(self.url, agent=self.user_agent)
+        self.sparql.setReturnFormat("json")
+
+    def query(self, query: str) -> dict:
+        """Executes a SPARQL query string and returns results.
+        Results in JSON format by default.
+        """
+        self.sparql.setQuery(query)
+        response = self.sparql.query().convert()
+        return response
+
+    def get_entities(self, entities, **kwargs) -> List[Entity]:
+        if not entities:
+            return []
+        response = self.query(
+            queries.get_entities.format(qids=" ".join([f"wd:{e}" for e in entities]))
         )
-        response.raise_for_status()
-        return response.json()
+        return [
+            Entity(
+                qid=self.url2id(entry["entity"]["value"]),
+                value=entry["entityLabel"]["value"],
+            )
+            for entry in response["results"]["bindings"]
+        ]
 
+    def get_relationships(self, entity: Entity, **kwargs) -> List[Relationship]:
+        response = self.query(queries.get_relationships.format(qid=entity.qid))
+        return [
+            Relationship(
+                pid=self.url2id(entry["prop"]["value"]),
+                value=entry["propLabel"]["value"],
+            )
+            for entry in response["results"]["bindings"]
+        ]
 
-# Usage:
-client = GraphWikidata()
-sparql = """
-SELECT ?country ?countryLabel WHERE {
-  ?country wdt:P31 wd:Q6256.   # instance of country
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-}
-LIMIT 5
-"""
-result = client.query(sparql)
-print("CHECK", result)
-for binding in result["results"]["bindings"]:
-    print(binding["countryLabel"]["value"], binding["country"]["value"])
+    def get_triplets(
+        self, entity: Entity, relationship: Relationship, **kwargs
+    ) -> List[Tuple[Entity, Relationship, Entity]]:
+        response = self.query(
+            queries.get_triplets.format(qid=entity.qid, pid=relationship.pid)
+        )
+        return [
+            (
+                Entity(
+                    qid=self.url2id(entry["head"]["value"]),
+                    value=entry["headLabel"]["value"],
+                ),
+                Relationship(
+                    pid=self.url2id(entry["rel"]["value"]),
+                    value=entry["relLabel"]["value"],
+                ),
+                Entity(
+                    qid=self.url2id(entry["tail"]["value"]),
+                    value=entry["tailLabel"]["value"],
+                ),
+            )
+            for entry in response["results"]["bindings"]
+        ]
+
+    @staticmethod
+    def url2id(url: str) -> str:
+        return url.replace("http://www.wikidata.org/entity/", "")

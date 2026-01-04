@@ -1,207 +1,190 @@
+from graphs.Graph import (
+    Graph,
+    Entity as AbstractEntity,
+    Relationship as AbstractRelationship,
+)
 from neo4j import GraphDatabase, Transaction
 from dotenv import load_dotenv
 import os
-from typing import Literal, List
-import queries_Cypher
+from typing import Literal, List, Tuple
+import graphs.queries.Cypher as queries
 import re
 
 
-# TODO: add db_name for performance
-class GraphNeo4j:
+class Entity(AbstractEntity):
+
+    def __init__(self, uuid: str, label: str):
+        self.uuid = uuid
+        self.label = label
+
+    def get_label(self):
+        return self.label.replace("\n", " ")
+
+
+class Relationship(AbstractRelationship):
+
+    def __init__(self, type: str):
+        self.type = type
+
+    def get_label(self):
+        return self.type
+
+
+class GraphNeo4j(Graph):
 
     def __init__(self):
-        print("Loading environment variables...")
         load_dotenv()
         host = os.getenv("NEO4J_HOST", "localhost")
         user = os.getenv("NEO4J_USERNAME")
         password = os.getenv("NEO4J_PASSWORD")
         bolt_port = os.getenv("NEO4J_BOLT_PORT", 7687)
         uri = f"bolt://{host}:{bolt_port}"
-        try:
-            print(f"Connecting to Neo4j at {uri}...")
-            self.driver = GraphDatabase.driver(uri, auth=(user, password))
-            print("Connected to Neo4j successfully!")
-        except Exception as e:
-            print(f"Failed to connect to Neo4j: {e}")
-            raise e
+        self.driver = GraphDatabase.driver(uri, auth=(user, password))
 
     def close(self):
-        """Close the Neo4j driver."""
+        """Close the Neo4j driver. Run this after you are done using an instance of this class."""
         if self.driver:
             self.driver.close()
-            print("Neo4j connection closed")
 
-    def _run_query(
-        self, mode: Literal["read", "write"], query: str, key="result", **kwparameters
+    def run_query(
+        self, mode: Literal["read", "write", "admin"], query: str, key=None, **kwargs
     ):
         try:
             with self.driver.session() as session:
+                if mode == "admin":
+                    return session.run(query, **kwargs).data()
                 execute = (
                     session.execute_read if mode == "read" else session.execute_write
                 )
-                result = execute(self._run_tx, query, key, **kwparameters)
+                result = execute(self._run_tx, query, key, **kwargs)
                 return result
         except Exception as e:
             print(f"Failed to {mode}", e)
 
     @staticmethod
-    def _run_tx(tx: Transaction, query: str, key: str | None, **kwparameters):
-        results = tx.run(query, **kwparameters)
+    def _run_tx(tx: Transaction, query: str, key: str | None, **kwargs):
+        results = tx.run(query, **kwargs)
 
         return [
             record.data() if key is None else record.data()[key] for record in results
         ]
 
+    def format_labels(self, labels: List[str]):
+        if not labels:
+            return ":NODE"
+        result = ""
+        for label in labels:
+            if self.check_label(label):
+                result += ":" + label
+        return result
+
     @staticmethod
-    def _format_query(
-        query: str,
-        labels: List[str] = [],
-        rel_type: str = "RELATED_TO",
-        ignore_direction=False,
-    ):
-        if rel_type != "" and not re.match(r"[A-Z][A-Z_]*", rel_type):
-            raise ValueError("Invalid relationship label")
-        return query.format(
-            labels=f":{":".join(labels)}" if len(labels) > 0 else "",
-            rel_type=f":{rel_type}" if rel_type else "",
-            direction="" if ignore_direction else ">",
+    def check_label(label: str) -> bool:
+        if not re.match(r"[A-Z][A-Z_]*[A-Z]", label):
+            raise ValueError(
+                f"Wrong format. Expected '[A-Z][A-Z_]*[A-Z]' but received: {label}"
+            )
+        return True
+
+    def export_graphml(self, filename: str) -> bool:
+        return self.run_query("admin", queries.export_graphml.format(filename=filename))
+
+    def import_graphml(self, filename: str) -> bool:
+        return self.run_query("admin", queries.import_graphml.format(filename=filename))
+
+    # ---------------------------------------------------------------------------- #
+    #                                    ToG OPS                                   #
+    # ---------------------------------------------------------------------------- #
+
+    def get_entities(self, entities, **kwargs) -> List[Entity]:
+        if not entities:
+            return []
+        results = self.run_query(
+            "read",
+            queries.get_entities,
+            data_list=entities,
         )
-
-    # ---------------------------------------------------------------------------- #
-    #                                  OPERATIONS                                  #
-    # ---------------------------------------------------------------------------- #
-
-    def create(self, data_list: List[dict], labels: List[str] = ["node"]):
-        """Create nodes given a `data_list` array of format
-        ```
-        [
-            {
-                "prop1": "value1",
-                "prop2": "value2",
-                ...
-            }
+        return [
+            Entity(uuid=result["entity"]["uuid"], label=result["entity"]["label"])
+            for result in results
         ]
-        ```
+
+    def get_relationships(self, entity: Entity, **kwargs) -> List[Relationship]:
+        if not entity:
+            return []
+        results = self.run_query(
+            "read", queries.get_relationships.format(uuid=entity.uuid)
+        )
+        return [Relationship(type=result["relationship"]) for result in results]
+
+    def get_triplets(self, entity: Entity, relationship: Relationship, **kwargs):
+        if not entity or not relationship:
+            return []
+        results = self.run_query(
+            "read",
+            queries.get_triplets.format(uuid=entity.uuid, rel_type=relationship.type),
+        )
+        return [
+            (
+                Entity(uuid=result["head"]["uuid"], label=result["head"]["label"]),
+                Relationship(type=result["relationship"]),
+                Entity(uuid=result["tail"]["uuid"], label=result["tail"]["label"]),
+            )
+            for result in results
+        ]
+
+    # ---------------------------------------------------------------------------- #
+    #                                GRAPH CRUD OPS                                #
+    # ---------------------------------------------------------------------------- #
+
+    def create(self, data_list: List[str], **kwargs) -> List[Entity]:
+        """Create entities given a `data_list` array of format of labels, each
+        representing an entity
         """
-        query = self._format_query(queries_Cypher.create, labels)
-        return self._run_query("write", query, data_list=data_list)
+        if not data_list:
+            return []
+        results = self.run_query(
+            "write",
+            queries.create.format(labels=self.format_labels(kwargs.get("labels"))),
+            data_list=data_list,
+        )
+        return [
+            Entity(uuid=result["entity"]["uuid"], label=result["entity"]["label"])
+            for result in results
+        ]
 
-    def read(self, data_list: List[dict], labels: List[str] = []):
-        query = self._format_query(queries_Cypher.read, labels)
-        return self._run_query("read", query, data_list=data_list)
-
-    def find(self, data_list: List[str], labels: List[str] = []):
+    def find(self, data_list: List[str], **kwargs) -> List[Entity]:
         """find nodes that contain strings in `data_list`"""
-        query = self._format_query(queries_Cypher.find, labels)
-        return self._run_query("read", query, data_list=data_list)
+        if not data_list:
+            return []
+        results = self.run_query(
+            "read",
+            queries.find.format(labels=self.format_labels(kwargs.get("labels"))),
+            data_list=data_list,
+        )
+        return [
+            Entity(uuid=result["entity"]["uuid"], label=result["entity"]["label"])
+            for result in results
+        ]
 
-    def update(self, data_list: List[dict], new_data: dict, labels: List[str] = []):
-        query = self._format_query(queries_Cypher.update, labels)
-        return self._run_query("write", query, data_list=data_list, new_data=new_data)
+    def delete(self, data_list: List[str], **kwargs) -> bool:
+        self.run_query("write", queries.delete, data_list=data_list)
+        return True
 
-    def delete(self, data_list: List[dict], labels: List[str] = []):
-        query = self._format_query(queries_Cypher.delete, labels)
-        return self._run_query("write", query, data_list=data_list)
-
-    def link(
-        self,
-        from_list: List[dict],
-        rel_type: str = "RELATED_TO",
-        to_list: List[dict] = [],
-        relationship_props: dict = None,
-    ):
+    def link(self, triplets: List[Tuple[str, str, str]], **kwargs):
         """
         can be used to create links or update existing ones
         """
-        query = self._format_query(queries_Cypher.link, rel_type=rel_type)
-        return self._run_query(
+        for triplet in triplets:
+            self.check_label(triplet[1])
+        return self.run_query("write", queries.link, triplets=triplets)
+
+    def unlink(self, triplet: Tuple[str, str, str], **kwargs):
+        return self.run_query(
             "write",
-            query,
-            key=None,
-            from_list=from_list,
-            to_list=to_list,
-            relationship_props=relationship_props,
+            queries.unlink.format(
+                head_uuid=triplet[0],
+                rel_type=triplet[1],
+                tail_uuid=triplet[2],
+            ),
         )
-
-    def unlink(
-        self,
-        from_list: List[dict] = [],
-        relation: str | dict = "",
-        to_list: List[dict] = [],
-        ignore_direction=False,
-    ):
-        isStr = isinstance(relation, str)
-        query = self._format_query(
-            queries_Cypher.unlink,
-            rel_type=relation if isStr else "",
-            ignore_direction=ignore_direction,
-        )
-        return self._run_query(
-            "write",
-            query,
-            key=None,
-            from_list=from_list,
-            to_list=to_list,
-            relationship_props={} if isStr else relation,
-        )
-
-    def read_link(
-        self,
-        from_list: List[dict] = [],
-        relation: str | dict = "",
-        to_list: List[dict] = [],
-        ignore_direction=False,
-    ):
-        isStr = isinstance(relation, str)
-        query = self._format_query(
-            queries_Cypher.read_link,
-            rel_type=relation if isStr else "",
-            ignore_direction=ignore_direction,
-        )
-        return self._run_query(
-            "read",
-            query,
-            key=None,
-            from_list=from_list,
-            to_list=to_list,
-            relationship_props={} if isStr else relation,
-        )
-
-    def read_neighbors(self, data_list: List[dict], rel_type="", ignore_direction=True):
-        query = self._format_query(
-            queries_Cypher.read_neighbors,
-            rel_type=rel_type,
-            ignore_direction=ignore_direction,
-        )
-        return self._run_query("read", query, key=None, data_list=data_list)
-
-    def read_path(self, data_list: List[dict | str], ignore_direction=True):
-        """
-        Usage:
-        ```
-        edges = kg.read_path(
-            [sam, "CHILD_OF", afsaneh, "CHILD_OF", diana, "CHILD_OF", ilayda, "CHILD_OF", eray],
-        )
-        for edge in edges:
-            print(f"{edge["from"]["name"]}--{edge["type"]}->{edge["to"]["name"]}")
-
-        ```
-        """
-        result = []
-        for i, _ in enumerate(data_list):
-            if i >= len(data_list) - 2:
-                break
-            if i % 2 == 0:
-                edge = self.read_link(
-                    [data_list[i]],
-                    data_list[i + 1],
-                    [data_list[i + 2]],
-                    ignore_direction,
-                )
-                if len(edge) == 0:
-                    print(
-                        f"Path incomplete: no relationship found for {data_list[i]} {data_list[i + 1]} {data_list[i + 2]}"
-                    )
-                    return []
-                result.extend(edge)
-        return result

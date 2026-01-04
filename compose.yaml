@@ -8,18 +8,20 @@ services:
     environment:
       NEO4J_AUTH: "${NEO4J_USERNAME}/${NEO4J_PASSWORD}"
       NEO4J_dbms_default__listen__address: 0.0.0.0
-      NEO4JLABS_PLUGINS: '["apoc"]'
-      NEO4J_dbms_security_procedures_unrestricted: "apoc.*"
+      NEO4J_PLUGINS: '["apoc", "graph-data-science"]'
+      NEO4J_dbms_security_procedures_unrestricted: "apoc.*,gds.*"
+      NEO4J_apoc_import_file_enabled: "true"
+      NEO4J_apoc_export_file_enabled: "true"
+      NEO4J_apoc_import_file_use__neo4j__config: "true"
     volumes:
       - neo4j_data:/data
       - neo4j_logs:/logs
-      - neo4j_import:/import
       - neo4j_plugins:/plugins
+      - "${NEO4J_IMPORT_VOLUME}:/import"
     restart: unless-stopped
 
 volumes:
   neo4j_data:
   neo4j_logs:
-  neo4j_import:
   neo4j_plugins:
 # include ollama?

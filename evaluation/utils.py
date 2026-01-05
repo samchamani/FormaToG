@@ -14,8 +14,15 @@ from methods.instructions.tog import config as tog_config, schema as tog_schema
 from methods.instructions.tog_sunetal import config as tog_sunetal_config
 from graphs.Graph import Graph
 import re
+from pathlib import Path
+import string
+import argparse
+import os
 
 
+# ---------------------------------------------------------------------------- #
+#                              QUESTION ANSWERING                              #
+# ---------------------------------------------------------------------------- #
 def get_configured_method(method: str):
     """Returns the method with all configured settings.
     ```
@@ -102,3 +109,76 @@ def map_question(catalogue: str, question_dict: dict, graph: Graph):
         }
 
     return question_dict
+
+
+# ---------------------------------------------------------------------------- #
+#                                    ANALYZE                                   #
+# ---------------------------------------------------------------------------- #
+DATA_TYPE_MAP = {
+    "question_index": int,
+    "expected_answer": str,
+    "answer": str,
+    "is_kg_based_answer": int,
+    "has_err_instruction": int,
+    "has_err_format": int,
+    "has_err_graph": int,
+    "has_err_other": int,
+    "has_err_agent": int,
+}
+
+
+def get_exp_and_dir_from_arg():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--exp",
+        type=str,
+        help="the name of the experiment folder in results/",
+        required=True,
+    )
+
+    args = parser.parse_args()
+    exp_name = args.exp
+
+    current_dir = os.path.dirname(__file__)
+    exp_dir = os.path.abspath(os.path.join(current_dir, "..", "results", exp_name))
+    if not os.path.exists(exp_dir):
+        raise NotADirectoryError("No such directory", exp_dir)
+    return exp_name, exp_dir
+
+
+def extract_meta_from_result_path(path: str):
+    """For an expected result file path, the repetition number and method name
+    are extracted and returned as `(method, rep)`"""
+    parts = Path(path).parts
+    return parts[-2], int(parts[-1].replace(".csv", "").replace("results_rep", ""))
+
+
+def normalize_answer(s: str):
+    """Normalization according to SQUAD.
+    Additions: German articles
+    """
+    # text to lowercase letters
+    s = s.lower()
+
+    # excluding punctuation
+    exclude = set(string.punctuation)
+    s = "".join(ch for ch in s if ch not in exclude)
+
+    # articles removed
+    regex = re.compile(
+        r"\b(a|an|the|der|die|das|den|dem|des|ein|eine|einen|einem|einer|eines)\b",
+        re.UNICODE,
+    )
+    s = re.sub(regex, " ", s)
+
+    # normalized white spaces, new lines, ...
+    s = " ".join(s.split())
+
+    return s
+
+
+def get_tokens(s: str):
+    """Tokenization according to SQUAD."""
+    if not s:
+        return []
+    return normalize_answer(s).split()

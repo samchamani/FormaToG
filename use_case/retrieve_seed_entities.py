@@ -1,7 +1,7 @@
 import argparse
 from graphs.GraphNeo4j import GraphNeo4j
 from agents.AgentGoogle import AgentGoogle
-from methods.instructions.tog import config, schema
+from methods.instructions.formatog import config, schema
 import json
 from tqdm import tqdm
 import time

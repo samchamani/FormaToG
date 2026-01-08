@@ -6,7 +6,7 @@ from graphs.Graph import Relationship, GraphTriplet
 #                                    ERRORS                                    #
 # ---------------------------------------------------------------------------- #
 class GraphException(Exception):
-    """Raised when a prompt can not be answered using ToG.
+    """Raised when a prompt can not be answered using a ToG approach.
     This might occur when running into dead ends, or if there are no
     seed entities."""
 

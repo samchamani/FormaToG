@@ -1,4 +1,4 @@
-# LLMxKG
+# FormaToG
 
 .env file in project root dir
 
@@ -34,3 +34,13 @@ Run Think-on-Graph
 ```
 python run.py --prompt "Your question" --agent llama3.1:8b-instruct-q6_K
 ```
+
+## Local setup
+
+```
+python -m venv .venv # or miniconda, etc.
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+Python versions tested: Python 3.12.7, 3.12.3

@@ -58,7 +58,7 @@ if __name__ == "__main__":
         nargs="+",
         type=str,
         required=True,
-        help="Methods to evaluate. Named after method files in /methods. For tog methods extend the name with max depth and max paths like so 'tog_d{max_depth}_p{max_paths}'.",
+        help="Methods to evaluate. Named after method files in /methods. For (forma)tog methods extend the name with max depth and max paths like so 'tog_d{max_depth}_p{max_paths}'.",
     )
     parser.add_argument(
         "--repetitions",

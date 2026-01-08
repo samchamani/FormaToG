@@ -1,6 +1,6 @@
 from methods.prompting import ask
-from methods.tog import think_on_graph
-from methods.tog_sunetal import think_on_graph as tog_sunetal
+from methods.formatog import think_on_graph as formatog
+from methods.tog import think_on_graph as tog
 from methods.instructions.cot import config as cot_config, schema as cot_schema
 from methods.instructions.io_few_shot import (
     config as io_few_shot_config,
@@ -10,8 +10,11 @@ from methods.instructions.io_zero_shot import (
     config as io_zero_shot_config,
     schema as io_zs_schema,
 )
-from methods.instructions.tog import config as tog_config, schema as tog_schema
-from methods.instructions.tog_sunetal import config as tog_sunetal_config
+from methods.instructions.formatog import (
+    config as formatog_config,
+    schema as formatog_schema,
+)
+from methods.instructions.tog import config as tog_config
 from graphs.Graph import Graph
 import re
 from pathlib import Path
@@ -47,20 +50,25 @@ def get_method_exec(method: str):
     if method in simple_methods:
         return simple_methods[method]
 
-    if method.startswith("tog"):
+    if re.fullmatch(r"_d[0-9]+_p[0-9]+$", method):
         parts = method.split("_")
         max_paths = int(parts[-1].removeprefix("p"))
         max_depth = int(parts[-2].removeprefix("d"))
 
-        if method.startswith("tog_sunetal"):
-            return lambda prompt, **kwargs: tog_sunetal(
+        tog_methods = {
+            "tog": lambda prompt, **kwargs: tog(
                 prompt, max_depth=max_depth, max_paths=max_paths, **kwargs
-            )
-        else:
-            return lambda prompt, **kwargs: think_on_graph(
+            ),
+            "formatog": lambda prompt, **kwargs: formatog(
                 prompt, max_depth=max_depth, max_paths=max_paths, **kwargs
-            )
-
+            ),
+            "formatog_noctx": lambda prompt, **kwargs: formatog(
+                prompt, max_depth=max_depth, max_paths=max_paths, **kwargs
+            ),
+        }
+        method_no_params = re.sub(r"_d[0-9]+_p[0-9]+$", "", method)
+        if method_no_params in tog_methods:
+            return tog_methods[method_no_params]
     raise ValueError(f"Unknown method: {method}")
 
 
@@ -70,9 +78,9 @@ def get_config_and_use_context(method_with_params: str):
         "cot": (cot_config, False, cot_schema),
         "io_few_shot": (io_few_shot_config, False, io_fs_schema),
         "io_zero_shot": (io_zero_shot_config, False, io_zs_schema),
-        "tog": (tog_config, True, tog_schema),
-        "tog_no_context": (tog_config, False, tog_schema),
-        "tog_sunetal": (tog_sunetal_config, False, None),
+        "formatog": (formatog_config, True, formatog_schema),
+        "formatog_noctx": (formatog_config, False, formatog_schema),
+        "tog": (tog_config, False, None),
     }
 
     if method in methods:

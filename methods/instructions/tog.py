@@ -1,365 +1,223 @@
-from typing import List, Tuple
-from agents.Agent import InstructionConfig, InstructionResponseSchema
-from pydantic import BaseModel
+from typing import List, TypedDict, Tuple
+from agents.Agent import InstructionConfig
 
 
-pick_relationships = """
-### Role ###
-You are a Knowledge Graph Retrieval Agent.
-Your goal is to identify the most relevant entity-relationship rows that help answer a complex question.
+class Possible_Relationships(TypedDict):
+    """All possible `relationships` connected to an `entity`"""
 
-### Task ###
-From the provided two-column CSV list (ENTITY, RELATIONSHIP), select exactly {amount} rows that are most likely to contribute to answering the USER QUESTION.
-The listed relationships may represent both incoming and outgoing edges relative to the entity and should be interpreted as possible connections in either direction within the knowledge graph.
-
-### Strict Constraints ###
-1. **String Literal Preservation:** You must copy entities and relationships exactly as they appear in the CSV list. Do not normalize, correct spelling, or change casing.
-2. **Output Format:** Respond exclusively with a valid JSON object. Do not include introductory text, markdown commentary, or closing remarks.
-3. **Cardinality:** You must select exactly {amount} rows.
-4. **Ordering:** The selected rows must be ordered from most important to least important.
-
-### Response Schema ###
-{{
-    "selection": [{{"entity": "Entity 1",  "relationship": "Relationship 1" }}],
-    "reason": "Explain why these entity-relationship pairs are most relevant in 2 to 3 sentences."
-}}
-
-### Example (Selecting 3 Rows) ###
-USER QUESTION: "Mesih Pasha's uncle became emperor in what year?"
-
-ENTITY,RELATIONSHIP
-"Mesih Pasha","child"
-"Mesih Pasha","country of citizenship"
-"Mesih Pasha","date of birth"
-"Mesih Pasha","family"
-"Mesih Pasha","father"
-
-AGENT RESPONSE:
-{{
-    "selection": [{{ "entity": "Mesih Pasha", "relationship": "family" }}, {{ "entity": "Mesih Pasha", "relationship": "father" }}, {{ "entity": "Mesih Pasha", "relationship": "country of citizenship" }}],
-    "reason": "The 'family' and 'father' relationships are crucial to identifying Mesih Pasha’s uncle. 'Country of citizenship' helps determine the imperial context relevant to the emperor title."
-}}
-
-### Real Data ###
-"""
-
-pick_triplets = """
-### Role ###
-You are a Knowledge Graph Retrieval Agent.
-Your goal is to select the most relevant knowledge graph triplets for answering a complex question.
-
-### Task ###
-From the provided three-column CSV list (HEAD_ENTITY, RELATIONSHIP, TAIL_ENTITY), select exactly {amount} triplets that most likely contribute to answering the USER QUESTION.
-The relationship direction always originates from the head entity and points to the tail entity.
-
-### Strict Constraints ###
-1. **String Literal Preservation:** You must copy entities and relationships exactly as they appear in the CSV list. Do not normalize, correct spelling, or change casing.
-2. **Triplet Integrity:** Never alter the order within each triplet (head, relationship, tail).
-3. **Output Format:** Respond exclusively with a valid JSON object. Do not include introductory text, markdown commentary, or closing remarks.
-4. **Cardinality:** You must select exactly {amount} triplets.
-5. **Ordering:** The selected triplets must be ordered from most important to least important.
-
-### Response Schema ###
-{{
-    "selection": [{{ "head": "Entity 1", "relationship": "Relationship 1", "tail": "Tail Entity 1" }}],
-    "reason": "Explain why these triplets are sufficient or helpful in 2 to 3 sentences."
-}}
-
-### Example (Selecting 3 Rows) ###
-USER QUESTION: "Staten Island Summer starred what actress who was a cast member of Saturday Night Live?"
-
-HEAD_ENTITY,RELATIONSHIP,TAIL_ENTITY
-"Ashley Greene","cast member","Saturday Night Live"
-"Bobby Moynihan","cast member","Saturday Night Live"
-"Camille Saviola","cast member","Saturday Night Live"
-"Cecily Strong","cast member","Staten Island Summer"
-"Ashley Greene","cast member","Staten Island Summer"
-
-AGENT RESPONSE:
-{{
-    "selection": [
-        {{ "head": "Ashley Greene", "relationship": "cast member", "tail": "Saturday Night Live" }},
-        {{ "head": "Ashley Greene", "relationship": "cast member", "tail": "Staten Island Summer" }},
-        {{ "head": "Cecily Strong", "relationship": "cast member", "tail": "Staten Island Summer" }}
-    ],
-    "reason": "Ashley Greene connects both Saturday Night Live and Staten Island Summer, directly answering the question. The additional triplet provides contextual confirmation of the film’s cast."
-}}
-
-### Real Data ###
-"""
-
-reflect = """
-### Role ###
-You are a Knowledge Graph Reasoning Agent.
-
-### Task ###
-Given the USER QUESTION, the remaining exploration iterations, and acquired knowledge graph triplets (HEAD_ENTITY,RELATIONSHIP,TAIL_ENTITY),
-assess whether enough information has been gathered to confidently answer the question.
-If sufficient, provide the answer. Otherwise, indicate that further exploration is required.
-The relationship direction of the provided triplets always originates from the HEAD_ENTITY and points to the TAIL_ENTITY.
-
-### Strict Constraints ###
-1. **Output Format:** Respond exclusively with a valid JSON object that satisfies the response schema below. Do not include introductory text, markdown commentary, or closing remarks.
-2. **Empty Answer Rule:** If `found_knowledge` is false, both `machine_answer` and `user_answer` must be empty strings.
-3. **Machine Answer Semantics (`machine_answer`):**
-   - Must be a concise, noise-free value suitable for programmatic use.
-   - May be an entity name, a normalized inferred value (e.g., year, number, location), a boolean ("yes" or "no"), or any other atomic value inferred from the provided triplets.
-   - Must never contain explanations or uncertainty expressions (e.g., "I don't know", "unknown", "cannot be determined").
-4. **Human Answer Semantics (`user_answer`):**
-   - Must be a natural-language answer suitable for display to a human user.
-   - Must not contradict the `machine_answer` field.
-   - Must be in the same language as the USER QUESTION.
-
-### Response Schema ###
-{
-    "found_knowledge": true,
-    "machine_answer": "Final Answer",
-    "user_answer": "Human-readable answer.",
-    "reason": "Explain your judgment in 2 to 3 sentences."
-}
-
-### Example ###
-USER QUESTION: "Viscount Yamaji Motoharu was a general in the early Imperial Japanese Army which belonged to which Empire?"
-
-Exploration iterations remaining: 1
-
-HEAD_ENTITY,RELATIONSHIP,TAIL_ENTITY
-"Imperial Japanese Army","allegiance","Emperor of Japan"
-"Imperial Japanese Army","headquarters","Tokyo"
-"Imperial Japanese Army","active during","World War II"
-"Yamaji Motoharu","allegiance","Emperor of Japan"
-"Tokyo","capital of","Empire of Japan"
-"World War II","leader of Japan","Emperor Hirohito"
-"Yamaji Motoharu","commanded","5th Division (Imperial Japanese Army)"
-"Empire of Japan","monarch","Emperor of Japan"
-"Emperor Hirohito","title","Emperor of Japan"
-
-AGENT RESPONSE:
-{
-    "found_knowledge": true,
-    "machine_answer": "Empire of Japan",
-    "user_answer": "It belonged to the Empire of Japan.",
-    "reason": "The Imperial Japanese Army is aligned with the Emperor of Japan, and has its headquarters in Tokyo which is identified as the capital of the Empire of Japan, so the answer is Empire of Japan."
-}
-
-### Real Data ###
-"""
-
-answer = """
-### Role ###
-You are a Question Answering Agent.
-Your goal is to provide a concise and accurate answer based on your knowledge.
-
-### Task ###
-Given a USER QUESTION, return the final answer.
-
-### Strict Constraints ###
-1. **Output Format:** Respond exclusively with a valid JSON object. Do not include introductory text, markdown commentary, or closing remarks.
-2. **Machine Answer Semantics (`machine_answer`):**
-   - Must be a concise, noise-free value suitable for programmatic use.
-   - Must never contain uncertainty expressions (e.g., "I don't know", "unknown", "cannot be determined").
-   - Must be an empty string if the question cannot be answered.
-3. **Human Answer Semantics (`user_answer`):**
-   - Must be a natural-language answer suitable for display to a human user.
-   - Must not contradict the `machine_answer` field.
-   - May provide a human-friendly response even when `machine_answer` is empty.
-   - Must be in the same language as the USER QUESTION.
+    entity: str
+    relationships: List[str]
 
 
-### Response Schema ###
-{
-    "machine_answer": "Final Answer",
-    "user_answer": "Human-readable answer."
-}
+class Possible_Triplets(TypedDict):
+    """All possible `triplets` containig  `entity` and `relationship`"""
 
-### Example ###
-USER QUESTION: "Viscount Yamaji Motoharu was a general in the early Imperial Japanese Army which belonged to which Empire?"
-
-AGENT RESPONSE:
-{
-    "machine_answer": "Empire of Japan",
-    "user_answer": "It belonged to the Empire of Japan."
-}
-
-### Real Data ###
-"""
-
-retrieve_queries = """
-### Role ###
-You are a Knowledge Graph Retrieval Agent.
-Your goal is to generate effective query strings for discovering relevant entities in a knowledge graph.
-
-### Task ###
-Given a USER QUESTION, derive a set of keyword-based query strings that can be used to retrieve initial entities from the knowledge graph.
-
-### Strict Constraints ###
-1. **Query Relevance:** Queries must be directly derived from key concepts, names, or entities in the question.
-2. **Conciseness:** Queries should be short keyword phrases, not full sentences.
-3. **Output Format:** Respond exclusively with a valid JSON object. Do not include introductory text, markdown commentary, or closing remarks.
-
-### Response Schema ###
-{
-    "queries": ["Query 1", "Query 2", "Query 3"]
-}
-
-### Example ###
-USER QUESTION: "Viscount Yamaji Motoharu was a general in the early Imperial Japanese Army which belonged to which Empire?"
-
-AGENT RESPONSE:
-{
-    "queries": ["Yamaji Motoharu", "Imperial Japanese Army", "Emperor of Japan", "Japan Empire"]
-}
-
-### Real Data ###
-"""
+    entity: str
+    relationship: str
+    entities: List[str]
 
 
-pick_seed_entities = """
-### Role ###
-You are a Knowledge Graph Retrieval Agent.
-Your goal is to select high-relevance "seed entities" to initiate a multi-hop traversal for answering complex queries.
-
-### Task ###
-From the provided list of ENTITIES, select a maximum of {amount} strings that contain the most relevant information relative to the USER QUESTION. 
-
-### Strict Constraints ###
-1. **String Literal Preservation:** You must copy selected entities exactly as they appear in the list. Do not normalize, correct spelling, or change casing. 
-2. **Output Format:** Respond exclusively with a valid JSON object. Do not include introductory text, markdown commentary, or closing remarks.
-3. **Cardinality:** Do not exceed {amount} entities in the "seed_entities" array.
-
-### Response Schema ###
-{{
-    "seed_entities": ["Entity Name 1", "Entity Name 2"],
-    "reason": "Explain the logical connection between these entities and the target answer in 2 to 3 sentences."
-}}
-
-### Example ###
-USER QUESTION: "Viscount Yamaji Motoharu was a general in the early Imperial Japanese Army which belonged to which Empire?"
-
-ENTITIES:
-"Yamaji Motoharu"
-"Imperial Japanese Army"
-"Japan"
-"Kazuhiro Yamaji"
-
-AGENT RESPONSE:
-{{
-    "seed_entities": ["Yamaji Motoharu", "Imperial Japanese Army", "Japan"],
-    "reason": "Yamaji Motoharu and Imperial Japanese Army are the primary subjects. 'Japan' is included to anchor the search within the correct geopolitical context, while 'Kazuhiro Yamaji' is likely a name-match distraction."
-}}
-
-### Real Data ###
-"""
+StringTriplet = Tuple[str, str, str]
 
 
 def use_template_pick_relationships(**kwargs):
     prompt: str = kwargs.get("prompt")
-    relationships: List[Tuple[str, str]] = kwargs.get("relationships")
+    relationships: List[Possible_Relationships] = kwargs.get("relationships")
+    amount = kwargs.get("amount")
+    result = """Please retrieve {amount} relations (separated by semicolon) that contribute to the question and rate their contribution on a scale from 0 to 1 (the sum of the scores of {amount} relations is 1).
+Q: Mesih Pasha's uncle became emperor in what year?
+Topic Entity: Mesih Pasha
+Relations:
+1. wiki.relation.child
+2. wiki.relation.country_of_citizenship
+3. wiki.relation.date_of_birth
+4. wiki.relation.family
+5. wiki.relation.father
+6. wiki.relation.languages_spoken, written_or_signed
+7. wiki.relation.military_rank
+8. wiki.relation.occupation
+9. wiki.relation.place_of_death
+10. wiki.relation.position_held
+11. wiki.relation.religion_or_worldview
+12. wiki.relation.sex_or_gender
+13. wiki.relation.sibling
+14. wiki.relation.significant_event
+A: 1. {{wiki.relation.family (Score: 0.5)}}: This relation is highly relevant as it can provide information about the family background of Mesih Pasha, including his uncle who became emperor.
+2. {{wiki.relation.father (Score: 0.4)}}: Uncle is father's brother, so father might provide some information as well.
+3. {{wiki.relation.position held (Score: 0.1)}}: This relation is moderately relevant as it can provide information about any significant positions held by Mesih Pasha or his uncle that could be related to becoming an emperor.
 
-    result = f"""USER QUESTION: "{prompt}"\n\nENTITY,RELATIONSHIP\n"""
-    for entity, relationship in relationships:
-        result += f'"{entity}","{relationship}"\n'
-    result += "\nAGENT RESPONSE:\n"
+Q: Van Andel Institute was founded in part by what American businessman, who was best known as co-founder of the Amway Corporation?
+Topic Entity: Van Andel Institute
+Relations:
+1. wiki.relation.affiliation
+2. wiki.relation.country
+3. wiki.relation.donations
+4. wiki.relation.educated_at
+5. wiki.relation.employer
+6. wiki.relation.headquarters_location
+7. wiki.relation.legal_form
+8. wiki.relation.located_in_the_administrative_territorial_entity
+9. wiki.relation.total_revenue
+A: 1. {{wiki.relation.affiliation (Score: 0.4)}}: This relation is relevant because it can provide information about the individuals or organizations associated with the Van Andel Institute, including the American businessman who co-founded the Amway Corporation.
+2. {{wiki.relation.donations (Score: 0.3)}}: This relation is relevant because it can provide information about the financial contributions made to the Van Andel Institute, which may include donations from the American businessman in question.
+3. {{wiki.relation.educated_at (Score: 0.3)}}: This relation is relevant because it can provide information about the educational background of the American businessman, which may have influenced his involvement in founding the Van Andel Institute.
+
+Q: """.format(
+        amount=amount
+    )
+    result += f"{prompt}\n"
+    for entity_relationships in relationships:
+        result += f"Topic Entity: {entity_relationships["entity"]}\nRelations:\n"
+        for index, relationship in enumerate(entity_relationships["relationships"]):
+            result += f"{index + 1}. wiki.relation.{relationship.replace(" ", "_")}\n"
+    result += "A: "
     return result
 
 
-def use_template_pick_triplets_or_reflect(**kwargs):
+def use_template_pick_triplets(**kwargs):
     prompt: str = kwargs.get("prompt")
-    triplets: List[Tuple[str, str, str]] = kwargs.get("triplets")
-    remaining_iterations = kwargs.get("remaining_iterations")
+    triplets: List[Possible_Triplets] = kwargs.get("triplets")
+    result = """Please score the entities' contribution to the question on a scale from 0 to 1 (the sum of the scores of all entities is 1).
+Q: Staten Island Summer, starred what actress who was a cast member of "Saturday Night Live"?
+Relation: cast member
+Entites: Ashley Greene; Bobby Moynihan; Camille Saviola; Cecily Strong; Colin Jost; Fred Armisen; Gina Gershon; Graham Phillips; Hassan Johnson; Jackson Nicoll; Jim Gaffigan; John DeLuca; Kate Walsh; Mary Birdsong
+Score: 0.0, 0.0, 0.0, 0.4, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.0
+To score the entities\' contribution to the question, we need to determine which entities are relevant to the question and have a higher likelihood of being the correct answer.
+In this case, we are looking for an actress who was a cast member of "Saturday Night Live" and starred in the movie "Staten Island Summer." Based on this information, we can eliminate entities that are not actresses or were not cast members of "Saturday Night Live."
+The relevant entities that meet these criteria are:\n- Ashley Greene\n- Cecily Strong\n- Fred Armisen\n- Gina Gershon\n- Kate Walsh\n\nTo distribute the scores, we can assign a higher score to entities that are more likely to be the correct answer. In this case, the most likely answer would be an actress who was a cast member of "Saturday Night Live" around the time the movie was released.
+Based on this reasoning, the scores could be assigned as follows:\n- Ashley Greene: 0\n- Cecily Strong: 0.4\n- Fred Armisen: 0.2\n- Gina Gershon: 0\n- Kate Walsh: 0.4
 
-    result = f'USER QUESTION: "{prompt}"\n\n'
-    if remaining_iterations is not None:
-        result += f"Exploration iterations remaining: {remaining_iterations}\n\n"
-    result += "HEAD_ENTITY,RELATIONSHIP,TAIL_ENTITY\n"
-    for head, rel, tail in triplets:
-        result += f'"{head}","{rel}","{tail}"\n'
-    result += "\nAGENT RESPONSE:\n"
+"""
+    result += f"Q: {prompt}\n"
+    for entity_rel_entities in triplets:
+        result += f"Relation: {entity_rel_entities["relationship"]}\nEntities: "
+        result += "; ".join(entity_rel_entities["entities"]) + "\n"
+    result += "Score: "
     return result
 
 
-def use_template_answer_or_retrieve_queries(**kwargs):
+def use_template_reflect(**kwargs):
     prompt: str = kwargs.get("prompt")
-    return f"""USER QUESTION: "{prompt}"\n\nAGENT RESPONSE:\n"""
+    triplets: List[StringTriplet] = kwargs.get("triplets")
+    result = """Given a question and the associated retrieved knowledge graph triplets (entity, relation, entity), you are asked to answer whether it's sufficient for you to answer the question with these triplets and your knowledge (Yes or No).
+Q: Viscount Yamaji Motoharu was a general in the early Imperial Japanese Army which belonged to which Empire?
+Knowledge Triplets: Imperial Japanese Army, allegiance, Emperor of Japan
+Yamaji Motoharu, allegiance, Emperor of Japan
+Yamaji Motoharu, military rank, general
+A: {Yes}. Based on the given knowledge triplets and my knowledge, Viscount Yamaji Motoharu, who was a general in the early Imperial Japanese Army, belonged to the Empire of Japan. Therefore, the answer to the question is {Empire of Japan}.
 
+Q: Who is the coach of the team owned by Steve Bisciotti?
+Knowledge Triplets: psilocybin, described by source, Opium Law,
+psilocybin, found in taxon, Gymnopilus purpuratus,
+psilocybin, found in taxon, Gymnopilus spectabilis, 
+Opium Law, part of, norcodeine (stereochemistry defined), 
+Gymnopilus purpuratus, edibility, psychoactive mushroom,
+Gymnopilus spectabilis, parent taxon, Gymnopilus
+A: {No}. Based on the given knowledge triplets and my knowledge, the specific psychedelic compound found in the Psilocybin genus mushroom that is converted to psilocin by the body is not explicitly mentioned. Therefore, additional knowledge about the specific compounds and their conversion to psilocin is required to answer the question.
 
-def use_template_pick_seed_entities(**kwargs):
-    prompt: str = kwargs.get("prompt")
-    entities: List[str] = kwargs.get("entities")
+Q: Which tennis player is younger, John Newcombe or Květa Peschke?
+Knowledge Triplets: Květa Peschke, date of birth, +1975-07-09T00:00:00Z, 
+John Newcombe, date of birth, +1944-05-23T00:00:00Z,
+John Newcombe, country of citizenship, Australia
+A: {Yes}. Based on the given knowledge triplets and my knowledge, John Newcombe was born on May 23, 1944, and Květa Peschke was born on July 9, 1975. Therefore, {Květa Peschke} is younger than John Newcombe.
 
-    result = f'USER QUESTION: "{prompt}"\n\nENTITIES:\n'
-    for entity in entities:
-        result += f'"{entity}"\n'
-    result += "\nAGENT RESPONSE:\n"
+Q: At what stadium did Mychal George Thompson play home games with the San Antonio Spurs?
+Knowledge Triplets: San Antonio Spurs, home venue, AT&T Center
+San Antonio Spurs, home venue, Alamodome
+San Antonio Spurs, home venue, Fort Worth Convention Center
+AT&T Center, occupant, San Antonio Spurs
+Fort Worth Convention Center, located in the administrative territorial entity, Texas
+Fort Worth Convention Center, occupant, San Antonio Spurs
+A: {Yes}. Based on the given knowledge triplets and my knowledge, Mychal George Thompson played home games with the San Antonio Spurs at the AT&T Center. Therefore, the answer to the question is {AT&T Center}.
+
+"""
+    result += f"Q: {prompt}\nKnowledge Triplets: "
+    for triplet in triplets:
+        result += f"{triplet[0]}, {triplet[1]}, {triplet[2]}\n"
+    result += "A: "
     return result
 
 
-class TupleFormat(BaseModel):
-    entity: str
-    relationship: str
+def use_template_answer(**kwargs):
+    prompt: str = kwargs.get("prompt")
+    triplets: List[StringTriplet] = kwargs.get("triplets")
+    result = """Given a question and the associated retrieved knowledge graph triplets (entity, relation, entity), you are asked to answer the question with these triplets and your own knowledge.
+Q: Viscount Yamaji Motoharu was a general in the early Imperial Japanese Army which belonged to which Empire?
+Knowledge Triplets: Imperial Japanese Army, allegiance, Emperor of Japan
+Yamaji Motoharu, allegiance, Emperor of Japan
+Yamaji Motoharu, military rank, general
+A: Based on the given knowledge triplets and my knowledge, Viscount Yamaji Motoharu, who was a general in the early Imperial Japanese Army, belonged to the Empire of Japan. Therefore, the answer to the question is {Empire of Japan}.
+
+Q: Who is the coach of the team owned by Steve Bisciotti?
+Knowledge Triplets: psilocybin, described by source, Opium Law,
+psilocybin, found in taxon, Gymnopilus purpuratus,
+psilocybin, found in taxon, Gymnopilus spectabilis, 
+Opium Law, part of, norcodeine (stereochemistry defined), 
+Gymnopilus purpuratus, edibility, psychoactive mushroom,
+Gymnopilus spectabilis, parent taxon, Gymnopilus
+A: Based on the given knowledge triplets and my knowledge, the specific psychedelic compound found in the Psilocybin genus mushroom that is converted to psilocin by the body is not explicitly mentioned. Therefore, additional knowledge about the specific compounds and their conversion to psilocin is required to answer the question.
+
+Q: Which tennis player is younger, John Newcombe or Květa Peschke?
+Knowledge Triplets: Květa Peschke, date of birth, +1975-07-09T00:00:00Z, 
+John Newcombe, date of birth, +1944-05-23T00:00:00Z,
+John Newcombe, country of citizenship, Australia
+A: Based on the given knowledge triplets and my knowledge, John Newcombe was born on May 23, 1944, and Květa Peschke was born on July 9, 1975. Therefore, {Květa Peschke} is younger than John Newcombe.
+
+Q: At what stadium did Mychal George Thompson play home games with the San Antonio Spurs?
+Knowledge Triplets: San Antonio Spurs, home venue, AT&T Center
+San Antonio Spurs, home venue, Alamodome
+San Antonio Spurs, home venue, Fort Worth Convention Center
+AT&T Center, occupant, San Antonio Spurs
+Fort Worth Convention Center, located in the administrative territorial entity, Texas
+Fort Worth Convention Center, occupant, San Antonio Spurs
+A: Based on the given knowledge triplets and my knowledge, Mychal George Thompson played home games with the San Antonio Spurs at the AT&T Center. Therefore, the answer to the question is {AT&T Center}.
+
+Q: """
+    if not triplets:
+        result = """Q: What state is home to the university that is represented in sports by George Washington Colonials men's basketball?
+A: First, the education institution has a sports team named George Washington Colonials men's basketball in is George Washington University , Second, George Washington University is in Washington D.C. The answer is {Washington, D.C.}.
+
+Q: Who lists Pramatha Chaudhuri as an influence and wrote Jana Gana Mana?
+A: First, Bharoto Bhagyo Bidhata wrote Jana Gana Mana. Second, Bharoto Bhagyo Bidhata lists Pramatha Chaudhuri as an influence. The answer is {Bharoto Bhagyo Bidhata}.
+
+Q: Who was the artist nominated for an award for You Drive Me Crazy?
+A: First, the artist nominated for an award for You Drive Me Crazy is Britney Spears. The answer is {Jason Allen Alexander}.
+
+Q: What person born in Siegen influenced the work of Vincent Van Gogh?
+A: First, Peter Paul Rubens, Claude Monet and etc. influenced the work of Vincent Van Gogh. Second, Peter Paul Rubens born in Siegen. The answer is {Peter Paul Rubens}.
+
+Q: What is the country close to Russia where Mikheil Saakashvii holds a government position?
+A: First, China, Norway, Finland, Estonia and Georgia is close to Russia. Second, Mikheil Saakashvii holds a government position at Georgia. The answer is {Georgia}.
+
+Q: What drug did the actor who portrayed the character Urethane Wheels Guy overdosed on?
+A: First, Mitchell Lee Hedberg portrayed character Urethane Wheels Guy. Second, Mitchell Lee Hedberg overdose Heroin. The answer is {Heroin}.
+
+Q: """
+    result += f"{prompt}\n{"Knowledge Triplets: " if triplets else ""}"
+    if triplets:
+        for triplet in triplets:
+            result += f"{triplet[0]}, {triplet[1]}, {triplet[2]}\n"
+    result += "A: "
+    return result
 
 
-class TripletFormat(BaseModel):
-    head: str
-    relationship: str
-    tail: str
-
-
-class PickRelationshipsResponseFormat(BaseModel):
-    selection: List[TupleFormat]
-    reason: str
-
-
-class PickTripletsResponseFormat(BaseModel):
-    selection: List[TripletFormat]
-    reason: str
-
-
-class ReflectResponseFormat(BaseModel):
-    found_knowledge: bool
-    machine_answer: str
-    user_answer: str
-    reason: str
-
-
-class AnswerResponseFormat(BaseModel):
-    machine_answer: str
-    user_answer: str
-
-
-class RetrieveQueriesResponseFormat(BaseModel):
-    queries: List[str]
-
-
-class PickSeedEntitiesResponseFormat(BaseModel):
-    seed_entities: List[str]
-    reason: str
-
-
-schema: InstructionResponseSchema = {
-    "answer": AnswerResponseFormat,
-    "pick_relationships": PickRelationshipsResponseFormat,
-    "pick_seed_entities": PickSeedEntitiesResponseFormat,
-    "pick_triplets": PickTripletsResponseFormat,
-    "reflect": ReflectResponseFormat,
-    "retrieve_queries": RetrieveQueriesResponseFormat,
-}
+system_message = "You are an AI assistant that helps people find information."
 
 config: InstructionConfig = {
     "system": {
-        "answer": lambda **_: answer,
-        "reflect": lambda **_: reflect,
-        "pick_relationships": lambda **kwargs: pick_relationships.format(**kwargs),
-        "pick_triplets": lambda **kwargs: pick_triplets.format(**kwargs),
-        "pick_seed_entities": lambda **kwargs: pick_seed_entities.format(**kwargs),
-        "retrieve_queries": lambda **_: retrieve_queries,
+        "answer": lambda **_: system_message,
+        "reflect": lambda **_: system_message,
+        "pick_relationships": lambda **_: system_message,
+        "pick_triplets": lambda **_: system_message,
+        "pick_seed_entities": lambda **_: system_message,
+        "retrieve_queries": lambda **_: system_message,
     },
     "user": {
-        "answer": use_template_answer_or_retrieve_queries,
-        "reflect": use_template_pick_triplets_or_reflect,
+        "answer": use_template_answer,
+        "reflect": use_template_reflect,
         "pick_relationships": use_template_pick_relationships,
-        "pick_triplets": use_template_pick_triplets_or_reflect,
-        "pick_seed_entities": use_template_pick_seed_entities,
-        "retrieve_queries": use_template_answer_or_retrieve_queries,
+        "pick_triplets": use_template_pick_triplets,
+        "pick_seed_entities": lambda **_: "",
+        "retrieve_queries": lambda **_: "",
     },
 }

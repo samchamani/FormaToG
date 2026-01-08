@@ -1,7 +1,7 @@
 [tool.deptry.package_module_name_map]
 python-dotenv = "dotenv"
 SPARQLWrapper = "SPARQLWrapper"
-google-generativeai = ["google.generativeai", "google"]
+google-genai = ["google.genai", "google"]
 neo4j="neo4j"
 ollama="ollama"
 selenium="selenium"

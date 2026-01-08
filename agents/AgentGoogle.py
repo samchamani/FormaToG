@@ -1,5 +1,5 @@
 from agents.Agent import Agent, Message
-from google import generativeai as genai
+from google import genai
 import os
 from dotenv import load_dotenv
 
@@ -10,7 +10,7 @@ class AgentGoogle(Agent):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         api_key = os.getenv("GOOGLE_API_KEY")
-        genai.configure(api_key=api_key)
+        self.client = genai.Client(api_key=api_key)
         self.context = []
 
     def run(self, instruction, prompt, **kwargs):
@@ -25,25 +25,34 @@ class AgentGoogle(Agent):
             content=self.instructions["user"][instruction](prompt=prompt, **kwargs),
             instruction=instruction,
         )
-        model = genai.GenerativeModel(
-            model_name=self.model,
-            generation_config=genai.types.GenerationConfig(
-                temperature=0,
-                response_mime_type="application/json" if response_format else None,
-                response_schema=response_format,
-            ),
+
+        config = genai.types.GenerateContentConfig(
+            temperature=0,
+            response_mime_type="application/json" if response_format else None,
+            response_schema=response_format,
             system_instruction=system_message["content"],
         )
-        chat = model.start_chat(history=self.context if self.use_context else [])
+
+        chat = self.client.chats.create(
+            model=self.model,
+            config=config,
+            history=self.context if self.use_context else [],
+        )
+
         self.log([system_message, user_message])
+
+        response_obj = chat.send_message(user_message["content"])
+
         response = Message(
             role="assistant",
-            content=chat.send_message(user_message["content"]).text,
+            content=response_obj.text,
             instruction=instruction,
         )
         self.log([response])
+
         if self.use_context:
-            self.context = chat.history
+            self.context = chat.get_history()
+
         return response["content"]
 
     def flush_context(self):

@@ -38,9 +38,9 @@ python run.py --prompt "Your question" --agent llama3.1:8b-instruct-q6_K
 ## Local setup
 
 ```
-python -m venv .venv # or miniconda, etc.
-source .venv/bin/activate
+conda create -n formatog python=3.12.7
+conda activate formatog
 pip install -r requirements.txt
 ```
 
-Python versions tested: Python 3.12.7, 3.12.3
+Python versions tested: Python 3.12.7

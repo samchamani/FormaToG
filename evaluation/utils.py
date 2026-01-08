@@ -50,7 +50,9 @@ def get_method_exec(method: str):
     if method in simple_methods:
         return simple_methods[method]
 
-    if re.fullmatch(r"_d[0-9]+_p[0-9]+$", method):
+    method_no_params = re.sub(r"_d[0-9]+_p[0-9]+$", "", method)
+
+    if len(method_no_params) < len(method):
         parts = method.split("_")
         max_paths = int(parts[-1].removeprefix("p"))
         max_depth = int(parts[-2].removeprefix("d"))
@@ -66,9 +68,10 @@ def get_method_exec(method: str):
                 prompt, max_depth=max_depth, max_paths=max_paths, **kwargs
             ),
         }
-        method_no_params = re.sub(r"_d[0-9]+_p[0-9]+$", "", method)
+
         if method_no_params in tog_methods:
             return tog_methods[method_no_params]
+
     raise ValueError(f"Unknown method: {method}")
 
 

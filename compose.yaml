@@ -2,11 +2,12 @@ services:
   neo4j:
     image: neo4j:5.28.2
     container_name: neo4j
+    restart: unless-stopped
     ports:
-      - "${NEO4J_HTTP_PORT}:7474"
-      - "${NEO4J_BOLT_PORT}:7687"
+      - "${GRAPH_HTTP_PORT}:7474"
+      - "${GRAPH_BOLT_PORT}:7687"
     environment:
-      NEO4J_AUTH: "${NEO4J_USERNAME}/${NEO4J_PASSWORD}"
+      NEO4J_AUTH: "${GRAPH_USERNAME}/${GRAPH_PASSWORD}"
       NEO4J_dbms_default__listen__address: 0.0.0.0
       NEO4J_PLUGINS: '["apoc", "graph-data-science"]'
       NEO4J_dbms_security_procedures_unrestricted: "apoc.*,gds.*"
@@ -17,8 +18,7 @@ services:
       - neo4j_data:/data
       - neo4j_logs:/logs
       - neo4j_plugins:/plugins
-      - "${NEO4J_IMPORT_VOLUME}:/import"
-    restart: unless-stopped
+      - "${GRAPH_IMPORT_VOL}:/import"
 
 volumes:
   neo4j_data:

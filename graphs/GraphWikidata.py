@@ -34,8 +34,8 @@ class GraphWikidata(Graph):
 
     def __init__(self):
         load_dotenv()
-        self.url = os.getenv("WIKIDATA_URL")
-        self.user_agent = os.getenv("WIKIDATA_USER_AGENT")
+        self.url = os.getenv("GRAPH_URL")
+        self.user_agent = os.getenv("GRAPH_USER_AGENT")
         self.sparql = SPARQLWrapper(self.url, agent=self.user_agent)
         self.sparql.setReturnFormat("json")
 

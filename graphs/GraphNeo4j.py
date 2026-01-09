@@ -34,10 +34,10 @@ class GraphNeo4j(Graph):
 
     def __init__(self):
         load_dotenv()
-        host = os.getenv("NEO4J_HOST", "localhost")
-        user = os.getenv("NEO4J_USERNAME")
-        password = os.getenv("NEO4J_PASSWORD")
-        bolt_port = os.getenv("NEO4J_BOLT_PORT", 7687)
+        host = os.getenv("GRAPH_HOST", "localhost")
+        user = os.getenv("GRAPH_USERNAME")
+        password = os.getenv("GRAPH_PASSWORD")
+        bolt_port = os.getenv("GRAPH_BOLT_PORT", 7687)
         uri = f"bolt://{host}:{bolt_port}"
         self.driver = GraphDatabase.driver(uri, auth=(user, password))
 

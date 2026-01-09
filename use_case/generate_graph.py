@@ -28,7 +28,7 @@ if __name__ == "__main__":
     #                                     SETUP                                    #
     # ---------------------------------------------------------------------------- #
     load_dotenv()
-    GRAPH_IMPORT_VOLUME = os.getenv("NEO4J_IMPORT_VOLUME")
+    GRAPH_IMPORT_VOLUME = os.getenv("GRAPH_IMPORT_VOL")
     GRAPH_FILE = "graph.xml"
     BASE_URL = "https://www.langenachtderwissenschaften.de/programm"
     TMP_FILE = "./use_case/event_urls.tmp"

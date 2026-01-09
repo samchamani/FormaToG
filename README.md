@@ -3,11 +3,11 @@
 .env file in project root dir
 
 ```
-NEO4J_HOST=localhost
-NEO4J_USERNAME=neo4j
-NEO4J_PASSWORD=test
-NEO4J_BOLT_PORT=7687
-NEO4J_HTTP_PORT=7474
+GRAPH_HOST=localhost
+GRAPH_USERNAME=neo4j
+GRAPH_PASSWORD=test
+GRAPH_BOLT_PORT=7687
+GRAPH_HTTP_PORT=7474
 ```
 
 Run neo4j database for KG in docker container

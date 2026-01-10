@@ -169,7 +169,7 @@ def normalize_answer(s: str):
     Additions: German articles
     """
     # text to lowercase letters
-    s = s.lower()
+    s = str(s).lower()
 
     # excluding punctuation
     exclude = set(string.punctuation)

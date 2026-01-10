@@ -1,0 +1,18 @@
+(
+export QUESTIONS="cwq"
+export QUESTIONS_BATCH_LENGTH=71
+export MODEL="llama3.1:8b"
+export GRAPH="wikidata"
+export METHODS="formatog_d3_p3 formatog_noctx_d3_p3 tog_d3_p3 cot io_zero_shot io_few_shot"
+export GRAPH_USER_AGENT="FormaToG/1.0 (https://samchamani.com; contact@samchamani.com)"
+sbatch \
+ --job-name=slm_on_cwq \
+ --array=34-34 \
+ --partition=gpu \
+ --gres=gpu:1 \
+ --mem=60G \
+ --cpus-per-task=4 \
+ --time=05:00:00 \
+ --export=ALL \
+ ~/FormaToG/evaluation/hpc/job.sbatch
+)

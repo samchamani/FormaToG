@@ -1,0 +1,23 @@
+{
+    "title": "slm_on_cwq",
+    "experiment": "question answering",
+    "methods": [
+        "formatog_d3_p3",
+        "formatog_noctx_d3_p3",
+        "tog_d3_p3",
+        "cot",
+        "io_zero_shot",
+        "io_few_shot"
+    ],
+    "agent": "llama3.1:8b",
+    "provider": "ollama",
+    "graph": "wikidata",
+    "questions": "cwq",
+    "q_range": [
+        0,
+        3531
+    ],
+    "repetitions": null,
+    "env_note": "Merged data | Tesla P100 GPU with 16GB",
+    "timestamp": 1768075920.942875
+}

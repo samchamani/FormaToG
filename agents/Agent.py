@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from typing import List, TypedDict, Protocol, Any, Literal, Type
 from pydantic import BaseModel
 from common import get_logger
+from logging import Handler
 import json
 
 
@@ -57,7 +58,7 @@ class Agent(ABC):
         model: str,
         instructions: InstructionConfig,
         response_schema: InstructionResponseSchema = None,
-        log_path: str = None,
+        log_path: str | Handler = None,
         use_context: bool = False,
     ):
         self.model = model

@@ -9,8 +9,15 @@ os.environ["NO_PROXY"] = "localhost,127.0.0.1"
 
 
 class AgentOllama(Agent):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(
+        self,
+        model,
+        instructions,
+        response_schema=None,
+        log_path=None,
+        use_context=False,
+    ):
+        super().__init__(model, instructions, response_schema, log_path, use_context)
         host = os.getenv("OLLAMA_HOST", "localhost:11434")
         self.client = Client(host=f"http://{host}")
         self.context = []

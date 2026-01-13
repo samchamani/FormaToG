@@ -3,7 +3,7 @@ import logging
 
 def get_logger(
     name: str,
-    log_path: str = "",
+    log_path: str | logging.Handler = "",
     log_level=logging.INFO,
     format="%(asctime)s [%(levelname)s] [%(name)s] %(message)s",
 ):
@@ -13,7 +13,12 @@ def get_logger(
     formatter = logging.Formatter(format)
     if logger.hasHandlers():
         logger.handlers.clear()
-    if log_path:
+
+    if isinstance(log_path, logging.Handler):
+        log_path.setLevel(log_level)
+        log_path.setFormatter(formatter)
+        logger.addHandler(log_path)
+    elif log_path:
         file_handler = logging.FileHandler(log_path)
         file_handler.setLevel(log_level)
         file_handler.setFormatter(formatter)

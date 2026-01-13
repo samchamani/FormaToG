@@ -7,8 +7,16 @@ load_dotenv()
 
 
 class AgentGoogle(Agent):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+
+    def __init__(
+        self,
+        model,
+        instructions,
+        response_schema=None,
+        log_path=None,
+        use_context=False,
+    ):
+        super().__init__(model, instructions, response_schema, log_path, use_context)
         api_key = os.getenv("GOOGLE_API_KEY")
         self.client = genai.Client(api_key=api_key)
         self.context = []
@@ -32,7 +40,6 @@ class AgentGoogle(Agent):
             response_schema=response_format,
             system_instruction=system_message["content"],
         )
-
         chat = self.client.chats.create(
             model=self.model,
             config=config,

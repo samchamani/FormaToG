@@ -69,6 +69,7 @@
       OLLAMA_PID=$!
       ollama pull llama3.1:8b # Size 4.9GB / 128K Context length / Input: Text / 8b params
       ollama pull llama4:scout # Size 67GB / 10M Context length / Input: Text, Image / 109b=16x17b params (16 experts)
+      ollama pull llama3.3:70b # Size 43GB / 128K Context length / Input: Text / 70b params
       sleep 5
       kill $OLLAMA_PID
       ```

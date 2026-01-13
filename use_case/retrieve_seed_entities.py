@@ -38,6 +38,7 @@ if __name__ == "__main__":
         instructions=config,
         log_path="./seed_entity_retrieval.log",
         use_context=True,
+        response_schema=schema,
     )
 
     for q_data in tqdm(questions):
@@ -46,22 +47,15 @@ if __name__ == "__main__":
         question = q_data["question"]
         try:
             time.sleep(4)
-            queries = json.loads(
-                agent.run(
-                    "retrieve_queries",
-                    question,
-                    response_format=schema["retrieve_queries"],
-                )
-            )["queries"]
+            queries = json.loads(agent.run("retrieve_queries", question))["queries"]
             entities = graph.find(queries)
             time.sleep(4)
             agent_picks = json.loads(
                 agent.run(
                     "pick_seed_entities",
                     question,
-                    max_paths=3,
+                    amount=3,
                     entities=[e.get_label() for e in entities],
-                    response_format=schema["pick_seed_entities"],
                 )
             )["seed_entities"]
             entities = [

@@ -1,0 +1,23 @@
+{
+    "title": "elm_on_qald_10-en",
+    "experiment": "question answering",
+    "methods": [
+        "formatog_d3_p3",
+        "formatog_noctx_d3_p3",
+        "tog_d3_p3",
+        "cot",
+        "io_zero_shot",
+        "io_few_shot"
+    ],
+    "agent": "llama4:scout",
+    "provider": "ollama",
+    "graph": "wikidata",
+    "questions": "qald_10-en",
+    "q_range": [
+        0,
+        333
+    ],
+    "repetitions": 1,
+    "env_note": "NodeName=gpu061 Arch=x86_64 CoresPerSocket=8 \n   CPUAlloc=4 CPUEfctv=32 CPUTot=32 CPULoad=1.05\n   AvailableFeatures=all,gpu,tesla_a10080G\n   ActiveFeatures=all,gpu,tesla_a10080G\n   Gres=gpu:a100:1\n   NodeAddr=gpu061 NodeHostName=gpu061 Version=22.05.8\n   OS=Linux 6.1.0-16-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.67-1 (2023-12-12) \n   RealMemory=380000 AllocMem=61440 FreeMem=324535 Sockets=2 Boards=1\n   MemSpecLimit=2048\n   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A\n   Partitions=ex_scioi_gpu,scioi_gpu \n   BootTime=2025-01-08T10:52:50 SlurmdStartTime=2025-03-17T14:58:46\n   LastBusyTime=2026-01-11T16:17:52\n   CfgTRES=cpu=32,mem=380000M,billing=7,gres/gpu=1\n   AllocTRES=cpu=4,mem=60G,gres/gpu=1\n   CapWatts=n/a\n   CurrentWatts=0 AveWatts=0\n   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s",
+    "timestamp": 1768148364.839526
+}

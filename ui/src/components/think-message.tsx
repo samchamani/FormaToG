@@ -16,6 +16,7 @@ import type { Message } from "@/api/chat";
 
 type Props = {
   data: Message[];
+  stopLoading?: boolean;
 };
 
 const InstructionMap: Record<Message["instruction"], string> = {
@@ -28,7 +29,7 @@ const InstructionMap: Record<Message["instruction"], string> = {
   retrieve_queries: "Initiating thinking process",
 };
 
-export const ThinkMessage = ({ data }: Props) => {
+export const ThinkMessage = ({ data, stopLoading = false }: Props) => {
   if (!data.length) return null;
 
   const lastItem = data.slice(-1)[0];
@@ -48,7 +49,7 @@ export const ThinkMessage = ({ data }: Props) => {
         <AccordionTrigger
           className={cn(
             "flex-row-reverse justify-end text-foreground/30 cursor-pointer",
-            lastItem.instruction !== "final" && "animate-pulse"
+            lastItem.instruction !== "final" && !stopLoading && "animate-pulse"
           )}
         >
           {InstructionMap[lastItem.instruction] + depthText}
@@ -74,7 +75,9 @@ export const ThinkMessage = ({ data }: Props) => {
               )}
             </div>
           ))}
-          {lastItem.role === "user" && <InternalAssistantMessagePlaceholder />}
+          {lastItem.role === "user" && (
+            <InternalAssistantMessagePlaceholder isLoading={!stopLoading} />
+          )}
         </AccordionContent>
       </AccordionItem>
     </Accordion>

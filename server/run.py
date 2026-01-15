@@ -1,17 +1,16 @@
-import threading
-import queue
-import logging
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
+from server.QueueHandler import QueueHandler
+from server.ConfigState import ConfigState, Config
+from agents.Agent import Message
+from methods.formatog import think_on_graph
+from dotenv import load_dotenv
+from logger import get_logger
+import threading
+import queue
 import uvicorn
 import os
-from dotenv import load_dotenv
-from methods.formatog import think_on_graph
-from methods.instructions.formatog import config, schema
-from agents.Agent import Message
-from agents.AgentOllama import AgentOllama
-from graphs.GraphNeo4j import GraphNeo4j
 import json
 
 load_dotenv()
@@ -23,56 +22,55 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
-class QueueHandler(logging.Handler):
-    def __init__(self, log_queue: queue.Queue, level=0):
-        super().__init__(level)
-        self.log_queue = log_queue
-
-    def emit(self, record):
-        formatted = self.format(record)
-        message_start = formatted.find("{")
-        self.log_queue.put(f"{formatted[message_start:]}\n")
+logger = get_logger("server")
+state = ConfigState()
 
 
 def task(prompt: str, log_queue: queue.Queue):
     handler = QueueHandler(log_queue)
-    print("Initializing graph and agent")
-    agent = AgentOllama(
-        model="llama3.2:3b-instruct-fp16",
-        instructions=config,
-        response_schema=schema,
-        log_path=handler,
-        use_context=True,
-    )
-    graph = GraphNeo4j()
+    logger.info("Connecting queue to agent")
+    agent = state.agent
+    graph = state.graph
+    agent.logger.addHandler(handler)
 
-    print("Starting")
+    logger.info("Starting task")
+    kg_extra_calls = 0
+    agent_extra_calls = 1
     queries = json.loads(agent.run("retrieve_queries", prompt))["queries"]
+    kg_extra_calls += 1
     entities = graph.find(queries)
+    agent_extra_calls += 1
     agent_picks = json.loads(
         agent.run(
             "pick_seed_entities",
             prompt,
-            amount=3,
+            amount=state.max_paths,
             entities=[e.get_label() for e in entities],
         )
     )["seed_entities"]
     entities = [entity for entity in entities if entity.get_label() in agent_picks]
-    seed_entities = (
-        entities
-        if entities
-        else [graph.get_entities(["fc381815-5b9e-465f-bd9c-8240724dcb0a"])[0]]
-    )
+    seed_entities = []
+    if entities:
+        seed_entities = entities
+    elif state.default_seed_entity_ids:
+        logger.info("No seed entities acquired. Using default entities")
+        kg_extra_calls += 1
+        seed_entities = graph.get_entities(state.default_seed_entity_ids)
 
-    response = json.dumps(
-        think_on_graph(
-            prompt, agent, graph, max_paths=3, max_depth=3, seed_entities=seed_entities
-        )
+    response = think_on_graph(
+        prompt,
+        agent,
+        graph,
+        max_paths=state.max_paths,
+        max_depth=state.max_depth,
+        seed_entities=seed_entities,
     )
+    response["agent_calls"] += agent_extra_calls
+    response["kg_calls"] += kg_extra_calls
     agent.logger.removeHandler(handler)
-    return json.dumps(Message(role="assistant", content=response, instruction="final"))
+    return json.dumps(
+        Message(role="assistant", content=json.dumps(response), instruction="final")
+    )
 
 
 def stream_processor(prompt: str):
@@ -80,7 +78,12 @@ def stream_processor(prompt: str):
     result_container = {}
 
     def worker():
-        result_container["data"] = task(prompt, log_queue)
+        try:
+            result_container["data"] = task(prompt, log_queue)
+        except Exception as e:
+            logger.error(e)
+            result_container["error"] = e
+            log_queue.put("")
 
     t = threading.Thread(target=worker)
     t.start()
@@ -88,6 +91,10 @@ def stream_processor(prompt: str):
     while t.is_alive() or not log_queue.empty():
         try:
             message = log_queue.get(timeout=0.1)
+            if result_container.get("error", None):
+                yield f"event: error\ndata: {str(result_container["error"])}\n\n"
+                yield "data: [DONE]\n\n"
+                return
             yield f"data: {message}\n\n"
         except queue.Empty:
             continue
@@ -103,6 +110,23 @@ async def chat(prompt: str):
         media_type="text/event-stream",
         headers={"X-Content-Type-Options": "nosniff"},
     )
+
+
+@app.get("/config")
+async def get_config():
+    return state.get()
+
+
+@app.put("/config")
+async def update_config(config: Config):
+    state.set(config)
+    return state.get()
+
+
+@app.post("/reset-agent")
+async def update_config():
+    state.agent.flush_context()
+    return True
 
 
 if __name__ == "__main__":

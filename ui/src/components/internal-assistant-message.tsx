@@ -165,14 +165,23 @@ export const InternalAssistantMessage = ({ data, at }: Props) => {
   );
 };
 
-export const InternalAssistantMessagePlaceholder = () => {
+export const InternalAssistantMessagePlaceholder = ({
+  isLoading = true,
+}: {
+  isLoading?: boolean;
+}) => {
   return (
     <div
       className={
         "bg-neutral-950/80 border p-4 rounded-b-2xl font-mono text-xs mb-8 mx-8 text-white"
       }
     >
-      <h3 className="markdown font-sans text-sm font-medium animate-pulse">
+      <h3
+        className={cn(
+          "markdown font-sans text-sm font-medium",
+          isLoading && "animate-pulse"
+        )}
+      >
         Model output
       </h3>
     </div>

@@ -59,7 +59,7 @@ export function ChatProvider({ children }: { children: ReactNode }) {
 
     source.onerror = function (err) {
       console.error("EventSource failed:", err);
-      setError("Connection failed");
+      setError("data" in err ? `${err.data}` : "Connection failed");
       setLoading(false);
       source.close();
     };

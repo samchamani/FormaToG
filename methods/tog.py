@@ -10,7 +10,7 @@ from methods.common import (
     triplet_to_string,
 )
 from logging import Logger
-from common import get_logger
+from logger import get_logger
 from typing import List
 import re
 import copy

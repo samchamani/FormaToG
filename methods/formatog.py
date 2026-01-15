@@ -9,7 +9,7 @@ from methods.common import (
     filter_relationships,
     triplet_to_string,
 )
-from common import get_logger
+from logger import get_logger
 from typing import List, Tuple, Set
 import json
 from logging import Logger

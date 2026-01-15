@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List, TypedDict, Protocol, Any, Literal, Type
 from pydantic import BaseModel
-from common import get_logger
+from logger import get_logger
 from logging import Handler
 import json
 

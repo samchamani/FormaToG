@@ -1,5 +1,5 @@
 from methods.common import Response, get_default_result
-from common import get_logger
+from logger import get_logger
 from agents.Agent import Agent
 import json
 

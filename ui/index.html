@@ -4,7 +4,22 @@
     <meta charset="UTF-8" />
     <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ui</title>
+    <script>
+    (function() {
+      try {
+        var localTheme = localStorage.getItem('formatog-theme');
+        var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;  
+        if (localTheme === 'dark' || (!localTheme && supportDarkMode)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {
+        console.error('Error setting theme script', e);
+      }
+    })();
+  </script>
+    <title>FormaToG</title>
   </head>
   <body>
     <div id="root"></div>

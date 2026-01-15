@@ -133,6 +133,19 @@ class GraphNeo4j(Graph):
             for result in results
         ]
 
+    def find(self, data_list, **kwargs) -> List[Entity]:
+        if not data_list:
+            return []
+        results = self.run_query(
+            "read",
+            queries.find.format(labels=self.format_labels(kwargs.get("labels"))),
+            data_list=data_list,
+        )
+        return [
+            Entity(uuid=result["entity"]["uuid"], label=result["entity"]["label"])
+            for result in results
+        ]
+
     # ---------------------------------------------------------------------------- #
     #                                GRAPH CRUD OPS                                #
     # ---------------------------------------------------------------------------- #
@@ -146,20 +159,6 @@ class GraphNeo4j(Graph):
         results = self.run_query(
             "write",
             queries.create.format(labels=self.format_labels(kwargs.get("labels"))),
-            data_list=data_list,
-        )
-        return [
-            Entity(uuid=result["entity"]["uuid"], label=result["entity"]["label"])
-            for result in results
-        ]
-
-    def find(self, data_list: List[str], **kwargs) -> List[Entity]:
-        """find nodes that contain strings in `data_list`"""
-        if not data_list:
-            return []
-        results = self.run_query(
-            "read",
-            queries.find.format(labels=self.format_labels(kwargs.get("labels"))),
             data_list=data_list,
         )
         return [

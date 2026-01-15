@@ -42,3 +42,14 @@ WHERE {{
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
 }}
 """
+
+
+find = """
+SELECT DISTINCT ?searchString ?entity ?entityLabel WHERE {{
+  VALUES ?searchString {{ {queries} }}
+  BIND(STRLANG(?searchString, "en") AS ?lookupLabel)
+  ?entity rdfs:label ?lookupLabel .
+  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
+}}
+LIMIT 50
+"""

@@ -51,3 +51,10 @@ class Graph(ABC):
         ```.
         """
         pass
+
+    @abstractmethod
+    def find(self, data_list: List[str], **kwargs) -> List[Entity]:
+        """Attempts to find entities based on query strings. If not applicable
+        this can be implemented to return an empty list instead.
+        """
+        pass

@@ -95,6 +95,33 @@ class GraphWikidata(Graph):
             for entry in response["results"]["bindings"]
         ]
 
+    def find(self, data_list, **kwargs) -> List[Entity]:
+        query_concat = " ".join([f'"{data}"' for data in data_list])
+        response = self.query(queries.find.format(queries=query_concat))
+
+        best_matches = {}
+        for row in response["results"]["bindings"]:
+            search_name = row["searchString"]["value"]
+            item_uri = row["entity"]["value"]
+            try:
+                q_id_string = self.url2id(item_uri)
+                q_id_val = int(q_id_string.replace("Q", ""))
+            except ValueError:
+                continue
+            if (
+                search_name not in best_matches
+                or q_id_val < best_matches[search_name]["id_val"]
+            ):
+                best_matches[search_name] = {
+                    "id_val": q_id_val,
+                    "qid": q_id_string,
+                    "value": row["entityLabel"]["value"],
+                }
+
+        return [
+            Entity(qid=row["qid"], value=row["value"]) for row in best_matches.values()
+        ]
+
     @staticmethod
     def url2id(url: str) -> str:
         return url.replace("http://www.wikidata.org/entity/", "")

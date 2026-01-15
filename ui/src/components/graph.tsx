@@ -3,7 +3,7 @@ import {
   isPickTriplets,
   useChatAPI,
   type Message,
-} from "@/ChatContext";
+} from "@/api/chat";
 import { useEffect, useState } from "react";
 import {
   darkTheme,

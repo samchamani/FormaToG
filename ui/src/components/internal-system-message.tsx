@@ -1,4 +1,4 @@
-import type { Message } from "@/ChatContext";
+import type { Message } from "@/api/chat";
 import {
   Accordion,
   AccordionContent,

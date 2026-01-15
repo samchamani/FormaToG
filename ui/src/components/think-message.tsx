@@ -12,7 +12,7 @@ import {
   InternalAssistantMessagePlaceholder,
 } from "./internal-assistant-message";
 import { InternalUserMessage } from "./internal-user-message";
-import type { Message } from "@/ChatContext";
+import type { Message } from "@/api/chat";
 
 type Props = {
   data: Message[];

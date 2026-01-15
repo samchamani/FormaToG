@@ -1,4 +1,4 @@
-import { isModelInput, type Message } from "@/ChatContext";
+import { isModelInput, type Message } from "@/api/chat";
 import {
   Accordion,
   AccordionContent,

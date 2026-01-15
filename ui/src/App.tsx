@@ -1,6 +1,5 @@
-// import { useState } from "react";
 import "./App.css";
-import { ChatProvider } from "./ChatContext";
+import { ChatProvider } from "./api/chat";
 import { Chat } from "./components/chat";
 import { Graph } from "./components/graph";
 

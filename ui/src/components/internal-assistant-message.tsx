@@ -8,7 +8,7 @@ import {
   isReflect,
   isRetrieveQueries,
   type Message,
-} from "@/ChatContext";
+} from "@/api/chat";
 import {
   Table,
   TableBody,

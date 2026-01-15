@@ -10,7 +10,7 @@ import {
 } from "./ui/card";
 import { Input } from "./ui/input";
 import { useEffect, useState } from "react";
-import { isFinal, useChatAPI, type Message } from "@/ChatContext";
+import { isFinal, useChatAPI, type Message } from "@/api/chat";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 import { ThinkMessage } from "./think-message";
 import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from "./ui/empty";

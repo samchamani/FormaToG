@@ -103,6 +103,12 @@ def stream_processor(prompt: str):
     yield "data: [DONE]\n\n"
 
 
+@app.get("/")
+async def hello():
+    state.agent.flush_context()
+    return True
+
+
 @app.get("/chat")
 async def chat(prompt: str):
     return StreamingResponse(

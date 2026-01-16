@@ -10,13 +10,14 @@ import {
 } from "./ui/card";
 import { Input } from "./ui/input";
 import { useEffect, useRef, useState } from "react";
-import { isFinal, useChatAPI, type Message } from "@/api/chat";
+import { isFinal, isModelInput, useChatAPI, type Message } from "@/api/chat";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 import { ThinkMessage } from "./think-message";
 import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from "./ui/empty";
 import { BadgeX, MoreVertical, X } from "lucide-react";
 import { Settings } from "./settings";
 import { Logo } from "./logo";
+import { useHealthCheckAPI } from "@/api/health";
 
 type Props = {
   className?: string;
@@ -24,10 +25,18 @@ type Props = {
 
 export const Chat = ({ className }: Props) => {
   const { data, loading, error, sendPrompt } = useChatAPI();
+  const { error: healthError } = useHealthCheckAPI();
   const [history, setHistory] = useState<HistoryItem[]>([]);
   const [prompt, setPrompt] = useState("");
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const scrollAnchor = useRef<HTMLDivElement>(null);
+
+  const hadNodes = history.some((h) => {
+    if (!h.data || h.type !== "thinking") return false;
+    return h.data.some(
+      (d) => isModelInput(d.content, d.role) && d.content.data.length > 1
+    );
+  });
 
   const hasError = (index: number) =>
     history.some((h, i) => index >= i && h.type === "error");
@@ -89,7 +98,7 @@ export const Chat = ({ className }: Props) => {
         "bg-card/80 backdrop-blur-sm h-full min-h-0 flex flex-col drop-shadow-lg",
         "relative left-1/2 -translate-x-1/2 transition-all duration-500",
         className,
-        (history.length >= 3 || data.length >= 5) && "left-0 translate-x-0"
+        hadNodes && "left-0 translate-x-0"
       )}
     >
       <CardHeader>
@@ -148,6 +157,9 @@ export const Chat = ({ className }: Props) => {
                   <EmptyTitle>Hello</EmptyTitle>
                   <EmptyDescription>
                     Write a message to make the AI think on a graph
+                    {healthError && (
+                      <div className="text-destructive">{healthError}</div>
+                    )}
                   </EmptyDescription>
                 </EmptyHeader>
               </Empty>

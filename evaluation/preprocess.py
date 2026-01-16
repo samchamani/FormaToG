@@ -74,7 +74,7 @@ if __name__ == "__main__":
         )
         df["has_err"] = (
             df["has_err_instruction"]
-            | df["has_err_format"]
+            | df["has_err_tog"]
             | df["has_err_graph"]
             | df["has_err_other"]
             | df["has_err_agent"]

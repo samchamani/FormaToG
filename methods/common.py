@@ -3,30 +3,7 @@ from graphs.Graph import Relationship, GraphTriplet
 
 
 # ---------------------------------------------------------------------------- #
-#                                    ERRORS                                    #
-# ---------------------------------------------------------------------------- #
-class GraphException(Exception):
-    """Raised when a prompt can not be answered using a ToG approach.
-    This might occur when running into dead ends, or if there are no
-    seed entities."""
-
-    pass
-
-
-class InstructionError(Exception):
-    """Raised when the agent did not follow the instructions."""
-
-    pass
-
-
-class FormatError(Exception):
-    """Raised when an answer does not match required format."""
-
-    pass
-
-
-# ---------------------------------------------------------------------------- #
-#                                     TYPES                                    #
+#                                   RESPONSE                                   #
 # ---------------------------------------------------------------------------- #
 class Response(TypedDict):
     machine_answer: str
@@ -35,10 +12,10 @@ class Response(TypedDict):
     kg_calls: int
     agent_calls: int
     depth: int
-    has_err_instruction: bool
-    has_err_format: bool
-    has_err_graph: bool
     has_err_agent: bool
+    has_err_graph: bool
+    has_err_tog: bool
+    has_err_instruction: bool
     has_err_other: bool
 
 
@@ -51,8 +28,8 @@ def get_default_result() -> Response:
         "agent_calls": 0,
         "kg_calls": 0,
         "has_err_agent": False,
-        "has_err_format": False,
         "has_err_graph": False,
+        "has_err_tog": False,
         "has_err_instruction": False,
         "has_err_other": False,
     }

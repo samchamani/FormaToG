@@ -19,8 +19,8 @@ const labelStyle = "w-50 text-right mr-4 shrink-0";
 const pseudoLabelStyle =
   "flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50";
 
-type AdjustedConfig = Omit<Config, "default_seed_entity_ids"> & {
-  default_seed_entity_ids: string;
+type AdjustedConfig = Omit<Config, "seed_entity_ids"> & {
+  seed_entity_ids: string;
 };
 
 export const Settings = () => {
@@ -32,7 +32,7 @@ export const Settings = () => {
     if (!current) return;
     const normalizedConfig: Config = {
       ...current,
-      default_seed_entity_ids: current.default_seed_entity_ids
+      seed_entity_ids: current.seed_entity_ids
         .trim()
         .split("\n")
         .filter((v) => v),
@@ -45,7 +45,7 @@ export const Settings = () => {
     if (!config) return;
     const adjustedConfig: AdjustedConfig = {
       ...config,
-      default_seed_entity_ids: config.default_seed_entity_ids.join("\n"),
+      seed_entity_ids: config.seed_entity_ids.join("\n"),
     };
     setCurrent(adjustedConfig);
   }, [config]);
@@ -151,13 +151,13 @@ export const Settings = () => {
           <span className={labelStyle}>Default seed entity IDs:</span>
           <Textarea
             className="h-20 resize-none whitespace-pre wrap-normal overflow-x-scroll"
-            value={current.default_seed_entity_ids}
+            value={current.seed_entity_ids}
             onChange={(e) =>
               setCurrent(
                 (prev) =>
                   ({
                     ...prev,
-                    default_seed_entity_ids: e.target.value,
+                    seed_entity_ids: e.target.value,
                   } as AdjustedConfig)
               )
             }

@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
-from typing import List, TypedDict, Protocol, Any, Literal, Type
-from pydantic import BaseModel
+from typing import List, TypedDict, Protocol, Any, Literal
+from errors import InstructionError
+from pydantic import BaseModel, ValidationError
 from logger import get_logger
 from logging import Handler
 import json
@@ -88,3 +89,15 @@ class Agent(ABC):
     def get_format(self, instruction: InstructionKey) -> ResponseFormat:
         """Retrieves the corresponding format definition from the `self.schema` dict"""
         return self.response_schema.get(instruction) if self.response_schema else None
+
+    def parse_valid_json(self, response_string, instruction: InstructionKey):
+        fmt = self.get_format(instruction)
+        if not fmt or isinstance(fmt, str):
+            raise Exception("Error: Tried parsing a non-json-string")
+        try:
+            fmt.model_validate_json(response_string)
+            return json.loads(response_string)
+        except ValidationError as e:
+            InstructionError(
+                f"Instruction error for {instruction} -- invalid response: {response_string} -- error: {e}"
+            )

@@ -3,11 +3,12 @@ from graphs.Graph import (
     Entity as AbstractEntity,
     Relationship as AbstractRelationship,
 )
+import graphs.queries.Cypher as queries
 from neo4j import GraphDatabase, Transaction
+from errors import GraphException
+from typing import Literal, List, Tuple
 from dotenv import load_dotenv
 import os
-from typing import Literal, List, Tuple
-import graphs.queries.Cypher as queries
 import re
 
 
@@ -33,18 +34,24 @@ class Relationship(AbstractRelationship):
 class GraphNeo4j(Graph):
 
     def __init__(self):
-        load_dotenv()
-        host = os.getenv("GRAPH_HOST", "localhost")
-        user = os.getenv("GRAPH_USERNAME")
-        password = os.getenv("GRAPH_PASSWORD")
-        bolt_port = os.getenv("GRAPH_BOLT_PORT", 7687)
-        uri = f"bolt://{host}:{bolt_port}"
-        self.driver = GraphDatabase.driver(uri, auth=(user, password))
+        try:
+            load_dotenv()
+            host = os.getenv("GRAPH_HOST", "localhost")
+            user = os.getenv("GRAPH_USERNAME")
+            password = os.getenv("GRAPH_PASSWORD")
+            bolt_port = os.getenv("GRAPH_BOLT_PORT", 7687)
+            uri = f"bolt://{host}:{bolt_port}"
+            self.driver = GraphDatabase.driver(uri, auth=(user, password))
+        except Exception as e:
+            raise GraphException(e)
 
     def close(self):
         """Close the Neo4j driver. Run this after you are done using an instance of this class."""
-        if self.driver:
-            self.driver.close()
+        try:
+            if self.driver:
+                self.driver.close()
+        except Exception as e:
+            raise GraphException(e)
 
     def run_query(
         self, mode: Literal["read", "write", "admin"], query: str, key=None, **kwargs
@@ -59,15 +66,18 @@ class GraphNeo4j(Graph):
                 result = execute(self._run_tx, query, key, **kwargs)
                 return result
         except Exception as e:
-            print(f"Failed to {mode}", e)
+            raise GraphException(e)
 
     @staticmethod
     def _run_tx(tx: Transaction, query: str, key: str | None, **kwargs):
-        results = tx.run(query, **kwargs)
-
-        return [
-            record.data() if key is None else record.data()[key] for record in results
-        ]
+        try:
+            results = tx.run(query, **kwargs)
+            return [
+                record.data() if key is None else record.data()[key]
+                for record in results
+            ]
+        except Exception as e:
+            raise GraphException(e)
 
     def format_labels(self, labels: List[str]):
         if not labels:
@@ -87,64 +97,88 @@ class GraphNeo4j(Graph):
         return True
 
     def export_graphml(self, filename: str) -> bool:
-        return self.run_query("admin", queries.export_graphml.format(filename=filename))
+        try:
+            return self.run_query(
+                "admin", queries.export_graphml.format(filename=filename)
+            )
+        except Exception as e:
+            raise GraphException(e)
 
     def import_graphml(self, filename: str) -> bool:
-        return self.run_query("admin", queries.import_graphml.format(filename=filename))
+        try:
+            return self.run_query(
+                "admin", queries.import_graphml.format(filename=filename)
+            )
+        except Exception as e:
+            raise GraphException(e)
 
     # ---------------------------------------------------------------------------- #
     #                                    ToG OPS                                   #
     # ---------------------------------------------------------------------------- #
 
     def get_entities(self, entities, **kwargs) -> List[Entity]:
-        if not entities:
-            return []
-        results = self.run_query(
-            "read",
-            queries.get_entities,
-            data_list=entities,
-        )
-        return [
-            Entity(uuid=result["entity"]["uuid"], label=result["entity"]["label"])
-            for result in results
-        ]
+        try:
+            if not entities:
+                return []
+            results = self.run_query(
+                "read",
+                queries.get_entities,
+                data_list=entities,
+            )
+            return [
+                Entity(uuid=result["entity"]["uuid"], label=result["entity"]["label"])
+                for result in results
+            ]
+        except Exception as e:
+            raise GraphException(e)
 
     def get_relationships(self, entity: Entity, **kwargs) -> List[Relationship]:
-        if not entity:
-            return []
-        results = self.run_query(
-            "read", queries.get_relationships.format(uuid=entity.uuid)
-        )
-        return [Relationship(type=result["relationship"]) for result in results]
+        try:
+            if not entity:
+                return []
+            results = self.run_query(
+                "read", queries.get_relationships.format(uuid=entity.uuid)
+            )
+            return [Relationship(type=result["relationship"]) for result in results]
+        except Exception as e:
+            raise GraphException(e)
 
     def get_triplets(self, entity: Entity, relationship: Relationship, **kwargs):
-        if not entity or not relationship:
-            return []
-        results = self.run_query(
-            "read",
-            queries.get_triplets.format(uuid=entity.uuid, rel_type=relationship.type),
-        )
-        return [
-            (
-                Entity(uuid=result["head"]["uuid"], label=result["head"]["label"]),
-                Relationship(type=result["relationship"]),
-                Entity(uuid=result["tail"]["uuid"], label=result["tail"]["label"]),
+        try:
+            if not entity or not relationship:
+                return []
+            results = self.run_query(
+                "read",
+                queries.get_triplets.format(
+                    uuid=entity.uuid, rel_type=relationship.type
+                ),
             )
-            for result in results
-        ]
+            return [
+                (
+                    Entity(uuid=result["head"]["uuid"], label=result["head"]["label"]),
+                    Relationship(type=result["relationship"]),
+                    Entity(uuid=result["tail"]["uuid"], label=result["tail"]["label"]),
+                )
+                for result in results
+            ]
+        except Exception as e:
+            raise GraphException(e)
 
     def find(self, data_list, **kwargs) -> List[Entity]:
-        if not data_list:
-            return []
-        results = self.run_query(
-            "read",
-            queries.find.format(labels=self.format_labels(kwargs.get("labels"))),
-            data_list=data_list,
-        )
-        return [
-            Entity(uuid=result["entity"]["uuid"], label=result["entity"]["label"])
-            for result in results
-        ]
+        try:
+            if not data_list:
+                return []
+            results = self.run_query(
+                "read",
+                queries.find.format(labels=self.format_labels(kwargs.get("labels"))),
+                data_list=data_list,
+            )
+            return [
+                Entity(uuid=result["entity"]["uuid"], label=result["entity"]["label"])
+                for result in results
+            ]
+        except Exception as e:
+            raise GraphException(e)
 
     # ---------------------------------------------------------------------------- #
     #                                GRAPH CRUD OPS                                #
@@ -154,36 +188,48 @@ class GraphNeo4j(Graph):
         """Create entities given a `data_list` array of format of labels, each
         representing an entity
         """
-        if not data_list:
-            return []
-        results = self.run_query(
-            "write",
-            queries.create.format(labels=self.format_labels(kwargs.get("labels"))),
-            data_list=data_list,
-        )
-        return [
-            Entity(uuid=result["entity"]["uuid"], label=result["entity"]["label"])
-            for result in results
-        ]
+        try:
+            if not data_list:
+                return []
+            results = self.run_query(
+                "write",
+                queries.create.format(labels=self.format_labels(kwargs.get("labels"))),
+                data_list=data_list,
+            )
+            return [
+                Entity(uuid=result["entity"]["uuid"], label=result["entity"]["label"])
+                for result in results
+            ]
+        except Exception as e:
+            raise GraphException(e)
 
     def delete(self, data_list: List[str], **kwargs) -> bool:
-        self.run_query("write", queries.delete, data_list=data_list)
-        return True
+        try:
+            self.run_query("write", queries.delete, data_list=data_list)
+            return True
+        except Exception as e:
+            raise GraphException(e)
 
     def link(self, triplets: List[Tuple[str, str, str]], **kwargs):
         """
         can be used to create links or update existing ones
         """
-        for triplet in triplets:
-            self.check_label(triplet[1])
-        return self.run_query("write", queries.link, triplets=triplets)
+        try:
+            for triplet in triplets:
+                self.check_label(triplet[1])
+            return self.run_query("write", queries.link, triplets=triplets)
+        except Exception as e:
+            raise GraphException(e)
 
     def unlink(self, triplet: Tuple[str, str, str], **kwargs):
-        return self.run_query(
-            "write",
-            queries.unlink.format(
-                head_uuid=triplet[0],
-                rel_type=triplet[1],
-                tail_uuid=triplet[2],
-            ),
-        )
+        try:
+            return self.run_query(
+                "write",
+                queries.unlink.format(
+                    head_uuid=triplet[0],
+                    rel_type=triplet[1],
+                    tail_uuid=triplet[2],
+                ),
+            )
+        except Exception as e:
+            raise GraphException(e)

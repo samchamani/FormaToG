@@ -13,6 +13,7 @@
    --exclude='__pycache__' \
    --exclude='*.pyc' \
    --exclude='results' \
+   --exclude='ui' \
    --exclude='.env' \
    --exclude-'.DS_Store' \
    $REPO_PARENT_DIR/FormaToG \

@@ -6,6 +6,7 @@ from methods.instructions.io_few_shot import (
     config as io_few_shot_config,
     schema as io_fs_schema,
 )
+from methods.instructions.io_simple import config as io_simple_config
 from methods.instructions.io_zero_shot import (
     config as io_zero_shot_config,
     schema as io_zs_schema,
@@ -45,6 +46,7 @@ def get_method_exec(method: str):
         "io_zero_shot": lambda prompt, **kwargs: ask(
             prompt, with_reason=False, **kwargs
         ),
+        "io_simple": lambda prompt, **kwargs: ask(prompt, with_reason=False, **kwargs),
     }
 
     if method in simple_methods:
@@ -79,6 +81,7 @@ def get_config_and_use_context(method_with_params: str):
     method = re.sub(r"_d[0-9]+_p[0-9]+$", "", method_with_params)
     methods = {
         "cot": (cot_config, False, cot_schema),
+        "io_simple": (io_simple_config, False, None),
         "io_few_shot": (io_few_shot_config, False, io_fs_schema),
         "io_zero_shot": (io_zero_shot_config, False, io_zs_schema),
         "formatog": (formatog_config, True, formatog_schema),
@@ -130,11 +133,11 @@ DATA_TYPE_MAP = {
     "expected_answer": str,
     "answer": str,
     "is_kg_based_answer": int,
-    "has_err_instruction": int,
-    "has_err_format": int,
-    "has_err_graph": int,
-    "has_err_other": int,
     "has_err_agent": int,
+    "has_err_graph": int,
+    "has_err_tog": int,
+    "has_err_instruction": int,
+    "has_err_other": int,
 }
 
 

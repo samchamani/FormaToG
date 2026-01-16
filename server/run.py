@@ -32,30 +32,14 @@ def task(prompt: str, log_queue: queue.Queue):
     agent = state.agent
     graph = state.graph
     agent.logger.addHandler(handler)
-
-    logger.info("Starting task")
     kg_extra_calls = 0
-    agent_extra_calls = 1
-    queries = json.loads(agent.run("retrieve_queries", prompt))["queries"]
-    kg_extra_calls += 1
-    entities = graph.find(queries)
-    agent_extra_calls += 1
-    agent_picks = json.loads(
-        agent.run(
-            "pick_seed_entities",
-            prompt,
-            amount=state.max_paths,
-            entities=[e.get_label() for e in entities],
-        )
-    )["seed_entities"]
-    entities = [entity for entity in entities if entity.get_label() in agent_picks]
-    seed_entities = []
-    if entities:
-        seed_entities = entities
-    elif state.default_seed_entity_ids:
-        logger.info("No seed entities acquired. Using default entities")
+    logger.info("Starting task")
+
+    seed_entities = None
+    if state.seed_entity_ids:
+        logger.info("Using provided seed entities")
         kg_extra_calls += 1
-        seed_entities = graph.get_entities(state.default_seed_entity_ids)
+        seed_entities = graph.get_entities(state.seed_entity_ids)
 
     response = think_on_graph(
         prompt,
@@ -64,8 +48,8 @@ def task(prompt: str, log_queue: queue.Queue):
         max_paths=state.max_paths,
         max_depth=state.max_depth,
         seed_entities=seed_entities,
+        with_find=True,
     )
-    response["agent_calls"] += agent_extra_calls
     response["kg_calls"] += kg_extra_calls
     agent.logger.removeHandler(handler)
     return json.dumps(

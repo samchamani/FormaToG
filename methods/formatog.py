@@ -1,18 +1,16 @@
 from agents.Agent import Agent
 from graphs.Graph import Graph, Entity, GraphTriplet, GraphTuple
 from methods.common import (
-    FormatError,
-    GraphException,
-    InstructionError,
     Response,
     get_default_result,
     filter_relationships,
     triplet_to_string,
 )
-from logger import get_logger
+from errors import GraphException, AgentException, ToGException, InstructionError
 from typing import List, Tuple, Set
-import json
 from logging import Logger
+from logger import get_logger
+import copy
 
 
 def think_on_graph(
@@ -23,6 +21,7 @@ def think_on_graph(
     max_depth: int,
     seed_entities: List[Entity] = None,
     log_path: str = "",
+    with_find: bool = False,
     **_,
 ):
     """An adjusted version of **think on graph**, where pruning is only done at most once
@@ -32,12 +31,21 @@ def think_on_graph(
 
     logger = get_logger(__name__, log_path)
     response = get_default_result()
+    initial_entities = copy.deepcopy(seed_entities)
     try:
-        if not len(seed_entities):
-            raise GraphException("No seed entities given.")
+        if not initial_entities:
+            if with_find:
+                logger.info(
+                    "Attempting to link entities from extracted prompt key words"
+                )
+                initial_entities = recognize_and_link_entities(
+                    agent, graph, prompt, max_paths, response
+                )
+            if not initial_entities:
+                raise ToGException("No seed entities found.")
 
         collected_triplets: Set[Tuple[str, str, str]] = set()
-        current_entities: List[Entity] = seed_entities[:max_paths]
+        current_entities: List[Entity] = initial_entities[:max_paths]
         logger.info(
             f"Paths initialized with {len(current_entities)} empty paths and seed entities: {[e.get_label() for e in current_entities]}"
         )
@@ -96,35 +104,68 @@ def think_on_graph(
 
         # ---------------------------------------------------------------------------- #
         logger.info("Maximum depth reached")
+    except AgentException as e:
+        response["has_err_agent"] = True
+        logger.warning(f"Agent Exception: {e}")
     except GraphException as e:
         response["has_err_graph"] = True
         logger.warning(f"Graph Exception: {e}")
-    except FormatError as e:
-        response["has_err_format"] = True
-        logger.warning(f"Format error: {e}")
+    except ToGException as e:
+        response["has_err_tog"] = True
+        logger.warning(f"ToG Exception: {e}")
     except InstructionError as e:
         response["has_err_instruction"] = True
-        logger.warning(f"Instructions were not followed! {e}")
+        logger.warning(f"Instruction Error: {e}")
     except Exception as e:
         response["has_err_other"] = True
-        logger.error(f"Error occured {e}")
+        logger.error(f"Unexpected error: {e}")
 
     logger.info("Using only agent knowledge to answer question")
     response["is_kg_based_answer"] = False
     try:
         response["agent_calls"] += 1
-        answer = json.loads(agent.run("answer", prompt))
+        answer_resp = agent.run("answer", prompt)
+        answer = agent.parse_valid_json(answer_resp, "answer")
         response["machine_answer"] = answer["machine_answer"]
         response["user_answer"] = answer["user_answer"]
-    except Exception as e:
-        logger.error(f"Agent error occured {e}")
+    except AgentException as e:
         response["has_err_agent"] = True
+        logger.warning(f"Agent Exception: {e}")
+    except InstructionError as e:
+        response["has_err_instruction"] = True
+        logger.warning(f"Instruction Error: {e}")
+    except Exception as e:
+        response["has_err_other"] = True
+        logger.error(f"Unexpected error: {e}")
     return response
 
 
 # ---------------------------------------------------------------------------- #
 #                                    TOG OPS                                   #
 # ---------------------------------------------------------------------------- #
+def recognize_and_link_entities(
+    agent: Agent, graph: Graph, prompt: str, max_paths: int, response: Response
+):
+    response["agent_calls"] += 1
+    retrieve_query_resp = agent.run("retrieve_queries", prompt)
+    queries = agent.parse_valid_json(retrieve_query_resp, "retrieve_queries")["queries"]
+
+    response["kg_calls"] += 1
+    entities = graph.find(queries)
+
+    response["agent_calls"] += 1
+    pick_seed_entities_resp = agent.run(
+        "pick_seed_entities",
+        prompt,
+        amount=max_paths,
+        entities=[e.get_label() for e in entities],
+    )
+    agent_picks = agent.parse_valid_json(pick_seed_entities_resp, "pick_seed_entities")[
+        "seed_entities"
+    ]
+    return [entity for entity in entities if entity.get_label() in agent_picks]
+
+
 def relationship_search(
     entities: List[Entity], graph: Graph, response: Response, logger: Logger
 ):
@@ -145,10 +186,7 @@ def relationship_search(
         logger.info(f"Checking entity {entityStr}")
         relationships = []
         response["kg_calls"] += 1
-        try:
-            relationships = graph.get_relationships(entity)
-        except Exception as e:
-            raise GraphException("Graph Error occured while searching relationships", e)
+        relationships = graph.get_relationships(entity)
         logger.info("Removing unnecessary relationships (meta data etc.)")
         relationships = filter_relationships(relationships)
         candidate_tuples.extend(
@@ -158,7 +196,7 @@ def relationship_search(
             f"Found {len(relationships)} relationships connected to {entityStr}"
         )
     if len(candidate_tuples) == 0:
-        raise GraphException("No relationships found", candidate_tuples)
+        raise ToGException("No relationships found", candidate_tuples)
     logger.info(f"Collected a total of {len(candidate_tuples)} candidate relationships")
     return candidate_tuples
 
@@ -180,19 +218,21 @@ def relationship_prune(
         selected_tuples = candidate_tuples.copy()
     else:
         response["agent_calls"] += 1
-        pick_relationships_response = json.loads(
-            agent.run(
-                "pick_relationships",
-                prompt=prompt,
-                relationships=[
-                    (entity.get_label(), relationship.get_label())
-                    for entity, relationship in candidate_tuples
-                ],
-                amount=max_paths,
-            )
+        pick_relationships_response = agent.run(
+            "pick_relationships",
+            prompt=prompt,
+            relationships=[
+                (entity.get_label(), relationship.get_label())
+                for entity, relationship in candidate_tuples
+            ],
+            amount=max_paths,
         )
+        selection = agent.parse_valid_json(
+            pick_relationships_response, "pick_relationships"
+        )["selection"][:max_paths]
+
         selected_tuples = map_str_tuples_to_objects(
-            pick_relationships_response["selection"][:max_paths],
+            selection,
             candidate_tuples,
         )
     return selected_tuples
@@ -208,7 +248,7 @@ def entity_search(
     """Searches the graph for all triplets that contain a selected tuple
     and then generates a list of unique candidate triplets with all triplets
     that have already been collected filtered out.
-    Raises a `GraphException`, if the candidate triplet list is empty, because
+    Raises a `ToGException`, if the candidate triplet list is empty, because
     this would imply that there is no change of the current state.
     """
 
@@ -218,12 +258,8 @@ def entity_search(
         entityStr = entity.get_label()
         relStr = relationship.get_label()
         logger.info(f"Searching for triplets containing {entityStr}, {relStr}")
-        triplets = []
         response["kg_calls"] += 1
-        try:
-            triplets = graph.get_triplets(entity, relationship)
-        except Exception as e:
-            raise GraphException("Graph Error occured while searching triplets", e)
+        triplets = graph.get_triplets(entity, relationship)
         triplets = [
             triplet
             for triplet in triplets
@@ -235,7 +271,7 @@ def entity_search(
             f"Found {len(triplets)} triplets including tuple [{entityStr}]-[{relStr}]"
         )
     if len(candidate_triplets) == 0:
-        raise GraphException(
+        raise ToGException(
             "Dead ends only. No new triplets were found", candidate_triplets
         )
     logger.info(f"Collected a total of {len(candidate_triplets)} candidate triplets")
@@ -259,20 +295,19 @@ def entity_prune(
         selected_triplets = candidate_triplets.copy()
     else:
         response["agent_calls"] += 1
-        pick_triplets_response = json.loads(
-            agent.run(
-                "pick_triplets",
-                prompt,
-                triplets=[
-                    (h.get_label(), r.get_label(), t.get_label())
-                    for h, r, t in candidate_triplets
-                ],
-                amount=max_paths,
-            )
+        pick_triplets_response = agent.run(
+            "pick_triplets",
+            prompt,
+            triplets=[
+                (h.get_label(), r.get_label(), t.get_label())
+                for h, r, t in candidate_triplets
+            ],
+            amount=max_paths,
         )
-        selected_triplets = map_str_triplets_to_objects(
-            pick_triplets_response["selection"][:max_paths], candidate_triplets
-        )
+        selection = agent.parse_valid_json(pick_triplets_response, "pick_triplets")[
+            "selection"
+        ][:max_paths]
+        selected_triplets = map_str_triplets_to_objects(selection, candidate_triplets)
     return selected_triplets
 
 
@@ -291,14 +326,13 @@ def reasoning(
     """
 
     response["agent_calls"] += 1
-    reflection = json.loads(
-        agent.run(
-            "reflect",
-            prompt,
-            triplets=list(collected_triplets),
-            remaining_iterations=remaining_iterations,
-        )
+    reflection_resp = agent.run(
+        "reflect",
+        prompt,
+        triplets=list(collected_triplets),
+        remaining_iterations=remaining_iterations,
     )
+    reflection = agent.parse_valid_json(reflection_resp, "reflect")
 
     if reflection["found_knowledge"] and reflection["machine_answer"] != "":
         logger.info("Answering with paths")
@@ -356,14 +390,14 @@ def map_str_triplets_to_objects(
 def get_next_entity(
     triplet: GraphTriplet, current_entities: List[Entity]
 ) -> Tuple[int, Entity]:
-    """Returns the path index a triplet is supposed to connect to, and the entity that should be used in case of further exploration"""
+    """Returns the entity that should be used in case of further exploration"""
     head, _, tail = triplet
     head_str = head.get_label()
     tail_str = tail.get_label()
-    for index, entity in enumerate(current_entities):
+    for entity in current_entities:
         entity_str = entity.get_label()
         if head_str == entity_str:
-            return (index, tail)
+            return tail
         if tail_str == entity_str:
-            return (index, head)
-    raise GraphException("No path index or follow-up entity found")
+            return head
+    raise ToGException("No follow-up entity found in triplet")

@@ -12,7 +12,7 @@ class Config(BaseModel):
     max_paths: int
     max_depth: int
     use_context: bool
-    default_seed_entity_ids: List[str]
+    seed_entity_ids: List[str]
 
 
 class ConfigState:
@@ -28,7 +28,7 @@ class ConfigState:
                 max_paths=3,
                 max_depth=3,
                 use_context=True,
-                default_seed_entity_ids=["fc381815-5b9e-465f-bd9c-8240724dcb0a"],
+                seed_entity_ids=["fc381815-5b9e-465f-bd9c-8240724dcb0a"],
             )
         )
 
@@ -39,7 +39,7 @@ class ConfigState:
         self.max_paths = config.max_paths
         self.max_depth = config.max_depth
         self.use_context = config.use_context
-        self.default_seed_entity_ids = config.default_seed_entity_ids
+        self.seed_entity_ids = config.seed_entity_ids
         self.agent = self.get_agent()
         self.graph = self.get_graph()
 
@@ -51,7 +51,7 @@ class ConfigState:
             max_paths=self.max_paths,
             max_depth=self.max_depth,
             use_context=self.use_context,
-            default_seed_entity_ids=self.default_seed_entity_ids,
+            seed_entity_ids=self.seed_entity_ids,
         )
 
     def get_agent(self):

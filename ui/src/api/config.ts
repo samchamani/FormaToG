@@ -7,7 +7,7 @@ export type Config = {
   max_paths: number;
   max_depth: number;
   use_context: boolean;
-  default_seed_entity_ids: string[];
+  seed_entity_ids: string[];
 };
 
 export function useConfigAPI() {

@@ -1,9 +1,7 @@
 from agents.Agent import Agent
 from graphs.Graph import Graph, Entity, Relationship, GraphTriplet
+from errors import ToGException, AgentException, GraphException, InstructionError
 from methods.common import (
-    FormatError,
-    GraphException,
-    InstructionError,
     Response,
     get_default_result,
     filter_relationships,
@@ -32,7 +30,7 @@ def think_on_graph(
     response = get_default_result()
     try:
         if not len(seed_entities):
-            raise GraphException("No seed entities given.")
+            raise ToGException("No seed entities given.")
         logger.info(f"Using seed entities {[e.get_label() for e in seed_entities]}")
 
         paths: List[Path] = [[] for _ in range(max_paths)]
@@ -65,7 +63,7 @@ def think_on_graph(
                 candidate_relationships.extend(parsed_relationship_picks)
 
             if len(candidate_relationships) == 0:
-                raise InstructionError(
+                raise ToGException(
                     "No relationships were selected", candidate_relationships
                 )
             selected_relationships = sorted(
@@ -83,7 +81,7 @@ def think_on_graph(
                 candidate_triplets.extend(parsed_triplet_picks)
 
             if len(candidate_triplets) == 0:
-                raise InstructionError("No triplets were selected", candidate_triplets)
+                raise ToGException("No triplets were selected", candidate_triplets)
             selected_triplets = sorted(
                 candidate_triplets, key=lambda x: x["score"], reverse=True
             )[:max_paths]
@@ -104,29 +102,35 @@ def think_on_graph(
 
         # ---------------------------------------------------------------------------- #
         logger.info("Maximum depth reached")
+    except AgentException as e:
+        response["has_err_agent"] = True
+        logger.warning(f"Agent Exception: {e}")
     except GraphException as e:
         response["has_err_graph"] = True
         logger.warning(f"Graph Exception: {e}")
-    except FormatError as e:
-        response["has_err_format"] = True
-        logger.warning(f"Format error: {e}")
+    except ToGException as e:
+        response["has_err_tog"] = True
+        logger.warning(f"ToG Exception: {e}")
     except InstructionError as e:
         response["has_err_instruction"] = True
-        logger.warning(f"Instructions were not followed! {e}")
+        logger.warning(f"Instruction Error: {e}")
     except Exception as e:
         response["has_err_other"] = True
-        logger.error(f"Error occured {e}")
+        logger.error(f"Unexpected error: {e}")
 
-    logger.info("Using only model knowledge to answer question")
+    logger.info("Using only agent knowledge to answer question")
     response["is_kg_based_answer"] = False
     try:
         generate(agent, prompt, None, response)
-    except InstructionError as e:
-        logger.error(f"Instructions were not followed! {e}")
-        response["has_err_instruction"] = True
-    except Exception as e:
-        logger.error(f"Agent error occured {e}")
+    except AgentException as e:
         response["has_err_agent"] = True
+        logger.warning(f"Agent Exception: {e}")
+    except InstructionError as e:
+        response["has_err_instruction"] = True
+        logger.warning(f"Instruction Error: {e}")
+    except Exception as e:
+        response["has_err_other"] = True
+        logger.error(f"Unexpected error: {e}")
     return response
 
 
@@ -139,11 +143,7 @@ def relationship_search(
     entity: Entity, graph: Graph, path: Path, response: Response, logger: Logger
 ):
     response["kg_calls"] += 1
-    relationships = []
-    try:
-        relationships = graph.get_relationships(entity)
-    except Exception as e:
-        raise GraphException("Graph Error occured while searching relationships", e)
+    relationships = graph.get_relationships(entity)
     logger.info("Filtering relationships")
     relationships = filter_relationships(relationships)
     if len(path) > 0:
@@ -192,12 +192,7 @@ def relationship_prune(
         logger.warning(f"Instruction Error while parsing: {e}")
         logger.warning("Continueing despite error.")
         response["has_err_instruction"] = True
-    except FormatError as e:
-        logger.warning(f"Format Error while parsing: {e}")
-        logger.warning("Continueing despite error.")
-        response["has_err_format"] = True
     except Exception as e:
-        logger.error("Error while parsing.")
         raise Exception("Error while parsing", e)
     return parsed_relationships
 
@@ -209,11 +204,7 @@ def entity_search(
     entityString = entity.get_label()
     relationship: Relationship = entity_relationship["relationship"]
     response["kg_calls"] += 1
-    triplets = []
-    try:
-        triplets = graph.get_triplets(entity, relationship)
-    except Exception as e:
-        raise GraphException("Graph Error occured while searching triplets", e)
+    triplets = graph.get_triplets(entity, relationship)
     logger.info(
         f"Choosing triplets containing {entityString}, {relationship.get_label()}"
     )
@@ -256,13 +247,22 @@ def entity_prune(
     )
 
     logger.info("parsing agent's pick_triplets response")
-    return parse_response_pick_triplets(
-        pick_triplets_response,
-        triplets,
-        entity,
-        relationship,
-        path_index,
-    )
+    parsed_triplets = []
+    try:
+        parsed_triplets = parse_response_pick_triplets(
+            pick_triplets_response,
+            triplets,
+            entity,
+            relationship,
+            path_index,
+        )
+    except InstructionError as e:
+        logger.warning(f"Instruction Error while parsing: {e}")
+        logger.warning("Continueing despite error.")
+        response["has_err_instruction"] = True
+    except Exception as e:
+        raise Exception("Error while parsing", e)
+    return parsed_triplets
 
 
 def update_paths(paths: List[Path], selected_triplets: List[dict], logger: Logger):
@@ -303,9 +303,7 @@ def reasoning(
 def generate(agent: Agent, prompt: str, path_triplets: list | None, response: Response):
     response["agent_calls"] += 1
     response["user_answer"] = agent.run("answer", prompt, triplets=path_triplets)
-    response["machine_answer"] = parse_response_answer(response["user_answer"])[
-        "answer"
-    ]
+    response["machine_answer"] = extract_answer(response["user_answer"])
 
 
 # ---------------------------------------------------------------------------- #
@@ -341,7 +339,7 @@ def parse_response_pick_relationships(
         try:
             score = float(score)
         except ValueError:
-            raise FormatError("Invalid score format", score)
+            raise InstructionError("Invalid score format", score)
         relations.append(
             {
                 "entity": entity,
@@ -365,59 +363,64 @@ def parse_response_pick_triplets(
     path_index: int,
 ):
     """Parsing logic mostly adapted from original code."""
-    scores = re.findall(r"\d+\.\d+", response)
-    scores = [float(number) for number in scores]
-    if len(scores) != len(triplets):
-        scores = [1 / len(triplets)] * len(triplets)
-    entity_string = entity.get_label()
-    scored_triplets = []
-    rtl_triplet_entities = [
-        triplet[0] for triplet in triplets if triplet[0].get_label() != entity_string
-    ]
-    for index, scored_entity in enumerate(rtl_triplet_entities):
-        scored_triplets.append(
-            {
-                "entity": entity,
-                "relationship": relationship,
-                "scored_entity": scored_entity,
-                "score": scores[index],
-                "is_scored_tail": False,
-                "path_index": path_index,
-            }
+    try:
+        scores = re.findall(r"\d+\.\d+", response)
+        scores = [float(number) for number in scores]
+        if len(scores) != len(triplets):
+            scores = [1 / len(triplets)] * len(triplets)
+        entity_string = entity.get_label()
+        scored_triplets = []
+        rtl_triplet_entities = [
+            triplet[0]
+            for triplet in triplets
+            if triplet[0].get_label() != entity_string
+        ]
+        for index, scored_entity in enumerate(rtl_triplet_entities):
+            scored_triplets.append(
+                {
+                    "entity": entity,
+                    "relationship": relationship,
+                    "scored_entity": scored_entity,
+                    "score": scores[index],
+                    "is_scored_tail": False,
+                    "path_index": path_index,
+                }
+            )
+        ltr_triplet_entities = [
+            triplet[2]
+            for triplet in triplets
+            if triplet[2].get_label() != entity_string
+        ]
+        for index, scored_entity in enumerate(ltr_triplet_entities):
+            scored_triplets.append(
+                {
+                    "entity": entity,
+                    "relationship": relationship,
+                    "scored_entity": scored_entity,
+                    "score": scores[len(rtl_triplet_entities) + index],
+                    "is_scored_tail": True,
+                    "path_index": path_index,
+                }
+            )
+        return scored_triplets
+    except Exception as e:
+        raise InstructionError(
+            "No triplets extracted or response format not as instructed."
         )
-    ltr_triplet_entities = [
-        triplet[2] for triplet in triplets if triplet[2].get_label() != entity_string
-    ]
-    for index, scored_entity in enumerate(ltr_triplet_entities):
-        scored_triplets.append(
-            {
-                "entity": entity,
-                "relationship": relationship,
-                "scored_entity": scored_entity,
-                "score": scores[len(rtl_triplet_entities) + index],
-                "is_scored_tail": True,
-                "path_index": path_index,
-            }
-        )
-    return scored_triplets
+
+
+def extract_answer(response: str):
+    start_index = response.find("{")
+    end_index = response.find("}")
+    if start_index == -1 or end_index == -1:
+        raise InstructionError("No marked answer found", response)
+    return response[start_index + 1 : end_index].strip()
 
 
 def parse_response_reflect(response: str) -> bool:
-    yes = re.findall(r"\{([Yy]es)\}", response)
-    if len(yes) > 0:
+    answer = extract_answer(response)
+    if answer.lower() == "yes":
         return True
-    no = re.findall(r"\{([Nn]o)\}", response)
-    if len(no) > 0:
+    if answer.lower() == "no":
         return False
     raise InstructionError("No {yes} or {no} included in reflection step.")
-
-
-def parse_response_answer(response: str) -> dict:
-    answers = re.findall(r"\{(.+)\}", response)
-    if not answers:
-        raise InstructionError("No marked answer found", response)
-
-    return {
-        "answer": answers[0].strip(),
-        "full_repsonse": response,
-    }

@@ -3,11 +3,12 @@ from .Graph import (
     Entity as AbstractEntity,
     Relationship as AbstractRelationship,
 )
-from typing import List, Tuple
 import graphs.queries.SPARQL as queries
 from SPARQLWrapper import SPARQLWrapper
-import os
+from errors import GraphException
+from typing import List, Tuple
 from dotenv import load_dotenv
+import os
 
 
 class Entity(AbstractEntity):
@@ -33,94 +34,114 @@ class Relationship(AbstractRelationship):
 class GraphWikidata(Graph):
 
     def __init__(self):
-        load_dotenv()
-        self.url = os.getenv("GRAPH_URL")
-        self.user_agent = os.getenv("GRAPH_USER_AGENT")
-        self.sparql = SPARQLWrapper(self.url, agent=self.user_agent)
-        self.sparql.setReturnFormat("json")
+        try:
+            load_dotenv()
+            self.url = os.getenv("GRAPH_URL")
+            self.user_agent = os.getenv("GRAPH_USER_AGENT")
+            self.sparql = SPARQLWrapper(self.url, agent=self.user_agent)
+            self.sparql.setReturnFormat("json")
+        except Exception as e:
+            raise GraphException(e)
 
     def query(self, query: str) -> dict:
         """Executes a SPARQL query string and returns results.
         Results in JSON format by default.
         """
-        self.sparql.setQuery(query)
-        response = self.sparql.query().convert()
-        return response
+        try:
+            self.sparql.setQuery(query)
+            response = self.sparql.query().convert()
+            return response
+        except Exception as e:
+            raise GraphException(e)
 
     def get_entities(self, entities, **kwargs) -> List[Entity]:
-        if not entities:
-            return []
-        response = self.query(
-            queries.get_entities.format(qids=" ".join([f"wd:{e}" for e in entities]))
-        )
-        return [
-            Entity(
-                qid=self.url2id(entry["entity"]["value"]),
-                value=entry["entityLabel"]["value"],
+        try:
+            if not entities:
+                return []
+            response = self.query(
+                queries.get_entities.format(
+                    qids=" ".join([f"wd:{e}" for e in entities])
+                )
             )
-            for entry in response["results"]["bindings"]
-        ]
+            return [
+                Entity(
+                    qid=self.url2id(entry["entity"]["value"]),
+                    value=entry["entityLabel"]["value"],
+                )
+                for entry in response["results"]["bindings"]
+            ]
+        except Exception as e:
+            raise GraphException(e)
 
     def get_relationships(self, entity: Entity, **kwargs) -> List[Relationship]:
-        response = self.query(queries.get_relationships.format(qid=entity.qid))
-        return [
-            Relationship(
-                pid=self.url2id(entry["prop"]["value"]),
-                value=entry["propLabel"]["value"],
-            )
-            for entry in response["results"]["bindings"]
-        ]
+        try:
+            response = self.query(queries.get_relationships.format(qid=entity.qid))
+            return [
+                Relationship(
+                    pid=self.url2id(entry["prop"]["value"]),
+                    value=entry["propLabel"]["value"],
+                )
+                for entry in response["results"]["bindings"]
+            ]
+        except Exception as e:
+            raise GraphException(e)
 
     def get_triplets(
         self, entity: Entity, relationship: Relationship, **kwargs
     ) -> List[Tuple[Entity, Relationship, Entity]]:
-        response = self.query(
-            queries.get_triplets.format(qid=entity.qid, pid=relationship.pid)
-        )
-        return [
-            (
-                Entity(
-                    qid=self.url2id(entry["head"]["value"]),
-                    value=entry["headLabel"]["value"],
-                ),
-                Relationship(
-                    pid=self.url2id(entry["rel"]["value"]),
-                    value=entry["relLabel"]["value"],
-                ),
-                Entity(
-                    qid=self.url2id(entry["tail"]["value"]),
-                    value=entry["tailLabel"]["value"],
-                ),
+        try:
+            response = self.query(
+                queries.get_triplets.format(qid=entity.qid, pid=relationship.pid)
             )
-            for entry in response["results"]["bindings"]
-        ]
+            return [
+                (
+                    Entity(
+                        qid=self.url2id(entry["head"]["value"]),
+                        value=entry["headLabel"]["value"],
+                    ),
+                    Relationship(
+                        pid=self.url2id(entry["rel"]["value"]),
+                        value=entry["relLabel"]["value"],
+                    ),
+                    Entity(
+                        qid=self.url2id(entry["tail"]["value"]),
+                        value=entry["tailLabel"]["value"],
+                    ),
+                )
+                for entry in response["results"]["bindings"]
+            ]
+        except Exception as e:
+            raise GraphException(e)
 
     def find(self, data_list, **kwargs) -> List[Entity]:
-        query_concat = " ".join([f'"{data}"' for data in data_list])
-        response = self.query(queries.find.format(queries=query_concat))
+        try:
+            query_concat = " ".join([f'"{data}"' for data in data_list])
+            response = self.query(queries.find.format(queries=query_concat))
+            best_matches = {}
+            for row in response["results"]["bindings"]:
+                search_name = row["searchString"]["value"]
+                item_uri = row["entity"]["value"]
+                try:
+                    q_id_string = self.url2id(item_uri)
+                    q_id_val = int(q_id_string.replace("Q", ""))
+                except ValueError:
+                    continue
+                if (
+                    search_name not in best_matches
+                    or q_id_val < best_matches[search_name]["id_val"]
+                ):
+                    best_matches[search_name] = {
+                        "id_val": q_id_val,
+                        "qid": q_id_string,
+                        "value": row["entityLabel"]["value"],
+                    }
 
-        best_matches = {}
-        for row in response["results"]["bindings"]:
-            search_name = row["searchString"]["value"]
-            item_uri = row["entity"]["value"]
-            try:
-                q_id_string = self.url2id(item_uri)
-                q_id_val = int(q_id_string.replace("Q", ""))
-            except ValueError:
-                continue
-            if (
-                search_name not in best_matches
-                or q_id_val < best_matches[search_name]["id_val"]
-            ):
-                best_matches[search_name] = {
-                    "id_val": q_id_val,
-                    "qid": q_id_string,
-                    "value": row["entityLabel"]["value"],
-                }
-
-        return [
-            Entity(qid=row["qid"], value=row["value"]) for row in best_matches.values()
-        ]
+            return [
+                Entity(qid=row["qid"], value=row["value"])
+                for row in best_matches.values()
+            ]
+        except Exception as e:
+            raise GraphException(e)
 
     @staticmethod
     def url2id(url: str) -> str:

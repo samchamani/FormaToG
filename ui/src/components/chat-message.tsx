@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import { Avatar, AvatarFallback } from "./ui/avatar";
-import { Bot, User } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { User } from "lucide-react";
 
 type Props = {
   content: string;
@@ -15,10 +15,14 @@ export const ChatMessage = ({ content, isUser }: Props) => {
         isUser && "self-end flex-row-reverse"
       )}
     >
-      <Avatar>
-        <AvatarFallback className="p-1.5">
-          {isUser ? <User /> : <Bot />}
-        </AvatarFallback>
+      <Avatar className="h-9 w-9">
+        {!isUser ? (
+          <AvatarImage className="bg-secondary p-1" src="./logo.svg" />
+        ) : (
+          <AvatarFallback className="p-2">
+            <User />
+          </AvatarFallback>
+        )}
       </Avatar>
       <div
         className={cn(

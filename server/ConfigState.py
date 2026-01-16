@@ -23,12 +23,12 @@ class ConfigState:
             if config
             else Config(
                 agent_provider="ollama",
-                model="llama3.1:3b",
+                model="llama3.2:3b-instruct-fp16",
                 graph_db="neo4j",
                 max_paths=3,
                 max_depth=3,
                 use_context=True,
-                default_seed_entity_ids=[],
+                default_seed_entity_ids=["fc381815-5b9e-465f-bd9c-8240724dcb0a"],
             )
         )
 

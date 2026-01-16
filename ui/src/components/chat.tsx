@@ -16,6 +16,7 @@ import { ThinkMessage } from "./think-message";
 import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from "./ui/empty";
 import { BadgeX, MoreVertical, X } from "lucide-react";
 import { Settings } from "./settings";
+import { Logo } from "./logo";
 
 type Props = {
   className?: string;
@@ -92,9 +93,14 @@ export const Chat = ({ className }: Props) => {
       )}
     >
       <CardHeader>
-        <CardTitle className="flex items-center justify-between">
-          FormaToG
-          <Button variant="ghost" size="icon-sm" onClick={handleSettings}>
+        <CardTitle className="flex items-center justify-center">
+          <Logo />
+          <Button
+            className="absolute top-6 right-6"
+            variant="ghost"
+            size="icon-sm"
+            onClick={handleSettings}
+          >
             {isSettingsOpen ? <X /> : <MoreVertical />}
           </Button>
         </CardTitle>

@@ -1,0 +1,667 @@
+question_index,expected_answer,answer,has_err_agent,has_err_graph,has_err_tog,has_err_instruction,has_err_other,is_kg_based_answer,kg_calls,agent_calls,reached_depth,start_timestamp,duration,exact_match,f1,is_no_answer,method,rep,model,questions
+0,https://www.langenachtderwissenschaften.de/programm/detail/51327,,0,0,0,1,0,0,4,2,1,1768605505.1351583,13.795031547546388,0,0.0,1,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+1,"Im Kleinsten wird unsere Welt durch die Quantentheorie beschrieben, wie sie vor 100 Jahren formuliert wurde. Ihre Gesetze faszinieren heute nicht weniger als damals, denn sie widersprechen unserer Alltagserfahrung auf bizarre Weise: Teilchen können an verschiedenen Orten gleichzeitig sein sowie durch Barrieren „tunneln“. Und bei der Messung des einen Quantensystems verändert sich auch der Zustand eines anderen, wenn dieses mit dem ersten „verschränkt“ ist. Erkunden Sie die faszinierenden Eigenschaften der Quantenwelt mit Hilfe interaktiver Simulationen und Visualisierungen.",Lange Nacht der Wissenschaften 2025,0,0,0,0,0,1,6,2,1,1768605547.8512578,13.44266653060913,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+2,"Wie kann man Dinge zum Schweben bringen? Student:innen des Projektlabors Physik zeigen euch physikalische Zaubertricks, die Alltagsgegenstände schwerelos machen können. Auch lebendige Flüssigkeiten und optische Täuschungen laden zum Mitmachen und Anfassen ein. Geeignet für Kinder ab 6 Jahren.",,0,0,0,1,0,0,3,2,1,1768605589.832084,14.140867471694946,0,0.0,1,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+3,Programmieren lernen für Kinder und Einsteiger:innen,Veranstaltung,0,0,0,0,0,1,4,3,1,1768605638.1694682,18.982563495635983,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+4,"Im Kleinsten wird unsere Welt durch die Quantentheorie beschrieben, wie sie vor 100 Jahren formuliert wurde. Ihre Gesetze faszinieren heute nicht weniger als damals, denn sie widersprechen unserer Alltagserfahrung auf bizarre Weise: Teilchen können an verschiedenen Orten gleichzeitig sein sowie durch Barrieren „tunneln“. Und bei der Messung des einen Quantensystems verändert sich auch der Zustand eines anderen, wenn dieses mit dem ersten „verschränkt“ ist. Erkunden Sie die faszinierenden Eigenschaften der Quantenwelt mit Hilfe interaktiver Simulationen und Visualisierungen.",Quantenphysik,0,0,0,0,0,1,4,2,1,1768605684.6811569,12.372382640838625,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+5,https://www.langenachtderwissenschaften.de/programm/detail/51248,,0,0,0,1,0,0,1,2,1,1768605716.5049832,7.90536642074585,0,0.0,1,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+6,"Unsere Forschungsgruppe baut Organoide, organähnliche Strukturen, aus humanen Stammzellen, um Tierexperimente in der Forschung zu reduzieren. Durch die Kombination von Organoiden simulieren wir in sogenannten Organ-Chips die komplexen Organ-Interaktionen des menschlichen Körpers. Wir erklären Konzept und Funktionsweise solcher Organ-Chips. Es werden Anwendungsgebiete in der Aufklärung pathologischer Prozesse und in der Medikamenten-Entwicklung zur Reduktion von Tierexperimenten dargestellt. Besucher:innen können Organ-Chips zusammenbauen und die magnetische Zellsortierung ausprobieren.",Alternative zu Tierversuchen,0,0,0,1,0,0,5,3,1,1768605752.448204,20.443766117095947,0,0.03278688524590164,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+7,https://www.langenachtderwissenschaften.de/programm/detail/51514,https://fsttub.tu-berlin.de/,0,0,0,1,0,0,6,3,1,1768605803.2213762,21.035699129104614,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+8,"Gestalte Straßen, Radwege, Brücken und mehr mit Klemmbausteinen, und lerne spielerisch, wie moderne Verkehrsplanung funktioniert. Ihr lernt die Funktionen von Straßen kennen, die passenden Verkehrsmittel, um verschiedene Orte zu erreichen, sowie ein Konzept, wie Verkehr nachhaltiger werden kann. Für Kinder ab 6 Jahren und Erwachsene – für alle Altersgruppen ist etwas dabei! Jeder Gast erhält Bausteine, um unsere Stadt wachsen zu lassen. Komm vorbei, und werde Verkehrsplaner:in für einen Abend!",SimCity von Electronic Arts,0,0,0,1,0,0,9,4,2,1768605856.647611,24.48084783554077,0,0.028571428571428574,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+9,"Testen Sie Ihr Wissen über das Universum, und gewinnen Sie kleine Preise – solange der Vorrat reicht! Geeignet ab 6 Jahren.",Astro-Quiz,0,0,0,0,0,1,4,2,1,1768605914.8739495,10.732401847839355,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+10,Chatbots zur Stärkung der Demokratie,Seminar oder Prüfung,0,0,0,1,0,0,3,2,1,1768605522.6834302,10.711651802062988,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+11,Live-Musik,Veranstaltung,0,0,0,0,0,1,4,2,1,1768605574.6350074,10.610057592391968,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+12,17:00-21:30 Uhr,Haus des Lernens (MAR) Marchstraße 23 10587 Berlin Raum MAR 1.001 (1. OG),0,0,0,0,0,1,4,3,1,1768605626.4566596,22.895241737365723,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+13,https://www.langenachtderwissenschaften.de/programm/detail/51498,https://www.langenachtderwissenschaften.de/programm,0,0,0,0,0,1,4,2,1,1768605672.893638,13.4776873588562,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+14,25,2025,0,0,0,0,0,1,3,2,1,1768605711.100109,10.356986045837402,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+15,https://www.langenachtderwissenschaften.de/programm/detail/51151,https://www.dlr.de/,0,0,0,0,0,1,4,1,1,1768605740.477093,5.178270101547241,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+16,Juri Mertens,Universitätsbibliothek,0,0,0,1,0,0,4,3,1,1768605780.9534843,19.107288360595703,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+17,"Wissensmarkt (HZA)
+Verlängerte Hertzallee
+10623 Berlin
+",Hamburg,0,0,0,1,0,0,4,3,1,1768605833.6223786,17.371965646743774,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+18,https://www.langenachtderwissenschaften.de/programm/detail/51348,Technische Universität Berlin,0,0,0,0,0,1,4,2,1,1768605874.587498,13.832446575164797,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+19,17:30-23:15 Uhr,20:30-21:15 Uhr,0,0,0,0,0,1,4,3,1,1768605926.7002988,18.657755374908447,0,0.5,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+20,"Das Open-Battery-Projekt bietet eine offene Transferplattform für Software- und Hardwarekomponenten, die um ein batteriegestütztes Photovoltaiksystem mit Netzanschluss angesiedelt sind. Dieser quelloffene Ansatz des Projekts ermöglicht es Privatpersonen, Vereinen, Communitys oder Unternehmen auf der ganzen Welt, an der Energiewende teilzunehmen und sie mitzugestalten. Aktuell befindet sich das Open-Battery-Projekt in der Entwicklungsphase. Hardware- und Softwarekomponenten werden zusammen mit Student:innen ausgelegt, aufgebaut und getestet.",Energiewende,0,0,0,0,0,1,4,2,1,1768605539.19709,22.785521030426025,0,0.038461538461538464,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+21,23:30-00:00 Uhr,19:30,0,0,0,0,0,1,2,3,1,1768605623.1282935,34.5529510974884,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+22,Studentisches Projekt „Automatisiertes Fahren“,Haus der Fahrzeugtechnik (TIB13),0,0,0,0,0,1,5,3,1,1768605725.2287903,37.20740628242493,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+23,Science Slam – Brainpower mit Entertainment-Faktor,Die ZDF-Hauptredaktion,0,0,0,1,0,0,4,2,1,1768605830.174373,25.30512547492981,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+24,Turbulentes Chaos: Wie können numerische Simulationen helfen?,The Tonight Show Starring Jimmy Fallon,0,0,1,0,0,0,6,3,2,1768605905.0612245,15.935119390487673,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+25,Science Slam – Brainpower mit Entertainment-Faktor,Late Night Bar,0,0,0,1,0,0,3,2,1,1768605955.9235303,12.59708833694458,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+26,Turbulentes Chaos: Wie können numerische Simulationen helfen?,Sesamstraße,0,0,0,1,0,0,3,2,1,1768606031.0268147,16.810535192489624,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+27,⚡ Blitztastisch! Die elektrisierende Energieshow für Kinder,,0,0,0,1,0,0,3,2,1,1768606102.2401123,15.329555988311768,0,0.0,1,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+28,Papier macht kreativ – Blumen basteln in der Gartenbaubibliothek,"Samstag, der 28.Juni 2025",0,0,0,0,0,1,4,2,1,1768606186.918918,20.946527004241943,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+29,Quantum Walks vs. Drunkard‘s Walk – wie Quantenteilchen schneller ans Ziel kommen,Seminar,0,0,0,1,0,0,6,3,1,1768606251.0692852,40.84426236152649,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+30,Lokfahren für Anfänger:innen,Einblicke in den modernen Bahnbetrieb,0,0,0,0,0,1,5,2,1,1768605603.4825468,27.475040435791016,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+31,Leseabenteuer im Zelt: altersgerechte Bücherwelten für kleine Entdecker:innen,Bingo,0,0,0,1,0,0,6,3,1,1768605694.6056504,26.05433416366577,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+32,Leseabenteuer im Zelt: altersgerechte Bücherwelten für kleine Entdecker:innen,Haus der Ökologie (AB-I),0,0,0,0,0,1,6,3,1,1768605796.0509036,38.73620533943176,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+33,Eine „Lesepfote“ zu Gast in der Bibliothek,Mitmachexperiment,0,0,0,0,0,1,5,3,1,1768605893.179901,35.323755502700806,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+34,Kopf trifft Körper: Teste deine Fitness und Motorik im TU-SportLab!,Sportwettkampf,0,0,0,1,0,0,3,2,1,1768605972.7303998,19.457433938980103,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+35,"Haus des Lernens (MAR)
+Marchstraße 23
+10587 Berlin
+Raum MAR 0.011 (EG)",Haus der Digitalisierung (RKF),0,0,0,0,0,1,6,3,1,1768606078.0677557,42.04849457740784,0,0.14285714285714288,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+36,Roboter im öffentlichen Raum: Mensch und Maschine mitten im Leben,Deutschland 83,0,0,0,1,0,0,2,2,1,1768606185.6754873,17.58102798461914,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+37,Tourismushistorischer Dia- und Filmabend,Tourismushistorischer Dia- und Filmabend,0,0,0,0,0,1,6,3,1,1768606269.0604167,35.51775765419006,1,1.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+38,5 Euro,,0,0,0,1,0,0,3,2,1,1768606355.978034,16.255213260650635,0,0.0,1,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+39,jedes Alter,2 bis 6 Jahre,0,0,0,1,0,0,3,2,1,1768606427.161884,16.929504871368408,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+40,Technische Universität Berlin,Lange Nacht der Wissenschaften e. V. (LNDW e. V.),0,0,0,0,0,1,3,1,1,1768605772.0587556,6.8842127323150635,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+41,Lange Nacht der Wissenschaften e. V. (LNDW e. V.),Lange Nacht der Wissenschaften e. V.,0,0,0,0,0,1,5,1,1,1768605815.3359125,5.397405385971069,0,0.7692307692307693,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+42,New Practice in Art and Technology / Workshops,keine spezifische Veranstaltung genannt,0,0,0,0,0,0,12,7,3,1768605925.8457325,62.857003927230835,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+43,Veranstaltung auf Englisch,Deutsch,0,0,0,1,0,0,3,2,1,1768606075.615517,13.538005113601685,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+44,Unterhaltsame Live-Show – Sport und Musik für Kopf und Körper,Abendkonzert,0,0,0,1,0,0,3,2,1,1768606163.877478,16.228338718414307,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+45,21:00-21:20 Uhr,2016,0,0,0,1,0,0,4,3,1,1768606253.6582158,31.37521171569824,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+46,Unterhaltsame Live-Show – Sport und Musik für Kopf und Körper,Live-Musik-Veranstaltung,0,0,0,0,0,1,5,2,1,1768606341.7986102,31.23274803161621,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+47,Historisch-ökologische Exkursion über den Steglitzer Fichtenberg,17:00-18:30 Uhr,0,0,0,0,0,1,10,6,2,1768606442.5330288,67.6306369304657,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+48,Als Eichhörnchen-Detektiv:innen auf den Spuren kleiner Persönlichkeiten der Natur,Nachhaltigkeit mit freien Lastenrädern gestalten und erleben,0,0,0,0,0,1,3,2,1,1768606602.740571,23.511010885238647,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+49,"Die verborgene Welt der Wurzeln: schätzen, messen, staunen","Karneval, Rosenmontagszug",0,0,0,1,0,0,3,2,1,1768606682.4991648,16.735755443572998,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+50,Zukunft der Energie: nachhaltig durch KI,KI-Kirche,0,0,0,1,0,0,3,2,1,1768605858.015478,33.79211902618408,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+51,über 1000,There are several events at LNDW.,0,0,0,1,0,0,3,2,1,1768605961.7355392,16.859565019607544,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+52,etwa 50,14,0,0,0,1,0,0,3,2,1,1768606051.573463,13.773394107818604,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+53,Science Slam – Brainpower mit Entertainment-Faktor,Science Slam – Brainpower mit Entertainment-Faktor,0,0,0,0,0,1,2,1,1,1768606125.1770666,6.619662761688232,1,1.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+54,Berlin,Berlin,0,0,0,0,0,1,5,1,1,1768606161.800561,7.068991661071777,1,1.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+55,FaSTTUBe – das elektrische Rennauto des Formula Student Team TU Berlin,Die Lange Nacht der Wissenschaften,0,0,0,0,0,1,4,2,1,1768606216.391288,20.731150150299072,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+56,Wie moderne Mobilfunknetze funktionieren – Identitätsmanagement in 6G-Netzwerken,Bletchley Park,0,0,0,0,0,1,4,3,1,1768606322.117567,53.441256284713745,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+57,"Die Lange Nacht der Wissenschaften in Berlin ist ein Gemeinschaftsprojekt wissenschaftlicher sowie wissenschaftsnaher Einrichtungen der Region und findet einmal jährlich statt. Veranstalter ist der Lange Nacht der Wissenschaften e. V. (LNDW e. V.), in dem sich wissenschaftliche Einrichtungen zusammengeschlossen haben. Finanziert wird die Lange Nacht der Wissenschaften weitgehend von den beteiligten wissenschaftlichen Einrichtungen selbst. Auch die Ticketeinnahmen werden vollständig für die Finanzierung der Gesamtveranstaltung verwendet. Die Lange Nacht der Wissenschaften wird von zahlreichen Partnern aus der Region unterstützt. Über den Einsatz der Mittel entscheidet die Mitgliederversammlung des LNDW e. V.",,0,0,0,1,0,0,3,2,1,1768606426.211939,19.110277891159058,0,0.0,1,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+58,"Haus der Ideen (H)
+Straße des 17. Juni 135
+10623 Berlin
+Wangari Maathai-Foyer (Foyer links, ehem. Cafébar, Bereich 0 H)",Haus der Ideen (H) Straße des 17. Juni 135,0,0,0,0,0,1,4,3,1,1768606520.5022924,35.75299668312073,0,0.56,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+59,17:30-23:20 Uhr,"17:30 Uhr, 23:20 Uhr",0,0,0,0,0,1,4,2,1,1768606606.2201035,19.55264401435852,0,0.3333333333333333,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+60,Barrierefreier Rollstuhlzugang,Barrierefreier Rollstuhlzugang,0,0,0,0,0,1,4,2,1,1768605917.8871586,19.33917498588562,1,1.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+61,Experiment,Technologie,0,0,0,1,0,0,6,3,1,1768606004.6930203,23.176114320755005,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+62,Demonstration,Veranstaltung,0,0,0,0,0,1,5,2,1,1768606082.5491614,21.522157192230225,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+63,Fluoreszierender Wärmeübertrager,Langen Nacht der Wissenschaften,0,0,0,1,0,0,3,2,1,1768606172.6777973,19.973719358444217,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+64,Technische Universität Berlin,Technische Universität Berlin,0,0,0,0,0,1,6,2,1,1768606250.79585,19.154718160629272,1,1.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+65,Technische Universität Berlin,Lange Nacht der Wissenschaften,0,0,0,0,0,1,3,1,1,1768606317.7297688,7.048671007156372,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+66,"Zentrum (u.a. Mitte, Wedding, Moabit, Tiergarten)",Berlin,0,0,0,0,0,1,3,2,1,1768606379.1232958,14.868964672088625,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+67,Mitmachexperiment,Mitmachexperiment,0,0,0,0,0,1,6,2,1,1768606440.9933212,18.47927165031433,1,1.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+68,Ausstellung,Diskussion,0,0,0,1,0,0,6,3,1,1768606516.4831877,29.10912585258484,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+69,Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management,Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management,0,0,0,0,0,1,3,1,1,1768606601.2706656,7.329308032989502,1,1.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+70,17:00-00:00 Uhr,00:00 Uhr,0,0,0,0,0,1,2,2,1,1768605985.3883052,8.9283287525177,0,0.5,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+71,Geeignet für Kinder,Kinder,0,0,0,0,0,1,5,2,1,1768606022.001464,12.185599327087402,0,0.5,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+72,17:00-17:15 Uhr,"Samstag, der 28. Juni 2025",0,0,0,0,0,1,4,2,1,1768606064.568015,12.160738945007324,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+73,"Im Fahrsimulator erleben fahrende Personen realitätsnahes Fahrverhalten mit Rundumsicht. Eine Fahrdynamiksimulation erzeugt das realistische Lenkgefühl, die aktive Pedalerie ermöglicht zum Beispiel das bekannte ABS-Ruckeln. Beim Bremsen und Beschleunigen nickt das Fahrzeug, in Kurven wankt es. Kenngrößen der Mensch-Fahrzeug-Interaktion und des Fahrzustands werden aufgezeichnet und ermöglichen eine Bewertung von Fahrfunktionen und Fahrleistung. So können sicherheitskritische Situationen und deren Beherrschbarkeit bis in den Grenzbereich erprobt und untersucht werden. Geeignet ab 15 Jahren.",Beschreibung,0,0,0,0,0,1,5,2,1,1768606114.6716192,20.56746220588684,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+74,21:45-22:00 Uhr,2022-12-31,0,0,0,0,0,1,6,2,1,1768606166.9710464,15.040010690689089,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+75,Demonstration,,0,0,0,1,0,0,6,3,1,1768606211.6124532,18.38744211196899,0,0.0,1,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+76,Barrierefreier Rollstuhlzugang,Online-Zugang,0,0,0,1,0,0,2,2,1,1768606258.7038305,11.831140518188477,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+77,17:00-22:00 Uhr,20:00-21:00 Uhr,0,0,0,0,0,1,5,3,1,1768606294.7509136,24.32863426208496,0,0.5,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+78,"Westen (u.a. Charlottenburg, Schöneberg, Spandau)",Charlottenburg,0,0,0,0,0,1,3,2,1,1768606342.0761392,7.200132846832275,0,0.33333333333333337,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+79,Mitmachexperiment,Mitmachexperiment,0,0,0,0,0,1,6,3,1,1768606372.043395,19.87463116645813,1,1.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+80,Geeignet für Kinder,jedes Alter,0,0,0,0,0,1,4,2,1,1768606023.4432683,17.085733652114868,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+81,Detektive im Heizungskeller: intelligente Messtechnik für die Wärmewende von „Delta Heat“,Bundesnetzagentur,0,0,0,1,0,0,3,2,1,1768606098.637684,14.79207181930542,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+82,Future Security Lab – Sicherheitsforschung zum Anfassen,Future Security Lab,0,0,0,0,0,1,5,2,1,1768606182.8028588,27.486436128616333,0,0.6,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+83,"Zentrum (u.a. Mitte, Wedding, Moabit, Tiergarten)",Haus der Digitalisierung (RKF) TU Berlin im Einstein Center Digital Future (ECDF)/Robert-Koch-Forum Wilhelmstraße 67,0,0,0,0,0,1,6,2,1,1768606261.7647753,26.296397924423218,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+84,17:00-00:00 Uhr,2025,0,0,0,0,0,1,5,2,1,1768606356.0425503,17.926969289779663,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+85,Geeignet für Kinder,Kinder,0,0,0,0,0,1,5,2,1,1768606421.913026,18.993834495544434,0,0.5,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+86,Installation,Installation,0,0,0,1,0,0,3,2,1,1768606500.6116872,15.78739881515503,1,1.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+87,Zukunft der Energie: nachhaltig durch KI,Haus der erlebbaren KI,0,0,0,0,0,1,5,2,1,1768606582.684012,25.798352003097538,0,0.25,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+88,Zukunft der Energie: nachhaltig durch KI,Zoll-Einheitskammer-Installation,0,0,0,1,0,0,3,2,1,1768606655.5851583,15.965692043304443,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+89,Future Security Lab – Sicherheitsforschung zum Anfassen,Berlin Hauptbahnhof,0,0,0,1,0,0,2,2,1,1768606737.0749235,13.331976652145386,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+90,Stich für Stich nachhaltig – Sticken fürs Klima,Textilwerkstatt des Haus des Lernens,0,0,0,0,0,1,2,2,1,1768606086.6342769,16.436801195144653,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+91,Notfallpfeife aus Aluminium – dein Signal in der Wildnis,Haus des Lernens,0,0,0,0,0,1,4,1,1,1768606139.194391,5.334887266159058,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+92,Mitmachexperiment,Veranstaltung,0,0,0,0,0,1,5,3,1,1768606182.7121809,32.64279580116272,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+93,17:30-21:30 Uhr,2025,0,0,0,0,0,1,4,2,1,1768606264.3405232,18.54847025871277,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+94,"Westen (u.a. Charlottenburg, Schöneberg, Spandau)",Westen,0,0,0,0,0,1,6,2,1,1768606323.6380894,19.759718894958496,0,0.33333333333333337,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+95,Spiel,Diskussion,0,0,0,1,0,0,6,3,1,1768606408.1744068,36.91969275474548,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+96,Geeignet für Kinder,jedes Alter,0,0,0,0,0,1,4,2,1,1768606498.492021,21.64391016960144,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+97,17:00-22:00 Uhr,,0,0,0,1,0,0,10,6,2,1768606646.0895586,75.82871270179749,0,0.0,1,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+98,Saturday SatelLight Fever – wofür braucht der Satellit Licht?,Kids Spacecraft Workshop – die Satellitenwerkstatt,0,0,0,0,0,1,6,3,1,1768606765.0665956,40.737529277801514,0,0.15384615384615385,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+99,Karriere und Jobs an der TU Berlin,Infostand,0,0,0,1,0,0,3,2,1,1768606875.9357758,17.3492112159729,0,0.0,0,formatog_noctx_d3_p3,1,llama3.1:8b,lndw25
+0,https://www.langenachtderwissenschaften.de/programm/detail/51327,https://www.physik.hu-berlin.de/de/veranstaltungen,0,0,0,0,0,0,0,1,0,1768605524.522269,8.139628648757935,0,0.0,0,cot,1,llama3.1:8b,lndw25
+1,"Im Kleinsten wird unsere Welt durch die Quantentheorie beschrieben, wie sie vor 100 Jahren formuliert wurde. Ihre Gesetze faszinieren heute nicht weniger als damals, denn sie widersprechen unserer Alltagserfahrung auf bizarre Weise: Teilchen können an verschiedenen Orten gleichzeitig sein sowie durch Barrieren „tunneln“. Und bei der Messung des einen Quantensystems verändert sich auch der Zustand eines anderen, wenn dieses mit dem ersten „verschränkt“ ist. Erkunden Sie die faszinierenden Eigenschaften der Quantenwelt mit Hilfe interaktiver Simulationen und Visualisierungen.",Langenacht der Wissenschaften,0,0,0,0,0,0,0,1,0,1768605571.466233,5.814915895462036,0,0.0,0,cot,1,llama3.1:8b,lndw25
+2,"Wie kann man Dinge zum Schweben bringen? Student:innen des Projektlabors Physik zeigen euch physikalische Zaubertricks, die Alltagsgegenstände schwerelos machen können. Auch lebendige Flüssigkeiten und optische Täuschungen laden zum Mitmachen und Anfassen ein. Geeignet für Kinder ab 6 Jahren.",Langen Nacht der Wissenschaften,0,0,0,0,0,0,0,1,0,1768605619.782706,5.17609977722168,0,0.0,0,cot,1,llama3.1:8b,lndw25
+3,Programmieren lernen für Kinder und Einsteiger:innen,Data Protection Summit,0,0,0,0,0,0,0,1,0,1768605662.355137,5.459373235702515,0,0.0,0,cot,1,llama3.1:8b,lndw25
+4,"Im Kleinsten wird unsere Welt durch die Quantentheorie beschrieben, wie sie vor 100 Jahren formuliert wurde. Ihre Gesetze faszinieren heute nicht weniger als damals, denn sie widersprechen unserer Alltagserfahrung auf bizarre Weise: Teilchen können an verschiedenen Orten gleichzeitig sein sowie durch Barrieren „tunneln“. Und bei der Messung des einen Quantensystems verändert sich auch der Zustand eines anderen, wenn dieses mit dem ersten „verschränkt“ ist. Erkunden Sie die faszinierenden Eigenschaften der Quantenwelt mit Hilfe interaktiver Simulationen und Visualisierungen.",Quantum Physik,0,0,0,0,0,0,0,1,0,1768605701.423166,3.931270122528076,0,0.0,0,cot,1,llama3.1:8b,lndw25
+5,https://www.langenachtderwissenschaften.de/programm/detail/51248,https://www.univie.ac.at/departments/science-slam,0,0,0,0,0,0,0,1,0,1768605728.6362774,5.337342262268066,0,0.0,0,cot,1,llama3.1:8b,lndw25
+6,"Unsere Forschungsgruppe baut Organoide, organähnliche Strukturen, aus humanen Stammzellen, um Tierexperimente in der Forschung zu reduzieren. Durch die Kombination von Organoiden simulieren wir in sogenannten Organ-Chips die komplexen Organ-Interaktionen des menschlichen Körpers. Wir erklären Konzept und Funktionsweise solcher Organ-Chips. Es werden Anwendungsgebiete in der Aufklärung pathologischer Prozesse und in der Medikamenten-Entwicklung zur Reduktion von Tierexperimenten dargestellt. Besucher:innen können Organ-Chips zusammenbauen und die magnetische Zellsortierung ausprobieren.",Alternativen zu Tierversuchen,0,0,0,0,0,0,0,1,0,1768605781.7727692,5.882068395614624,0,0.03278688524590164,0,cot,1,llama3.1:8b,lndw25
+7,https://www.langenachtderwissenschaften.de/programm/detail/51514,https://fsttueberlin.de/,0,0,0,0,0,0,0,1,0,1768605836.588262,6.312799453735352,0,0.0,0,cot,1,llama3.1:8b,lndw25
+8,"Gestalte Straßen, Radwege, Brücken und mehr mit Klemmbausteinen, und lerne spielerisch, wie moderne Verkehrsplanung funktioniert. Ihr lernt die Funktionen von Straßen kennen, die passenden Verkehrsmittel, um verschiedene Orte zu erreichen, sowie ein Konzept, wie Verkehr nachhaltiger werden kann. Für Kinder ab 6 Jahren und Erwachsene – für alle Altersgruppen ist etwas dabei! Jeder Gast erhält Bausteine, um unsere Stadt wachsen zu lassen. Komm vorbei, und werde Verkehrsplaner:in für einen Abend!",SimCity von Electronic Arts,0,0,0,0,0,0,0,1,0,1768605889.4923594,3.813401460647583,0,0.028571428571428574,0,cot,1,llama3.1:8b,lndw25
+9,"Testen Sie Ihr Wissen über das Universum, und gewinnen Sie kleine Preise – solange der Vorrat reicht! Geeignet ab 6 Jahren.",Astronomie,0,0,0,0,0,0,0,1,0,1768605934.273049,5.105355978012085,0,0.0,0,cot,1,llama3.1:8b,lndw25
+10,Chatbots zur Stärkung der Demokratie,Schuljungfernball,0,0,0,0,0,0,0,1,0,1768605547.4125242,5.907878398895264,0,0.0,0,cot,1,llama3.1:8b,lndw25
+11,Live-Musik,Workshop,0,0,0,0,0,0,0,1,0,1768605595.776265,7.057263374328613,0,0.0,0,cot,1,llama3.1:8b,lndw25
+12,17:00-21:30 Uhr,keine genauen Informationen vorhanden,0,0,0,0,0,0,0,1,0,1768605657.2021277,5.0313334465026855,0,0.0,0,cot,1,llama3.1:8b,lndw25
+13,https://www.langenachtderwissenschaften.de/programm/detail/51498,,0,0,0,0,0,0,0,1,0,1768605689.6750576,6.925045013427734,0,0.0,1,cot,1,llama3.1:8b,lndw25
+14,25,Deutscher Physikertag,0,0,0,0,0,0,0,1,0,1768605728.7882457,5.4768548011779785,0,0.0,0,cot,1,llama3.1:8b,lndw25
+15,https://www.langenachtderwissenschaften.de/programm/detail/51151,https://www.astro.uni-bonn.de/~pbj/Events.html,0,0,0,0,0,0,0,1,0,1768605750.9980676,7.456141471862793,0,0.0,0,cot,1,llama3.1:8b,lndw25
+16,Juri Mertens,Sascha Wiesenthal,0,0,0,0,0,0,0,1,0,1768605803.8454983,6.517679929733276,0,0.0,0,cot,1,llama3.1:8b,lndw25
+17,"Wissensmarkt (HZA)
+Verlängerte Hertzallee
+10623 Berlin
+",Universität Hamburg,0,0,0,0,0,0,0,1,0,1768605855.533383,5.107469320297241,0,0.0,0,cot,1,llama3.1:8b,lndw25
+18,https://www.langenachtderwissenschaften.de/programm/detail/51348,www.bayern3.de,0,0,0,0,0,0,0,1,0,1768605899.971885,5.178247928619385,0,0.0,0,cot,1,llama3.1:8b,lndw25
+19,17:30-23:15 Uhr,,0,0,0,0,0,0,0,1,0,1768605948.8851104,4.626316547393799,0,0.0,1,cot,1,llama3.1:8b,lndw25
+20,"Das Open-Battery-Projekt bietet eine offene Transferplattform für Software- und Hardwarekomponenten, die um ein batteriegestütztes Photovoltaiksystem mit Netzanschluss angesiedelt sind. Dieser quelloffene Ansatz des Projekts ermöglicht es Privatpersonen, Vereinen, Communitys oder Unternehmen auf der ganzen Welt, an der Energiewende teilzunehmen und sie mitzugestalten. Aktuell befindet sich das Open-Battery-Projekt in der Entwicklungsphase. Hardware- und Softwarekomponenten werden zusammen mit Student:innen ausgelegt, aufgebaut und getestet.",Open Source Hardware Plattform fuer Energiespeicher,0,0,0,0,0,0,0,1,0,1768605580.107019,8.242530822753906,0,0.03508771929824561,0,cot,1,llama3.1:8b,lndw25
+21,23:30-00:00 Uhr,19:00 Uhr,0,0,0,0,0,0,0,1,0,1768605674.7192423,6.232815742492676,0,0.5,0,cot,1,llama3.1:8b,lndw25
+22,Studentisches Projekt „Automatisiertes Fahren“,eMove 360° Europe,0,0,0,0,0,0,0,1,0,1768605788.272569,11.178054094314575,0,0.0,0,cot,1,llama3.1:8b,lndw25
+23,Science Slam – Brainpower mit Entertainment-Faktor,Kantine,0,0,0,0,0,0,0,1,0,1768605870.2040658,6.2286598682403564,0,0.0,0,cot,1,llama3.1:8b,lndw25
+24,Turbulentes Chaos: Wie können numerische Simulationen helfen?,Sesame Street: Elmo's World,0,0,0,0,0,0,0,1,0,1768605927.1836538,6.811620473861694,0,0.0,0,cot,1,llama3.1:8b,lndw25
+25,Science Slam – Brainpower mit Entertainment-Faktor,Late Night Bites,0,0,0,0,0,0,0,1,0,1768606009.911915,7.560540199279785,0,0.0,0,cot,1,llama3.1:8b,lndw25
+26,Turbulentes Chaos: Wie können numerische Simulationen helfen?,,0,0,0,0,0,0,0,1,0,1768606074.4644892,10.785908699035645,0,0.0,1,cot,1,llama3.1:8b,lndw25
+27,⚡ Blitztastisch! Die elektrisierende Energieshow für Kinder,Vorträge,0,0,0,0,0,0,0,1,0,1768606156.167309,6.717868804931641,0,0.0,0,cot,1,llama3.1:8b,lndw25
+28,Papier macht kreativ – Blumen basteln in der Gartenbaubibliothek,,0,0,0,0,0,0,0,1,0,1768606221.9507787,6.548983812332153,0,0.0,1,cot,1,llama3.1:8b,lndw25
+29,Quantum Walks vs. Drunkard‘s Walk – wie Quantenteilchen schneller ans Ziel kommen,,0,0,0,0,0,0,0,1,0,1768606315.750798,9.00638222694397,0,0.0,1,cot,1,llama3.1:8b,lndw25
+30,Lokfahren für Anfänger:innen,Deutsches Bahnhof,0,0,0,0,0,0,0,1,0,1768605651.001247,6.867421388626099,0,0.0,0,cot,1,llama3.1:8b,lndw25
+31,Leseabenteuer im Zelt: altersgerechte Bücherwelten für kleine Entdecker:innen,Schafskopf,0,0,0,0,0,0,0,1,0,1768605765.7567365,7.670676231384277,0,0.0,0,cot,1,llama3.1:8b,lndw25
+32,Leseabenteuer im Zelt: altersgerechte Bücherwelten für kleine Entdecker:innen,Einzelsprachenseminar Spanisch,0,0,0,0,0,0,0,1,0,1768605868.9237356,9.01038670539856,0,0.0,0,cot,1,llama3.1:8b,lndw25
+33,Eine „Lesepfote“ zu Gast in der Bibliothek,Das Buch,0,0,0,0,0,0,0,1,0,1768605947.8118117,4.669253349304199,0,0.0,0,cot,1,llama3.1:8b,lndw25
+34,Kopf trifft Körper: Teste deine Fitness und Motorik im TU-SportLab!,Spiel,0,0,0,0,0,0,0,1,0,1768606031.1603312,8.236304998397827,0,0.0,0,cot,1,llama3.1:8b,lndw25
+35,"Haus des Lernens (MAR)
+Marchstraße 23
+10587 Berlin
+Raum MAR 0.011 (EG)",Haus der Freien Wirtschaft,0,0,0,0,0,0,0,1,0,1768606144.018176,6.282345294952393,0,0.14285714285714288,0,cot,1,llama3.1:8b,lndw25
+36,Roboter im öffentlichen Raum: Mensch und Maschine mitten im Leben,Die Diskussion über die Zukunft des Kinos,0,0,0,0,0,0,0,1,0,1768606224.9392798,9.00485348701477,0,0.0,0,cot,1,llama3.1:8b,lndw25
+37,Tourismushistorischer Dia- und Filmabend,Die Aufführungen im Theater,0,0,0,0,0,0,0,1,0,1768606329.0281496,5.939781427383423,0,0.0,0,cot,1,llama3.1:8b,lndw25
+38,5 Euro,,0,0,0,0,0,0,0,1,0,1768606399.6658733,9.17049789428711,0,0.0,1,cot,1,llama3.1:8b,lndw25
+39,jedes Alter,3-4 Jahre,0,0,0,0,0,0,0,1,0,1768606477.5536366,8.482268810272217,0,0.0,0,cot,1,llama3.1:8b,lndw25
+40,Technische Universität Berlin,Bundeswehr,0,0,0,0,0,0,0,1,0,1768605794.4391785,6.487932920455933,0,0.0,0,cot,1,llama3.1:8b,lndw25
+41,Lange Nacht der Wissenschaften e. V. (LNDW e. V.),Gemeinde Neustadt an der Waldnaab,0,0,0,0,0,0,0,1,0,1768605836.0334654,6.590483903884888,0,0.0,0,cot,1,llama3.1:8b,lndw25
+42,New Practice in Art and Technology / Workshops,Keine Information verfügbar,0,0,0,0,0,0,0,1,0,1768606014.0206833,7.209902048110962,0,0.0,0,cot,1,llama3.1:8b,lndw25
+43,Veranstaltung auf Englisch,Deutsch,0,0,0,0,0,0,0,1,0,1768606125.1224062,7.097128868103027,0,0.0,0,cot,1,llama3.1:8b,lndw25
+44,Unterhaltsame Live-Show – Sport und Musik für Kopf und Körper,Rock am Ring,0,0,0,0,0,0,0,1,0,1768606209.726547,6.345468044281006,0,0.0,0,cot,1,llama3.1:8b,lndw25
+45,21:00-21:20 Uhr,2014,0,0,0,0,0,0,0,1,0,1768606304.3315449,5.858805894851685,0,0.0,0,cot,1,llama3.1:8b,lndw25
+46,Unterhaltsame Live-Show – Sport und Musik für Kopf und Körper,,0,0,0,0,0,0,0,1,0,1768606399.376902,7.89709997177124,0,0.0,1,cot,1,llama3.1:8b,lndw25
+47,Historisch-ökologische Exkursion über den Steglitzer Fichtenberg,,0,0,0,0,0,0,0,1,0,1768606533.371147,6.421850204467773,0,0.0,1,cot,1,llama3.1:8b,lndw25
+48,Als Eichhörnchen-Detektiv:innen auf den Spuren kleiner Persönlichkeiten der Natur,Bahnhofsvorplatz,0,0,0,0,0,0,0,1,0,1768606638.5627234,6.66737961769104,0,0.0,0,cot,1,llama3.1:8b,lndw25
+49,"Die verborgene Welt der Wurzeln: schätzen, messen, staunen","Bodensee-Festival, Freiburger Herbst, Ruhrtriennale",0,0,0,0,0,0,0,1,0,1768606734.133834,10.917872190475464,0,0.0,0,cot,1,llama3.1:8b,lndw25
+50,Zukunft der Energie: nachhaltig durch KI,Deutscher Roboter-Cup,0,0,0,0,0,0,0,1,0,1768605934.8863297,9.567213535308838,0,0.0,0,cot,1,llama3.1:8b,lndw25
+51,über 1000,"Yeah, sie haben mehrere",0,0,0,0,0,0,0,1,0,1768606020.0170183,10.633036136627195,0,0.0,0,cot,1,llama3.1:8b,lndw25
+52,etwa 50,Wenige,0,0,0,0,0,0,0,1,0,1768606106.265425,9.283981084823608,0,0.0,0,cot,1,llama3.1:8b,lndw25
+53,Science Slam – Brainpower mit Entertainment-Faktor,StarTalk mit Neil deGrasse Tyson,0,0,0,0,0,0,0,1,0,1768606143.637436,7.840259552001953,0,0.1818181818181818,0,cot,1,llama3.1:8b,lndw25
+54,Berlin,Niedersachsen,0,0,0,0,0,0,0,1,0,1768606187.0914233,8.444538354873657,0,0.0,0,cot,1,llama3.1:8b,lndw25
+55,FaSTTUBe – das elektrische Rennauto des Formula Student Team TU Berlin,Formel 1,0,0,0,0,0,0,0,1,0,1768606246.619681,4.477096796035767,0,0.0,0,cot,1,llama3.1:8b,lndw25
+56,Wie moderne Mobilfunknetze funktionieren – Identitätsmanagement in 6G-Netzwerken,Hackathon,0,0,0,0,0,0,0,1,0,1768606395.3124824,6.850896596908569,0,0.0,0,cot,1,llama3.1:8b,lndw25
+57,"Die Lange Nacht der Wissenschaften in Berlin ist ein Gemeinschaftsprojekt wissenschaftlicher sowie wissenschaftsnaher Einrichtungen der Region und findet einmal jährlich statt. Veranstalter ist der Lange Nacht der Wissenschaften e. V. (LNDW e. V.), in dem sich wissenschaftliche Einrichtungen zusammengeschlossen haben. Finanziert wird die Lange Nacht der Wissenschaften weitgehend von den beteiligten wissenschaftlichen Einrichtungen selbst. Auch die Ticketeinnahmen werden vollständig für die Finanzierung der Gesamtveranstaltung verwendet. Die Lange Nacht der Wissenschaften wird von zahlreichen Partnern aus der Region unterstützt. Über den Einsatz der Mittel entscheidet die Mitgliederversammlung des LNDW e. V.",,0,0,0,0,0,0,0,1,0,1768606492.098042,8.229784488677979,0,0.0,1,cot,1,llama3.1:8b,lndw25
+58,"Haus der Ideen (H)
+Straße des 17. Juni 135
+10623 Berlin
+Wangari Maathai-Foyer (Foyer links, ehem. Cafébar, Bereich 0 H)",Universität Bielefeld,0,0,0,0,0,0,0,1,0,1768606574.836795,8.819748878479004,0,0.0,0,cot,1,llama3.1:8b,lndw25
+59,17:30-23:20 Uhr,17. September 2022 bis 27. November 2022,0,0,0,0,0,0,0,1,0,1768606641.8882313,8.846566438674927,0,0.0,0,cot,1,llama3.1:8b,lndw25
+60,Barrierefreier Rollstuhlzugang,optischer,0,0,0,0,0,0,0,1,0,1768605953.4336984,7.27272891998291,0,0.0,0,cot,1,llama3.1:8b,lndw25
+61,Experiment,Wärmepumpe,0,0,0,0,0,0,0,1,0,1768606052.8735898,8.946774244308472,0,0.0,0,cot,1,llama3.1:8b,lndw25
+62,Demonstration,Sensorelement,0,0,0,0,0,0,0,1,0,1768606126.023446,8.801719665527344,0,0.0,0,cot,1,llama3.1:8b,lndw25
+63,Fluoreszierender Wärmeübertrager,Langen Nacht der Wissenschaften,0,0,0,0,0,0,0,1,0,1768606223.752041,8.63560938835144,0,0.0,0,cot,1,llama3.1:8b,lndw25
+64,Technische Universität Berlin,Deutsches Zentrum für Luft- und Raumfahrt,0,0,0,0,0,0,0,1,0,1768606297.871139,9.658963441848757,0,0.0,0,cot,1,llama3.1:8b,lndw25
+65,Technische Universität Berlin,Landesinstitut für Nachhaltiges Wirtschaften (LNI),0,0,0,0,0,0,0,1,0,1768606332.7874784,7.360564470291138,0,0.0,0,cot,1,llama3.1:8b,lndw25
+66,"Zentrum (u.a. Mitte, Wedding, Moabit, Tiergarten)",in einem Wissensmanagement-System,0,0,0,0,0,0,0,1,0,1768606414.1385112,5.211559534072876,0,0.0,0,cot,1,llama3.1:8b,lndw25
+67,Mitmachexperiment,Film,0,0,0,0,0,0,0,1,0,1768606490.6813972,6.929810523986816,0,0.0,0,cot,1,llama3.1:8b,lndw25
+68,Ausstellung,Diskussion,0,0,0,0,0,0,0,1,0,1768606573.841703,8.573083639144897,0,0.0,0,cot,1,llama3.1:8b,lndw25
+69,Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management,Open-Science-Veranstaltung,0,0,0,0,0,0,0,1,0,1768606630.514369,8.916459083557129,0,0.0,0,cot,1,llama3.1:8b,lndw25
+70,17:00-00:00 Uhr,,0,0,0,0,0,0,0,1,0,1768605998.8200872,5.01308798789978,0,0.0,1,cot,1,llama3.1:8b,lndw25
+71,Geeignet für Kinder,"Forschungsinstitutionen, Universitäten und Forschende",0,0,0,0,0,0,0,1,0,1768606044.5919492,4.378369331359863,0,0.0,0,cot,1,llama3.1:8b,lndw25
+72,17:00-17:15 Uhr,9. Oktober 2022,0,0,0,0,0,0,0,1,0,1768606083.928976,4.730910539627075,0,0.0,0,cot,1,llama3.1:8b,lndw25
+73,"Im Fahrsimulator erleben fahrende Personen realitätsnahes Fahrverhalten mit Rundumsicht. Eine Fahrdynamiksimulation erzeugt das realistische Lenkgefühl, die aktive Pedalerie ermöglicht zum Beispiel das bekannte ABS-Ruckeln. Beim Bremsen und Beschleunigen nickt das Fahrzeug, in Kurven wankt es. Kenngrößen der Mensch-Fahrzeug-Interaktion und des Fahrzustands werden aufgezeichnet und ermöglichen eine Bewertung von Fahrfunktionen und Fahrleistung. So können sicherheitskritische Situationen und deren Beherrschbarkeit bis in den Grenzbereich erprobt und untersucht werden. Geeignet ab 15 Jahren.",Virtual Reality,0,0,0,0,0,0,0,1,0,1768606145.046889,7.185582160949707,0,0.0,0,cot,1,llama3.1:8b,lndw25
+74,21:45-22:00 Uhr,,0,0,0,0,0,0,0,1,0,1768606191.5063577,6.134800910949707,0,0.0,1,cot,1,llama3.1:8b,lndw25
+75,Demonstration,Demonstration,0,0,0,0,0,0,0,1,0,1768606240.1736753,5.680962324142456,1,1.0,0,cot,1,llama3.1:8b,lndw25
+76,Barrierefreier Rollstuhlzugang,Online,0,0,0,0,0,0,0,1,0,1768606279.5351777,3.9629993438720703,0,0.0,0,cot,1,llama3.1:8b,lndw25
+77,17:00-22:00 Uhr,Freitags 12:00-15:30 Uhr,0,0,0,0,0,0,0,1,0,1768606326.9627986,5.515343904495239,0,0.4,0,cot,1,llama3.1:8b,lndw25
+78,"Westen (u.a. Charlottenburg, Schöneberg, Spandau)",Bezirk 5,0,0,0,0,0,0,0,1,0,1768606355.4521198,5.8507750034332275,0,0.0,0,cot,1,llama3.1:8b,lndw25
+79,Mitmachexperiment,Festival,0,0,0,0,0,0,0,1,0,1768606403.7744431,4.656811475753784,0,0.0,0,cot,1,llama3.1:8b,lndw25
+80,Geeignet für Kinder,Führungskräfte und Unternehmensentwickler,0,0,0,0,0,0,0,1,0,1768606073.1266286,7.108081340789795,0,0.0,0,cot,1,llama3.1:8b,lndw25
+81,Detektive im Heizungskeller: intelligente Messtechnik für die Wärmewende von „Delta Heat“,Haus der Energie,0,0,0,0,0,0,0,1,0,1768606145.6720376,7.304531574249268,0,0.0,0,cot,1,llama3.1:8b,lndw25
+82,Future Security Lab – Sicherheitsforschung zum Anfassen,"Event ist nicht klar definiert, es könnte sich um das Future Security Lab handeln.",0,0,0,0,0,0,0,1,0,1768606235.767001,9.599486112594604,0,0.3,0,cot,1,llama3.1:8b,lndw25
+83,"Zentrum (u.a. Mitte, Wedding, Moabit, Tiergarten)",Bundeswehr University Munich,0,0,0,0,0,0,0,1,0,1768606327.1669896,5.9423744678497314,0,0.0,0,cot,1,llama3.1:8b,lndw25
+84,17:00-00:00 Uhr,2023-11-01 bis 2023-11-03,0,0,0,0,0,0,0,1,0,1768606394.088445,7.119356393814087,0,0.0,0,cot,1,llama3.1:8b,lndw25
+85,Geeignet für Kinder,,0,0,0,0,0,0,0,1,0,1768606468.3269572,8.13060474395752,0,0.0,1,cot,1,llama3.1:8b,lndw25
+86,Installation,Installation,0,0,0,0,0,0,0,1,0,1768606548.8485909,7.407516241073608,1,1.0,0,cot,1,llama3.1:8b,lndw25
+87,Zukunft der Energie: nachhaltig durch KI,Roboterzentrum,0,0,0,0,0,0,0,1,0,1768606628.74701,7.774477958679199,0,0.0,0,cot,1,llama3.1:8b,lndw25
+88,Zukunft der Energie: nachhaltig durch KI,Zitadelle von Akershus,0,0,0,0,0,0,0,1,0,1768606714.1862707,6.218296051025391,0,0.0,0,cot,1,llama3.1:8b,lndw25
+89,Future Security Lab – Sicherheitsforschung zum Anfassen,Brandenburger Tor,0,0,0,0,0,0,0,1,0,1768606776.0164928,6.026018857955933,0,0.0,0,cot,1,llama3.1:8b,lndw25
+90,Stich für Stich nachhaltig – Sticken fürs Klima,FiberDays,0,0,0,0,0,0,0,1,0,1768606118.5224805,7.204285144805908,0,0.0,0,cot,1,llama3.1:8b,lndw25
+91,Notfallpfeife aus Aluminium – dein Signal in der Wildnis,Die Veranstaltung ist nicht spezifiziert,0,0,0,0,0,0,0,1,0,1768606156.687081,6.787611484527588,0,0.0,0,cot,1,llama3.1:8b,lndw25
+92,Mitmachexperiment,Echter Notfallobjekt,0,0,0,0,0,0,0,1,0,1768606235.1097386,7.079228162765503,0,0.0,0,cot,1,llama3.1:8b,lndw25
+93,17:30-21:30 Uhr,11. Juni 2023,0,0,0,0,0,0,0,1,0,1768606296.3576002,9.615859031677246,0,0.0,0,cot,1,llama3.1:8b,lndw25
+94,"Westen (u.a. Charlottenburg, Schöneberg, Spandau)",West,0,0,0,0,0,0,0,1,0,1768606372.3855,5.935475587844849,0,0.0,0,cot,1,llama3.1:8b,lndw25
+95,Spiel,Diskussion,0,0,0,0,0,0,0,1,0,1768606471.637863,7.123955249786377,0,0.0,0,cot,1,llama3.1:8b,lndw25
+96,Geeignet für Kinder,Lernende mit grundlegender Vorbereitung in Deutsch,0,0,0,0,0,0,0,1,0,1768606532.9557848,8.918577432632446,0,0.0,0,cot,1,llama3.1:8b,lndw25
+97,17:00-22:00 Uhr,,0,0,0,0,0,0,0,1,0,1768606734.9215808,6.944351434707642,0,0.0,1,cot,1,llama3.1:8b,lndw25
+98,Saturday SatelLight Fever – wofür braucht der Satellit Licht?,The astronaut ice cream mitmachen im Deutschen Museum,0,0,0,0,0,0,0,1,0,1768606832.613458,10.954437732696531,0,0.0,0,cot,1,llama3.1:8b,lndw25
+99,Karriere und Jobs an der TU Berlin,Der Stand der Stadtentwicklung,0,0,0,0,0,0,0,1,0,1768606919.464544,8.46876335144043,0,0.0,0,cot,1,llama3.1:8b,lndw25
+0,https://www.langenachtderwissenschaften.de/programm/detail/51327,"Die genauen Informationen über die spezifische URL für die Veranstaltung an dieser Adresse können je nach Organisation oder System variieren. Es gibt jedoch einige gängige Möglichkeiten, wie man solche Informationen finden kann:
+
+1. **Veranstaltungswebsite**: Die meisten Veranstaltungen haben ihre eigene Website, auf der oft alle nützlichen Informationen, einschließlich der Zugangs- oder Anmeldedetails, bereitgestellt werden.
+2. **Systeme für Veranstaltungsbuchungen**: Viele Universitäten und Organisationen nutzen Systeme wie MyCampus, SISO oder ähnliche, über die man sich anmelden kann, um an Veranstaltungen teilzunehmen.
+3. **E-Mail von der Organisation**: Es ist möglich, dass Sie direkt von der Organisation kontaktiert wurden, um sich anzumelden und Details zu erhalten.
+
+Um die genaue URL für eine spezifische Veranstaltung an dieser Adresse zu finden, empfehle ich Ihnen, direkt mit dem verantwortlichen Team oder der Veranstaltungsorganisation in Kontakt zu treten. 
+
+Sie können auch nachsehen, ob die Universität oder Organisation ein zentrales System für Veranstaltungen nutzt und auf ihrer Website eine Liste aller laufenden Veranstaltungen bereitstellt.
+
+Ohne weitere Informationen kann ich keine spezifische URL angeben.",0,0,0,0,0,0,0,1,0,1768605532.8876867,3.5206291675567627,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+1,"Im Kleinsten wird unsere Welt durch die Quantentheorie beschrieben, wie sie vor 100 Jahren formuliert wurde. Ihre Gesetze faszinieren heute nicht weniger als damals, denn sie widersprechen unserer Alltagserfahrung auf bizarre Weise: Teilchen können an verschiedenen Orten gleichzeitig sein sowie durch Barrieren „tunneln“. Und bei der Messung des einen Quantensystems verändert sich auch der Zustand eines anderen, wenn dieses mit dem ersten „verschränkt“ ist. Erkunden Sie die faszinierenden Eigenschaften der Quantenwelt mit Hilfe interaktiver Simulationen und Visualisierungen.","Die Veranstaltung, die im Programm von der Langen Nacht der Wissenschaften unter der ID 51450 aufgeführt ist, hat den Titel ""Wie funktioniert ein Quantencomputer?"".",0,0,0,0,0,0,0,1,0,1768605577.3852887,1.3212502002716064,0,0.07142857142857144,0,io_simple,1,llama3.1:8b,lndw25
+2,"Wie kann man Dinge zum Schweben bringen? Student:innen des Projektlabors Physik zeigen euch physikalische Zaubertricks, die Alltagsgegenstände schwerelos machen können. Auch lebendige Flüssigkeiten und optische Täuschungen laden zum Mitmachen und Anfassen ein. Geeignet für Kinder ab 6 Jahren.","Die Veranstaltung bezieht sich auf die Langen Nacht der Wissenschaften in München. Die genaue Beschreibung ist jedoch nicht eindeutig verfügbar, ohne den Inhalt der angegebenen URL zu analysieren. Es könnte eine Vortragsveranstaltung oder ein Experiment sein.",0,0,0,0,0,0,0,1,0,1768605625.0592673,1.5294668674468994,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+3,Programmieren lernen für Kinder und Einsteiger:innen,"""Die Veranstaltung 'Datenschutz und Cybersicherheit' hat die gleiche Kategorie wie die Privatsphäre-im-Internet-Veranstaltung.""",0,0,0,0,0,0,0,1,0,1768605667.9055312,1.2489547729492188,0,0.13333333333333333,0,io_simple,1,llama3.1:8b,lndw25
+4,"Im Kleinsten wird unsere Welt durch die Quantentheorie beschrieben, wie sie vor 100 Jahren formuliert wurde. Ihre Gesetze faszinieren heute nicht weniger als damals, denn sie widersprechen unserer Alltagserfahrung auf bizarre Weise: Teilchen können an verschiedenen Orten gleichzeitig sein sowie durch Barrieren „tunneln“. Und bei der Messung des einen Quantensystems verändert sich auch der Zustand eines anderen, wenn dieses mit dem ersten „verschränkt“ ist. Erkunden Sie die faszinierenden Eigenschaften der Quantenwelt mit Hilfe interaktiver Simulationen und Visualisierungen.","Es geht um eine Veranstaltung, bei der Interaktionen mit quantenphysikalischen Simulationen ermöglicht werden sollen.",0,0,0,0,0,0,0,1,0,1768605705.4709146,1.1388800144195557,0,0.07594936708860758,0,io_simple,1,llama3.1:8b,lndw25
+5,https://www.langenachtderwissenschaften.de/programm/detail/51248,https://www.science-slam.de/,0,0,0,0,0,0,0,1,0,1768605734.0930865,0.9419937133789062,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+6,"Unsere Forschungsgruppe baut Organoide, organähnliche Strukturen, aus humanen Stammzellen, um Tierexperimente in der Forschung zu reduzieren. Durch die Kombination von Organoiden simulieren wir in sogenannten Organ-Chips die komplexen Organ-Interaktionen des menschlichen Körpers. Wir erklären Konzept und Funktionsweise solcher Organ-Chips. Es werden Anwendungsgebiete in der Aufklärung pathologischer Prozesse und in der Medikamenten-Entwicklung zur Reduktion von Tierexperimenten dargestellt. Besucher:innen können Organ-Chips zusammenbauen und die magnetische Zellsortierung ausprobieren.","Das Thema der Veranstaltung lautet ""Tierversuche"" oder besser ""Alternativen zu Tierversuchen"".",0,0,0,0,0,0,0,1,0,1768605787.7154546,1.0922377109527588,0,0.029850746268656716,0,io_simple,1,llama3.1:8b,lndw25
+7,https://www.langenachtderwissenschaften.de/programm/detail/51514,https://www.fsttuebingen.de/,0,0,0,0,0,0,0,1,0,1768605842.9688702,1.0063576698303225,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+8,"Gestalte Straßen, Radwege, Brücken und mehr mit Klemmbausteinen, und lerne spielerisch, wie moderne Verkehrsplanung funktioniert. Ihr lernt die Funktionen von Straßen kennen, die passenden Verkehrsmittel, um verschiedene Orte zu erreichen, sowie ein Konzept, wie Verkehr nachhaltiger werden kann. Für Kinder ab 6 Jahren und Erwachsene – für alle Altersgruppen ist etwas dabei! Jeder Gast erhält Bausteine, um unsere Stadt wachsen zu lassen. Komm vorbei, und werde Verkehrsplaner:in für einen Abend!","Die Frage nach VW SimCity scheint ein bisschen verwirrend zu sein. Ich denke, du meinst vielleicht Sims City oder Cities: Skylines von Colossal Order, eine Stadtbausimulation. Allerdings gibt es auch ein Spiel namens ""SimCity"" von EA, aber ich bin nicht sicher, ob diese Frage nach diesem speziellen Spiel steht.
+
+Ich werde mich bemühen, eine Antwort zu geben, aber bitte korrigiere mich, wenn ich falsch bin!
+
+Die Antwort ist: Cities: Skylines",0,0,0,0,0,0,0,1,0,1768605893.420691,1.937220811843872,0,0.07692307692307693,0,io_simple,1,llama3.1:8b,lndw25
+9,"Testen Sie Ihr Wissen über das Universum, und gewinnen Sie kleine Preise – solange der Vorrat reicht! Geeignet ab 6 Jahren.",Astronomie,0,0,0,0,0,0,0,1,0,1768605939.4793012,0.9272592067718506,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+10,Chatbots zur Stärkung der Demokratie,"Die ""Aktion Mensch""-Veranstaltung.",0,0,0,0,0,0,0,1,0,1768605553.4791124,1.0747342109680176,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+11,Live-Musik,"Die Veranstaltung heißt ""Kreiere deinen Song im Musik-Makerspace „m3“"" und es handelt sich dabei um eine Art Workshops oder Einmaleins, um eigene Musik zu kreieren.",0,0,0,0,0,0,0,1,0,1768605602.903838,1.3440666198730469,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+12,17:00-21:30 Uhr,"Ich konnte keine spezifischen Informationen zu den „Küchentagebüchern“ finden, insbesondere nicht zu einem Ereignis mit diesem Titel. Wenn Sie nach allgemeinen Tipps zum Thema Lebensmittelverschwendung suchen, kann ich Ihnen gerne Informationen anbieten.",0,0,0,0,0,0,0,1,0,1768605662.3017392,1.5468971729278564,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+13,https://www.langenachtderwissenschaften.de/programm/detail/51498,"Die URL der Veranstaltung ist nicht bekannt. Es wäre hilfreich, wenn Sie mir mehr über die Veranstaltung oder den Veranstalter geben würden, um eine genaue Antwort zu finden. Ich kann Ihnen jedoch sagen, dass Sie sich auch bei Google nach der Veranstaltungsbeschreibung und der URL erkundigen können.",0,0,0,0,0,0,0,1,0,1768605696.712964,1.5914747714996338,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+14,25,"Die Veranstaltung ist das ""Wissenschaftsjahr 2005"".",0,0,0,0,0,0,0,1,0,1768605734.371864,1.050915241241455,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+15,https://www.langenachtderwissenschaften.de/programm/detail/51151,"Die genaue URL zur Veranstaltung kann je nach Anbieter und System variieren. Allerdings ist eine der bekanntesten Möglichkeiten, sich um Events und deren Details zu informieren, das offizielle Portal der Technischen Universität Berlin (TU Berlin). 
+
+Hier könnten Sie sich über die aktuell verfügbaren Informationen zu Veranstaltungen in Raum F 032 informieren: https://www.tu-berlin.de/de/service/veranstaltungshinweis/
+
+Bitte beachten Sie, dass diese URL spezifisch für die TU Berlin ist und je nach Universität oder Einrichtung, an der die Veranstaltung stattfindet, sich die Angaben ändern können.",0,0,0,0,0,0,0,1,0,1768605758.5734684,2.2599494457244873,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+16,Juri Mertens,"Die Kontaktperson für die Medien für die Veranstaltung, zu der auch die Veranstaltung ""Geheime Orte der Universitätsbibliothek"" gehört, ist Frau Anja Heilmann. Sie steht unter anja.heilmann@ub.uni-leipzig.de zur Verfügung.",0,0,0,0,0,0,0,1,0,1768605810.4872198,1.4973032474517822,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+17,"Wissensmarkt (HZA)
+Verlängerte Hertzallee
+10623 Berlin
+","Die Veranstaltung ""Greening Africa Together – Klimapartnerschaft mit afrikanischen Hochschulen und Communitys"" findet in Deutschland statt.",0,0,0,0,0,0,0,1,0,1768605860.7339125,1.2597038745880127,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+18,https://www.langenachtderwissenschaften.de/programm/detail/51348,Festnetz Berlin,0,0,0,0,0,0,0,1,0,1768605905.2062232,0.8927748203277588,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+19,17:30-23:15 Uhr,"Die Antwort kann nicht gefunden werden, da keine Informationen über das Ereignis verfügbar sind.",0,0,0,0,0,0,0,1,0,1768605953.5917854,1.097092628479004,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+20,"Das Open-Battery-Projekt bietet eine offene Transferplattform für Software- und Hardwarekomponenten, die um ein batteriegestütztes Photovoltaiksystem mit Netzanschluss angesiedelt sind. Dieser quelloffene Ansatz des Projekts ermöglicht es Privatpersonen, Vereinen, Communitys oder Unternehmen auf der ganzen Welt, an der Energiewende teilzunehmen und sie mitzugestalten. Aktuell befindet sich das Open-Battery-Projekt in der Entwicklungsphase. Hardware- und Softwarekomponenten werden zusammen mit Student:innen ausgelegt, aufgebaut und getestet.","Es handelt sich um eine Plattform für open-source-Hardwaresysteme, die darauf abzielt, kostengünstige Lösungen für Energie und Speicher zu entwickeln.",0,0,0,0,0,0,0,1,0,1768605588.579836,2.3446526527404785,0,0.14705882352941177,0,io_simple,1,llama3.1:8b,lndw25
+21,23:30-00:00 Uhr,"Die letzte Veranstaltung von ""Lokfahren für Anfänger:innen"" ist am 17. Juli um 14 Uhr im Bahnhof Stuttgart.",0,0,0,0,0,0,0,1,0,1768605681.0541644,2.1238675117492676,0,0.1111111111111111,0,io_simple,1,llama3.1:8b,lndw25
+22,Studentisches Projekt „Automatisiertes Fahren“,"Der Text ""FaSTTUBe"" kann nicht ohne weiteres Verständnis interpretiert werden, aber es ist möglich, dass es sich um eine Veranstaltung handelt. 
+
+Lkw mit Batteriewechselsystem könnten an einer solchen Veranstaltung teilnehmen.
+
+Wenn ich recherchieren würde, nach Veranstaltungen, die in der Nähe von FaSTTUBe stattfinden und Lkws mit Batteriewechsel-System enthalten, wäre eine mögliche Antwort: ""Internationale Energiespar-Messe"".",0,0,0,0,0,0,0,1,0,1768605799.5447793,4.289013862609863,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+23,Science Slam – Brainpower mit Entertainment-Faktor,Der Berlinale Palast.,0,0,0,0,0,0,0,1,0,1768605876.5551896,1.343888521194458,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+24,Turbulentes Chaos: Wie können numerische Simulationen helfen?,"""Saturday Night Live (SNL)""",0,0,0,0,0,0,0,1,0,1768605934.0828462,1.3833811283111572,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+25,Science Slam – Brainpower mit Entertainment-Faktor,"Das bekannteste Late-Night-Event, das Speisen und Getränke anbietet, ist die ""Nachtschicht"" (auch als ""Late Night"" oder ""Afterhours"" bezeichnet). Es finden jedoch auch andere Veranstaltungen statt, deren Bezeichnung je nach Region variieren kann. Eine weitere Möglichkeit sind sogenannte ""Party-Events"", wie z.B. ""Afterparty"" oder ""Feten"".",0,0,0,0,0,0,0,1,0,1768606017.6657488,3.8423237800598145,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+26,Turbulentes Chaos: Wie können numerische Simulationen helfen?,"""Schlag den Henssler""",0,0,0,0,0,0,0,1,0,1768606085.3713028,1.4567179679870603,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+27,⚡ Blitztastisch! Die elektrisierende Energieshow für Kinder,"Der Science Slam ist nur ein Teil der Veranstaltungen, die im Audimax stattfinden. Weitere Veranstaltungen finden regelmäßig dort statt, wie zum Beispiel Vorlesungen, Seminare, Prüfungen und Konzerte. Die genauen Termine und die Belegung des Audimax können je nach Semester und Veranstaltung variieren.",0,0,0,0,0,0,0,1,0,1768606162.9755893,3.3356199264526367,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+28,Papier macht kreativ – Blumen basteln in der Gartenbaubibliothek,"Die genaue Information zu den Veranstaltungen und deren Austragungsorte in der Universitätsbibliothek kann je nach Semester und Angebot variieren. Allerdings gibt es normalerweise eine zentrale Informationsquelle, die für solche Fragen dient.
+
+Eine mögliche Antwort auf diese Frage würde man am besten direkt an der Universitätsbibliothek oder auf ihrer offiziellen Website finden, da dort aktuelle Informationen zu Veranstaltungen und ihren Austragungsorten veröffentlicht werden. 
+
+Wenn du nach einer bestimmten Veranstaltung suchst, solltest du auch die Termine und Räume überprüfen, da sich diese mit dem Semester wechseln können.
+
+Ich kann keine spezifische Antwort geben ohne weitere Informationen.",0,0,0,0,0,0,0,1,0,1768606228.569182,5.711341857910156,0,0.021978021978021976,0,io_simple,1,llama3.1:8b,lndw25
+29,Quantum Walks vs. Drunkard‘s Walk – wie Quantenteilchen schneller ans Ziel kommen,"Ich habe keine spezifische Information darüber, welche Veranstaltung am 23:30 Uhr im Haus der Physik stattfindet.",0,0,0,0,0,0,0,1,0,1768606324.8481522,1.954578161239624,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+30,Lokfahren für Anfänger:innen,"Die Frage nach Veranstaltungen im Haus der Eisenbahn ist sehr allgemein. Es gibt viele mögliche Antworten abhängig von den tatsächlichen Programmen und Event-Kalendern, die regelmäßig aktualisiert werden.
+
+Einige Beispiele für dort stattfindende Veranstaltungen sind:
+
+- Ausstellungen über Eisenbahngeschichte
+- Vorträge zu Themen rund um den Eisenbahnverkehr
+- Sonderausgaben mit Fahrzeugen oder technischem Zubehör
+- Modelleisenbahnausstellungen und -wettbewerbe
+
+Die genaue Liste der aktuellen Veranstaltungen ist online auf der Website des Hauses der Eisenbahn abrufbar. Ich empfehle, sich dort umfassend zu informieren.
+
+Alternativ kann man auch einfach in die Nähe des Hauses der Eisenbahn gehen und dort direkt Fragen stellen, da die Mitarbeiter in der Regel sehr freundlich und kompetent sind.",0,0,0,0,0,0,0,1,0,1768605657.980749,7.251511096954346,0,0.021505376344086023,0,io_simple,1,llama3.1:8b,lndw25
+31,Leseabenteuer im Zelt: altersgerechte Bücherwelten für kleine Entdecker:innen,"Ein Beispiel für eine solche Veranstaltung ist ""The Shawshank Redemption"" von Stephen King. In der Literatur lautet der Originaltitel ""Rita Hayworth und die Gesellschaft des McNutley Club"". Es ist eine Mischung aus Lesung und Spiel.
+
+ Ein anderes Beispiel ist ""The Tell-Tale Heart"", ebenfalls von Edgar Allan Poe. 
+
+ Eine weitere Möglichkeit wäre ""Der Fänger im Roggen"" von John Irving, in der auch ein Spielbezug besteht.
+
+ Die Beispiele belegen, dass es sehr verschiedene Kombinationen gibt, aber die allgemeine Frage zielt darauf ab, den Begriff ""ein Spiel und eine Lesung"" als eine Form zu finden.",0,0,0,0,0,0,0,1,0,1768605773.4951236,5.33655309677124,0,0.049999999999999996,0,io_simple,1,llama3.1:8b,lndw25
+32,Leseabenteuer im Zelt: altersgerechte Bücherwelten für kleine Entdecker:innen,"Die Frage ist auf Deutsch und die Antwort lautet:
+
+Keine Information verfügbar. (Das könnte je nach Kontext variieren.)
+
+Wenn du möchtest, kann ich dir versuchen, eine Antwort zu finden oder dich an einen Ort weiterleiten, wo du diese Informationen finden kannst.
+
+Lass mich bitte wissen, wenn du weitere Fragen hast!",0,0,0,0,0,0,0,1,0,1768605878.0480924,3.1862406730651855,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+33,Eine „Lesepfote“ zu Gast in der Bibliothek,Eine Hörbuchlesung.,0,0,0,0,0,0,0,1,0,1768605952.610851,1.3746564388275146,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+34,Kopf trifft Körper: Teste deine Fitness und Motorik im TU-SportLab!,Olympische Spiele,0,0,0,0,0,0,0,1,0,1768606039.564571,1.2812914848327637,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+35,"Haus des Lernens (MAR)
+Marchstraße 23
+10587 Berlin
+Raum MAR 0.011 (EG)","Das Haus, in dem die Podiumsdiskussion stattfindet, ist das Haus der Wissenschaft.",0,0,0,0,0,0,0,1,0,1768606150.4460878,1.831240177154541,0,0.1111111111111111,0,io_simple,1,llama3.1:8b,lndw25
+36,Roboter im öffentlichen Raum: Mensch und Maschine mitten im Leben,"Die Diskussion findet im gleichen Haus statt wie ""Ist das schon ein Roboter"" ist nicht klar. Es gibt jedoch eine Diskussion namens ""Roboter"" die wahrscheinlich in einem ähnlichen Kontext steht, aber ich kann keine genauen Informationen finden. 
+
+Ich konnte jedoch herausfinden, dass in dem Buch ""Roboter"" von Daniel H. Wilson und auch in anderen Büchern über Roboter mit diesem Namen diskutiert wird.",0,0,0,0,0,0,0,1,0,1768606234.0075989,3.9622151851654057,0,0.0923076923076923,0,io_simple,1,llama3.1:8b,lndw25
+37,Tourismushistorischer Dia- und Filmabend,Die Aufführung der 4. Klasse findet im großen Festsaal statt.,0,0,0,0,0,0,0,1,0,1768606335.068653,1.618502140045166,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+38,5 Euro,"Die Kosten für die Lange Nacht der Wissenschaften können je nach Veranstaltung und Standort variieren. Es ist ratsam, vorher auf der offiziellen Website oder bei den jeweiligen Teilnehmern nachzufragen, um genauere Informationen zu erhalten. In der Regel sind die Eintrittskarten jedoch kostenlos oder günstig.",0,0,0,0,0,0,0,1,0,1768606408.9126756,3.258293628692627,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+39,jedes Alter,LNDW (Langzeitnahrung) ist für Kinder von 1 bis 18 Jahren geeignet.,0,0,0,0,0,0,0,1,0,1768606486.161007,1.8688006401062012,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+40,Technische Universität Berlin,"Die Landespflege und Nachhaltigkeit im Wald (LNDW) ist ein gemeinsames Programm der Landwirtschaftskammern in Deutschland. Daher nehmen alle Landwirtschaftskammern in den Bundesländern an dem Programm teil. 
+
+Insgesamt sind dies 22 Einrichtungen, die an LNDW teilnehmen:",0,0,0,0,0,0,0,1,0,1768605801.0637012,3.2749719619750977,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+41,Lange Nacht der Wissenschaften e. V. (LNDW e. V.),Die Organisation der LNDW-Veranstaltung obliegt dem Landesverband Nordrhein-Westfalen des Deutschen Behindertensportverbands (DBS).,0,0,0,0,0,0,0,1,0,1768605842.7957292,2.2809550762176514,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+42,New Practice in Art and Technology / Workshops,"Ich konnte keine spezifische Veranstaltung finden, die genau von 19 bis 21 Uhr stattfindet. Wenn Sie eine bestimmte Veranstaltung oder einen speziellen Kontext nennen könnten, könnte ich Ihnen besser helfen.",0,0,0,0,0,0,0,1,0,1768606021.3369431,2.5884945392608643,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+43,Veranstaltung auf Englisch,Deutsche,0,0,0,0,0,0,0,1,0,1768606132.326712,1.2606725692749023,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+44,Unterhaltsame Live-Show – Sport und Musik für Kopf und Körper,"Es ist nicht möglich, eine spezifische Antwort auf die Veranstaltungszeit basierend alleine auf der Frage zu geben. Einige mögliche Antworten für Live-Musikveranstaltungen beginnend um 19:30 Uhr sind:
+
+* Konzert in einem großen Stadion
+* Open-Air-Festival
+* Nachtclub-Event
+* Theateraufführungen",0,0,0,0,0,0,0,1,0,1768606216.247399,3.689948797225952,0,0.04878048780487805,0,io_simple,1,llama3.1:8b,lndw25
+45,21:00-21:20 Uhr,Die letzte Veranstaltung von 'Livemusik im Fahrstuhl' fand am 30. Juni 2022 statt.,0,0,0,0,0,0,0,1,0,1768606310.2613218,2.0155677795410156,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+46,Unterhaltsame Live-Show – Sport und Musik für Kopf und Körper,Der Name der richtigen Veranstaltung ist nicht bekannt.,0,0,0,0,0,0,0,1,0,1768606407.3983295,1.4923465251922607,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+47,Historisch-ökologische Exkursion über den Steglitzer Fichtenberg,"Ich habe keine Informationen über Führungen im Südwesten, die um 17 Uhr stattfinden. Wenn Sie spezifische Informationen benötigen, können Sie sich bitte direkt an eine Quelle wenden oder nach einer verfügbaren Führung fragen.",0,0,0,0,0,0,0,1,0,1768606539.8892107,2.773524045944214,0,0.0588235294117647,0,io_simple,1,llama3.1:8b,lndw25
+48,Als Eichhörnchen-Detektiv:innen auf den Spuren kleiner Persönlichkeiten der Natur,"Es gibt verschiedene Infostände im Südwesten. Einige der bekanntesten sind:
+
+* Der Infostand in Freiburg, wo man sich über die Ökologie und den Naturschutz informieren kann.
+* Der Infostand in Basel, der sich auf Nachhaltigkeit und Umweltfreundlichkeit konzentriert.
+* Der Infostand in Karlsruhe, der Informationen zu Energieeffizienz und Recycling bietet.
+
+Es gibt jedoch noch viele weitere Infostände im Südwesten, die je nach Themenbereich unterschiedliche Inhalte anbieten. Es lohnt sich also, sich vorher online oder über das lokale Informationsportal über die genauen Standorte und Inhalte zu informieren.",0,0,0,0,0,0,0,1,0,1768606645.2905078,5.61102819442749,0,0.02531645569620253,0,io_simple,1,llama3.1:8b,lndw25
+49,"Die verborgene Welt der Wurzeln: schätzen, messen, staunen","Die Region Südwestdeutschland ist für ihre vielfältigen Kultur- und Freizeitangebote bekannt. Hier sind einige der beliebtesten Demonstrationsveranstaltungen:
+
+*   **Karneval**: Der Karneval ist ein wichtiger Teil der südwestdeutschen Tradition. In Städten wie Stuttgart, Heidelberg und Freiburg finden große Paraden und Feste statt.
+*   **Weinfeste**: Die Region Südwesten ist bekannt für ihre Weinberge und -produktion. Zu den beliebtesten Weinfesten gehören das Wiesn-Wein-Fest in Stuttgart und das Heidelberger Weindorf.
+*   **Klassik Open Air**: In der Nähe von Pforzheim findet jedes Jahr das Klassik Open Air statt, ein Musikfestival mit Live-Auftritten internationaler Musiker.
+*   **Stuttgarter Frühlingstage**: Im April finden in Stuttgart die Frühlingstage statt. Hier gibt es zahlreiche Konzerte und Aufführungen, auch in der Nähe von Freiburg.
+
+Diese Veranstaltungen sind nur einige Beispiele für die vielfältigen Demonstrationen, die im Südwesten Deutschlands stattfinden. Es lohnt sich, vorher zu recherchieren, um genauere Informationen über Termin und Ort des jeweiligen Events zu erhalten.",0,0,0,0,0,0,0,1,0,1768606745.1335173,9.456313848495483,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+50,Zukunft der Energie: nachhaltig durch KI,"Die Veranstaltung ""KI meets Kunst"" im Haus der Erlebbaren KI ist nicht geeignet für Kinder, da sie sich auf ein erwachsenenorientiertes Format konzentriert.",0,0,0,0,0,0,0,1,0,1768605944.6209655,2.3656041622161865,0,0.08000000000000002,0,io_simple,1,llama3.1:8b,lndw25
+51,über 1000,"Die Landesjugendwoche (LNDW) ist ein landesweites Jugendkultur- und Freizeitangebot in Baden-Württemberg. Es gibt jährlich mehrere Veranstaltungsorte, aber die genaue Anzahl an Veranstaltungen variiert je nach Jahr.
+
+Die LNDW bietet jedoch insgesamt etwa 40 bis 50 Veranstaltungen an verschiedenen Orten im Land an, darunter Musik- und Tanzveranstaltungen, Workshops, Shows und Konzerte.",0,0,0,0,0,0,0,1,0,1768606030.7278066,4.334399461746216,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+52,etwa 50,36 wissenschaftlichen Einrichtungen,0,0,0,0,0,0,0,1,0,1768606115.6463473,1.371870517730713,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+53,Science Slam – Brainpower mit Entertainment-Faktor,StarTalk mit Neil deGrasse Tyson,0,0,0,0,0,0,0,1,0,1768606151.5515022,1.418055534362793,0,0.1818181818181818,0,io_simple,1,llama3.1:8b,lndw25
+54,Berlin,Die Landeswohlfahrtsschau (LNDW) findet in verschiedenen Orten in Bayern statt. Der genaue Ort variiert jedes Jahr.,0,0,0,0,0,0,0,1,0,1768606195.6459904,2.2607991695404053,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+55,FaSTTUBe – das elektrische Rennauto des Formula Student Team TU Berlin,Formel 1.,0,0,0,0,0,0,0,1,0,1768606251.199791,1.2912983894348145,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+56,Wie moderne Mobilfunknetze funktionieren – Identitätsmanagement in 6G-Netzwerken,"Der Code ""Workshop"" oder ""Seminar"" kann je nach Kultur oder Institution variieren. Eine häufige Bezeichnung für einen englischen Workshop, der keine Mahlzeiten anbietet, ist ein ""Lecture-Style Event"". Einige Beispiele sind:
+
+* Lecture (nur Vorträge)
+* Seminar
+* Conference (oft auch mit Vorträgen und Diskussionen, aber ohne gemeinsame Verpflegung)
+
+Es ist jedoch wichtig zu beachten, dass diese Begriffe nicht immer eindeutig sind. Einige Workshops können sich als „Lecture-Style Event“ ausgeben, aber tatsächlich Mahlzeiten anbieten.",0,0,0,0,0,0,0,1,0,1768606402.2525244,5.3791868686676025,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+57,"Die Lange Nacht der Wissenschaften in Berlin ist ein Gemeinschaftsprojekt wissenschaftlicher sowie wissenschaftsnaher Einrichtungen der Region und findet einmal jährlich statt. Veranstalter ist der Lange Nacht der Wissenschaften e. V. (LNDW e. V.), in dem sich wissenschaftliche Einrichtungen zusammengeschlossen haben. Finanziert wird die Lange Nacht der Wissenschaften weitgehend von den beteiligten wissenschaftlichen Einrichtungen selbst. Auch die Ticketeinnahmen werden vollständig für die Finanzierung der Gesamtveranstaltung verwendet. Die Lange Nacht der Wissenschaften wird von zahlreichen Partnern aus der Region unterstützt. Über den Einsatz der Mittel entscheidet die Mitgliederversammlung des LNDW e. V.","Die 'Lange Nacht der Wissenschaften' ist eine jährliche Veranstaltung, bei der Universitäten und Forschungseinrichtungen öffentlich zugänglich gemacht werden. Die genauen Details für die Veranstaltung im Jahr 2025 sind nicht verfügbar. Allerdings fand die Veranstaltung bereits in den Jahren 2019, 2021 und 2023 statt. Es ist wahrscheinlich, dass sie auch 2025 wieder stattfinden wird, aber dies sollte von der jeweiligen Universität oder Forschungseinrichtung bestätigt werden.",0,0,0,0,0,0,0,1,0,1768606500.4490223,4.58098578453064,0,0.20800000000000002,0,io_simple,1,llama3.1:8b,lndw25
+58,"Haus der Ideen (H)
+Straße des 17. Juni 135
+10623 Berlin
+Wangari Maathai-Foyer (Foyer links, ehem. Cafébar, Bereich 0 H)","Die Veranstaltung ""Exzellentes Pub-Quiz für Teamplayer, Rätselbegeisterte und Wissenschaftsfans"" findet im 'Ausschreibung Pub' in Berlin statt.",0,0,0,0,0,0,0,1,0,1768606583.779951,2.3313376903533936,0,0.0606060606060606,0,io_simple,1,llama3.1:8b,lndw25
+59,17:30-23:20 Uhr,"Die Veranstaltung ""Stich für Stich nachhaltig – Sticken fürs Klima"" startet am 12.11.2022 und endet am 27.11.2022.",0,0,0,0,0,0,0,1,0,1768606650.902505,2.4084792137145996,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+60,Barrierefreier Rollstuhlzugang,"Der Begriff ""Fluoreszierender Wärmeübertrager"" bezieht sich auf eine spezielle Art von Wärmeübertragern, die Fluoreszenzphänomene nutzen, um effizient Wärme zu übertragen. Der Zugang zu dieser Technologie ist in verschiedenen Bereichen wie der Industrie und Forschung, insbesondere in Unternehmen, die sich auf Entwicklung und Anwendung innovativer Wärmeübertragungssysteme spezialisieren.
+
+Die genauen Details des Zugangs hängen stark von den spezifischen Anwendungsfall, der Unternehmensgröße und dem Standort ab. In allgemeiner Form können Forscher und Entwickler diesen Zugang über:
+
+1. **Publikationen und wissenschaftliche Literatur**: Viele Unternehmen und Organisationen publizieren ihre Forschungsergebnisse und Erkenntnisse in Fachzeitschriften, Konferenzbeiträgen und Online-Datenbanken.
+2. **Patentdokumente**: Der Zugang zu patentierten Technologien kann über Patentämter und Datenbanken wie die Europäische Patentorganisation (EPO) oder das United States Patent and Trademark Office (USPTO) erfolgen.
+3. **Konferenzen, Workshops und Fachveranstaltungen**: Teilnahme an wissenschaftlichen Konferenzen und Workshops bietet direkten Zugang zu neuesten Forschungsergebnissen und Experten in diesem Bereich.
+4. **Forschungsnetzwerke und Partnertreffen**: Viele Unternehmen und Organisationen beteiligen sich an Netzwerken, die es ermöglichen, mit anderen ForscherInnen und EntwicklerInnen zusammenzuarbeiten, um Innovationen voranzutreiben.
+5. **Lizenzen oder Kooperationen**: In einigen Fällen kann der Zugang auch über Lizensierungen oder Kooperationsvereinbarungen mit Unternehmen gewährt werden, die entsprechende Technologien entwickeln und anwenden.
+
+Es ist wichtig zu beachten, dass der genaue Zugang bedarfsspezifisch und von den konkreten Anforderungen eines Projekts abhängt.",0,0,0,0,0,0,0,1,0,1768605960.8801703,14.55969738960266,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+61,Experiment,Thermische Energieumsetzung.,0,0,0,0,0,0,0,1,0,1768606061.94282,1.6538143157958984,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+62,Demonstration,"""Thermischer Energiewandler""",0,0,0,0,0,0,0,1,0,1768606134.919308,1.415538311004639,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+63,Fluoreszierender Wärmeübertrager,"Die Veranstaltung ist ""Langenacht der Wissenschaften"".",0,0,0,0,0,0,0,1,0,1768606232.5148091,1.556283712387085,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+64,Technische Universität Berlin,Fraunhofer-Institut für Solare Energiesysteme (ISE),0,0,0,0,0,0,0,1,0,1768606307.6206715,1.721088409423828,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+65,Technische Universität Berlin,Die Bundesanstalt für Wasserbau.,0,0,0,0,0,0,0,1,0,1768606340.2340808,1.4353668689727783,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+66,"Zentrum (u.a. Mitte, Wedding, Moabit, Tiergarten)",Die Konferenz findet im Bereich der Informatik statt.,0,0,0,0,0,0,0,1,0,1768606419.4115858,1.827364921569824,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+67,Mitmachexperiment,"Nein, es handelt sich um ein Konzept des Information Managements.",0,0,0,0,0,0,0,1,0,1768606497.7119231,1.7287473678588867,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+68,Ausstellung,"Die Frage scheint sich auf ein Konzept zu beziehen, das oft im Zusammenhang mit Wissensmanagement und -verteilung diskutiert wird. Die Formulierung ""Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management"" legt nahe, dass es sich um einen Prozess handelt, der darauf abzielt, wissenschaftliche Erkenntnisse oder Forschungsergebnisse über die traditionellen Kanäle hinaus zu verbreiten.
+
+In diesem Kontext ist ""Information Management"" ein Schlüsselkonzept, das sich mit der Verwaltung und dem Zugänglichmachen von Informationen beschäftigt. Dies kann auch als Wissensmanagement oder Open Science verstanden werden.
+
+Die Frage ""Ist dies eine Diskussion oder eine Ausstellung?"" könnte dahingehend interpretiert werden, ob es sich um ein Format handelt, das Forscher dabei unterstützt, ihre Ergebnisse zu präsentieren und mit der Öffentlichkeit, anderen Wissenschaftlern oder Stakeholdern auszutauschen.
+
+Eine mögliche Antwort wäre: ""Diskussion"" oder ""Ausstellung"", abhängig davon, in welchem Format die wissenschaftlichen Ergebnisse über Information Management zugänglich gemacht werden.",0,0,0,0,0,0,0,1,0,1768606582.526404,8.682957649230957,0,0.01652892561983471,0,io_simple,1,llama3.1:8b,lndw25
+69,Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management,"""Information Management und Open Science""",0,0,0,0,0,0,0,1,0,1768606639.5350232,1.647045373916626,0,0.3076923076923077,0,io_simple,1,llama3.1:8b,lndw25
+70,17:00-00:00 Uhr,"Die genauen Terminabschnitte für die Veranstaltung 'Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management' liegen mir nicht vor. 
+
+Dieses Problem könnte mit mehr Kontext gelöst werden, indem das genaue Datum der Veranstaltung oder eine Beschreibung der Zeitplanung verfügbar wäre.",0,0,0,0,0,0,0,1,0,1768606003.9985745,1.5719232559204102,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+71,Geeignet für Kinder,"Die Veranstaltung ""Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management"" ist für Wissenschaftler, Forscher und Institutionen geeignet, die ihre wissenschaftlichen Erkenntnisse effektiv kommunizieren und verwalten möchten.",0,0,0,0,0,0,0,1,0,1768606049.052277,1.3895690441131592,0,0.14814814814814814,0,io_simple,1,llama3.1:8b,lndw25
+72,17:00-17:15 Uhr,"Die genaue Information über die Terminierung der Veranstaltung ""Realistisches Fahrgefühl im dynamischen Fahrsimulator des KFZB-Versuchszentrums"" ist nicht verfügbar. Es ist jedoch möglich, dass sie auf der offiziellen Website des Veranstalters oder bei direkter Anfrage an das KFZB-Versuchszentrum erhältlich ist.",0,0,0,0,0,0,0,1,0,1768606088.738389,1.714470386505127,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+73,"Im Fahrsimulator erleben fahrende Personen realitätsnahes Fahrverhalten mit Rundumsicht. Eine Fahrdynamiksimulation erzeugt das realistische Lenkgefühl, die aktive Pedalerie ermöglicht zum Beispiel das bekannte ABS-Ruckeln. Beim Bremsen und Beschleunigen nickt das Fahrzeug, in Kurven wankt es. Kenngrößen der Mensch-Fahrzeug-Interaktion und des Fahrzustands werden aufgezeichnet und ermöglichen eine Bewertung von Fahrfunktionen und Fahrleistung. So können sicherheitskritische Situationen und deren Beherrschbarkeit bis in den Grenzbereich erprobt und untersucht werden. Geeignet ab 15 Jahren.","Es geht um die Vermittlung eines realistischen Fühlens beim Autofahren in einem dynamischen Fahrsimulator, der am KFZB-Versuchszentrum eingesetzt wird.",0,0,0,0,0,0,0,1,0,1768606152.3432062,1.341743230819702,0,0.10526315789473684,0,io_simple,1,llama3.1:8b,lndw25
+74,21:45-22:00 Uhr,"Ich konnte keine genauen Informationen über eine Veranstaltung mit dem Titel „Realistisches Fahrgefühl im dynamischen Fahrsimulator des KFZB-Versuchszentrums“ finden. Es ist jedoch möglich, dass diese Veranstaltung stattgefunden hat, ohne dass dies in meine verfügbaren Datenbanken aufgenommen wurde.",0,0,0,0,0,0,0,1,0,1768606197.7387211,1.656409740447998,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+75,Demonstration,"Die Veranstaltung scheint eher einer Demonstration zu entsprechen, da es sich um ein ""Realistisches Fahrgefühl"" im dynamischen Fahrsimulator handelt. Die Bezeichnung ""Demonstration"" wird dabei häufig mit Präsentationen oder Vorführungen von Systemen oder Technologien in Verbindung gebracht.",0,0,0,0,0,0,0,1,0,1768606245.9669583,1.564185380935669,0,0.06060606060606061,0,io_simple,1,llama3.1:8b,lndw25
+76,Barrierefreier Rollstuhlzugang,"Der Zugang zur Veranstaltung INGenius ist nicht öffentlich bekannt. Es wäre hilfreich, wenn Sie direkt mit der Organisation in Kontakt treten, um genaue Informationen über den Zugangsstatus zu erhalten.",0,0,0,0,0,0,0,1,0,1768606283.7342308,1.4254693984985352,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+77,17:00-22:00 Uhr,"Die Frage ist auf Deutsch gestellt und ich kann eine Antwort geben. 
+
+Die Veranstaltungzeit von INGenius wird je nach Programm oder Tag variieren, aber in der Regel finden die Events am Abend statt, also zwischen 18:00 Uhr und 22:00 Uhr.",0,0,0,0,0,0,0,1,0,1768606332.5993173,1.483361005783081,0,0.05405405405405405,0,io_simple,1,llama3.1:8b,lndw25
+78,"Westen (u.a. Charlottenburg, Schöneberg, Spandau)",Dortmund-Stadtbezirk Nord,0,0,0,0,0,0,0,1,0,1768606361.4039292,1.0218112468719482,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+79,Mitmachexperiment,Programmieren,0,0,0,0,0,0,0,1,0,1768606408.555317,0.9464082717895508,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+80,Geeignet für Kinder,"INGeniues ist geeignet für Menschen mit chronischer Demenz, insbesondere bei Alzheimer-Krankheit. Es unterstützt die Kommunikation und das Sprechen auf eine einfache und sichere Art.",0,0,0,0,0,0,0,1,0,1768606080.4546,2.5155229568481445,0,0.16666666666666666,0,io_simple,1,llama3.1:8b,lndw25
+81,Detektive im Heizungskeller: intelligente Messtechnik für die Wärmewende von „Delta Heat“,"Die Frage scheint sich auf eine spezifische Adresse im Bereich des Bundesministeriums für Wirtschaft und Klimaschutz zu beziehen. 
+
+Infostand: 
+
+""Verbraucher-Service""
+
+Adresse:
+
+Bundesministerium für Wirtschaft und Klimaschutz
+Robert-Havemann-Allee 2
+12489 Berlin",0,0,0,0,0,0,0,1,0,1768606153.0750046,3.3387937545776367,0,0.10810810810810811,0,io_simple,1,llama3.1:8b,lndw25
+82,Future Security Lab – Sicherheitsforschung zum Anfassen,Future Security Lab,0,0,0,0,0,0,0,1,0,1768606245.4750605,1.6254847049713137,0,0.6,0,io_simple,1,llama3.1:8b,lndw25
+83,"Zentrum (u.a. Mitte, Wedding, Moabit, Tiergarten)","Das Future Security Lab in Berlin findet in der TU Cottbus-Senftenberg (Brandenburg) statt, nicht in Berlin. Es könnte sein, dass Sie sich an die Konferenz Referrierende Sicherheit im Internet denken. Der genaue Standort ist wichtig, um genauen Hinweis zu geben.",0,0,0,0,0,0,0,1,0,1768606333.2309456,3.078286647796631,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+84,17:00-00:00 Uhr,Das Future Security Lab fand vom 26. Oktober bis 28. Oktober 2022 statt.,0,0,0,0,0,0,0,1,0,1768606401.308925,1.8173809051513672,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+85,Geeignet für Kinder,"Das Future Security Lab ist eine Veranstaltung, die für Jugendliche und junge Erwachsene (ab 14 Jahren) konzipiert ist. Es bietet Workshops und Foren, bei denen Teilnehmer an der Lösung von IT-Sicherheitsproblemen arbeiten können. Die Veranstaltung ist nicht speziell auf Kinder ab 6 Jahren ausgelegt, sondern richtet sich eher an Jugendliche mit Interesse für Informatik und Sicherheit.",0,0,0,0,0,0,0,1,0,1768606476.556868,3.8640754222869873,0,0.07692307692307691,0,io_simple,1,llama3.1:8b,lndw25
+86,Installation,Das Future Security Lab ist wahrscheinlich eine Installation.,0,0,0,0,0,0,0,1,0,1768606556.3783755,1.543846607208252,0,0.2857142857142857,0,io_simple,1,llama3.1:8b,lndw25
+87,Zukunft der Energie: nachhaltig durch KI,"Die Installation, die sich im Haus der Erlebbaren KI befindet, ist das ""Neuronenhaus"".",0,0,0,0,0,0,0,1,0,1768606636.641277,2.078680992126465,0,0.14285714285714285,0,io_simple,1,llama3.1:8b,lndw25
+88,Zukunft der Energie: nachhaltig durch KI,Die Installation von ZEKI ist die Einsetzung eines neuen Kirchenältesten.,0,0,0,0,0,0,0,1,0,1768606720.531071,1.7094264030456543,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+89,Future Security Lab – Sicherheitsforschung zum Anfassen,"Die Berliner Mauer-Gedenkstätte ist eine der bekanntesten Sehenswürdigkeiten im Stadtzentrum von Berlin. Sie erinnert an die Geschichte und die politische Grenze, die bis 1989 das Leben in Berlin bestimmte. Die Gedenkstätte befindet sich am Checkpoint Charlie und bietet einen Überblick über die Geschichte der Mauer sowie über die politischen und sozialen Veränderungen, die sie nach ihrer Zerstörung mitbrachte.
+
+Ein weiteres touristisches Ziel ist das Brandenburger Tor, ein architektonisch beeindruckendes Symbol für Berlin. Es steht im Herzen des Stadtzentrums und ist eines der bekanntesten Wahrzeichen Deutschlands. Das Brandenburger Tor wurde 1788 bis 1791 erbaut und diente als Triumphbogen für die Heerführer Friedrich II. Der Eingang zum Tor wurde später in ein Wahrzeichen umgebildet.
+
+Die Reichstagsgebäude-Gedenkstätte ist eine weitere historische Sehenswürdigkeit in der Nähe des Berliner Hauptbahnhofs. Das Gebäude selbst erinnert an die Geschichte Deutschlands im 20. Jahrhundert und bietet einen Einblick in das politische System zwischen den Weltkriegen.
+
+Eine weitere beliebte Installation in der Stadt ist das Holocaust-Mahnmal, das sich südlich des Reichstagsgebäudes befindet. Es wurde von dem israelischen Künstler Michael Blumenthal 2005 eingeweiht und erinnert an die Opfer des Holocaust. Die Mahnmalinstallation besteht aus 2.711 Betonsteine unterschiedlicher Größe, die im Marmorfarben gefasst sind.
+
+Die Berliner Mauer-Gedenkstätte ist eine der bekanntesten Sehenswürdigkeiten in der Stadt und bietet einen Überblick über die Geschichte des Todesstreifens zwischen dem West- und Ost-Berlin.",0,0,0,0,0,0,0,1,0,1768606782.168099,13.308850049972534,0,0.011627906976744186,0,io_simple,1,llama3.1:8b,lndw25
+90,Stich für Stich nachhaltig – Sticken fürs Klima,"Die Textilwerkstatt ist ein Raum, der für verschiedene Aktivitäten genutzt werden kann. Ich habe keine spezifische Information darüber, welche Veranstaltung genau hier stattfinden wird.
+
+Wenn du nach einer bestimmten Veranstaltung suchst, könnte ich mich gerne noch einmal überprüfen oder dir eine Liste der geplanten Veranstaltungen im Haus des Lernens anbieten, aber leider kann ich diese Frage aufgrund fehlender Informationen nicht direkt beantworten.",0,0,0,0,0,0,0,1,0,1768606125.9427805,3.972684144973755,0,0.031746031746031744,0,io_simple,1,llama3.1:8b,lndw25
+91,Notfallpfeife aus Aluminium – dein Signal in der Wildnis,"Die Frage nach der Veranstaltung, die in der Metallwerkstatt des Haus des Lernens stattfindet, kann nicht aus dieser interaktiven Umgebung beantwortet werden. Allerdings kann ich dir sagen, dass es verschiedene Angebote gibt, wie zum Beispiel Workshops und Kurse, aber genaue Informationen dazu fehlen mir. Es wäre ratsam, dich direkt an das Haus des Lernens zu wenden, um die genauen Termine und Veranstaltungen in der Metallwerkstatt zu erfahren.",0,0,0,0,0,0,0,1,0,1768606163.54066,4.4306182861328125,0,0.0625,0,io_simple,1,llama3.1:8b,lndw25
+92,Mitmachexperiment,"Die Buchbeschreibung ""Notfallpfeife aus Aluminium – dein Signal in der Wildnis"" beschreibt wahrscheinlich eine Notfallpfeife, die als Helfermittel in extremer Situationen wie im Gelände oder bei Wanderungen dient. Es handelt sich also um einen Artikel zur Selbstschutz und Sicherheit.",0,0,0,0,0,0,0,1,0,1768606242.2511828,3.2668967247009277,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+93,17:30-21:30 Uhr,"Ich konnte keine Informationen zu einer Veranstaltung namens ""Notfallpfeife aus Aluminium – dein Signal in der Wildnis"" finden. Es ist möglich, dass es sich um eine lokale oder temporäre Veranstaltung handelt, über die ich nicht informiert bin. Wenn Sie mehr Details oder den genauen Zeitpunkt wissen möchten, empfehle ich Ihnen, direkt mit dem Veranstalter oder an der angegebenen Stelle in Kontakt zu treten.",0,0,0,0,0,0,0,1,0,1768606306.0436308,3.8139917850494385,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+94,"Westen (u.a. Charlottenburg, Schöneberg, Spandau)",Ostberlin,0,0,0,0,0,0,0,1,0,1768606378.3852067,1.3090827465057373,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+95,Spiel,"Die Bezeichnung ""Diskussion"" ist mehr passend.",0,0,0,0,0,0,0,1,0,1768606478.866157,1.5843586921691897,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+96,Geeignet für Kinder,Wer sich für Neulingen im Bereich der Fremdsprache interessiert und gerne neue Herausforderungen überwinden möchte.,0,0,0,0,0,0,0,1,0,1768606541.9458988,1.9619090557098389,0,0.11764705882352941,0,io_simple,1,llama3.1:8b,lndw25
+97,17:00-22:00 Uhr,"Die genauen Termine der Veranstaltung 'Neue Sprachen, neue Welten' sind nicht bekannt. Es ist ratsam, sich direkt an den Veranstalter oder eine entsprechende Quelle zu wenden, um die genauen Daten zu ermitteln.",0,0,0,0,0,0,0,1,0,1768606741.9625418,2.7181243896484375,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+98,Saturday SatelLight Fever – wofür braucht der Satellit Licht?,Das Auswählen von verschiedenen Speisen ist das passende Beispiel. Es befindet sich in der Cafeteria des Deutschen Museums. Die Sprache ist nicht ein Hindernis. Der Bereich ist zugänglich für Rollstuhlfahrer und wird als besonders geeignet für Familien betrachtet.,0,0,0,0,0,0,0,1,0,1768606843.683767,3.021841526031494,0,0.0,0,io_simple,1,llama3.1:8b,lndw25
+99,Karriere und Jobs an der TU Berlin,"Die Veranstaltung ""Infostand"" ist wahrscheinlich die Veranstaltung im Haus der Ideen, bei der verschiedene Organisationen und Unternehmen Informationen über ihre Angebote und Projekte präsentieren.",0,0,0,0,0,0,0,1,0,1768606928.0416858,2.385823011398315,0,0.08000000000000002,0,io_simple,1,llama3.1:8b,lndw25
+0,https://www.langenachtderwissenschaften.de/programm/detail/51327,https://www.fu-berlin.de/physik/veranstaltungen,0,0,0,1,0,0,4,2,1,1768605472.2848244,32.625261545181274,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+1,"Im Kleinsten wird unsere Welt durch die Quantentheorie beschrieben, wie sie vor 100 Jahren formuliert wurde. Ihre Gesetze faszinieren heute nicht weniger als damals, denn sie widersprechen unserer Alltagserfahrung auf bizarre Weise: Teilchen können an verschiedenen Orten gleichzeitig sein sowie durch Barrieren „tunneln“. Und bei der Messung des einen Quantensystems verändert sich auch der Zustand eines anderen, wenn dieses mit dem ersten „verschränkt“ ist. Erkunden Sie die faszinierenden Eigenschaften der Quantenwelt mit Hilfe interaktiver Simulationen und Visualisierungen.",Langen Nacht der Wissenschaften,0,0,0,1,0,0,3,2,1,1768605536.6166732,11.12039589881897,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+2,"Wie kann man Dinge zum Schweben bringen? Student:innen des Projektlabors Physik zeigen euch physikalische Zaubertricks, die Alltagsgegenstände schwerelos machen können. Auch lebendige Flüssigkeiten und optische Täuschungen laden zum Mitmachen und Anfassen ein. Geeignet für Kinder ab 6 Jahren.",,0,0,0,1,0,0,3,2,1,1768605578.8865857,10.80167269706726,0,0.0,1,formatog_d3_p3,1,llama3.1:8b,lndw25
+3,Programmieren lernen für Kinder und Einsteiger:innen,Lange Nacht der Wissenschaften 2025,0,0,0,0,0,1,4,2,1,1768605626.6911683,11.379056692123411,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+4,"Im Kleinsten wird unsere Welt durch die Quantentheorie beschrieben, wie sie vor 100 Jahren formuliert wurde. Ihre Gesetze faszinieren heute nicht weniger als damals, denn sie widersprechen unserer Alltagserfahrung auf bizarre Weise: Teilchen können an verschiedenen Orten gleichzeitig sein sowie durch Barrieren „tunneln“. Und bei der Messung des einen Quantensystems verändert sich auch der Zustand eines anderen, wenn dieses mit dem ersten „verschränkt“ ist. Erkunden Sie die faszinierenden Eigenschaften der Quantenwelt mit Hilfe interaktiver Simulationen und Visualisierungen.",Lange Nacht der Wissenschaften 2025,0,0,0,0,0,1,4,2,1,1768605669.2762086,15.324777126312256,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+5,https://www.langenachtderwissenschaften.de/programm/detail/51248,https://www.zvw.de/inhalt/veranstaltung-scienceslam-brainpower-mit-entertainment-faktor-wo-und-wann-13481.html,0,0,0,1,0,0,1,2,1,1768605706.723274,9.72270679473877,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+6,"Unsere Forschungsgruppe baut Organoide, organähnliche Strukturen, aus humanen Stammzellen, um Tierexperimente in der Forschung zu reduzieren. Durch die Kombination von Organoiden simulieren wir in sogenannten Organ-Chips die komplexen Organ-Interaktionen des menschlichen Körpers. Wir erklären Konzept und Funktionsweise solcher Organ-Chips. Es werden Anwendungsgebiete in der Aufklärung pathologischer Prozesse und in der Medikamenten-Entwicklung zur Reduktion von Tierexperimenten dargestellt. Besucher:innen können Organ-Chips zusammenbauen und die magnetische Zellsortierung ausprobieren.",Tierversuche,0,0,0,0,0,1,5,2,1,1768605735.215165,17.140822887420654,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+7,https://www.langenachtderwissenschaften.de/programm/detail/51514,https://fsttbe.tu-berlin.de/,0,0,0,0,0,1,6,2,1,1768605788.9163327,14.230830192565918,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+8,"Gestalte Straßen, Radwege, Brücken und mehr mit Klemmbausteinen, und lerne spielerisch, wie moderne Verkehrsplanung funktioniert. Ihr lernt die Funktionen von Straßen kennen, die passenden Verkehrsmittel, um verschiedene Orte zu erreichen, sowie ein Konzept, wie Verkehr nachhaltiger werden kann. Für Kinder ab 6 Jahren und Erwachsene – für alle Altersgruppen ist etwas dabei! Jeder Gast erhält Bausteine, um unsere Stadt wachsen zu lassen. Komm vorbei, und werde Verkehrsplaner:in für einen Abend!",Veranstaltung,0,0,0,0,0,1,5,2,1,1768605844.0963776,12.478212118148804,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+9,"Testen Sie Ihr Wissen über das Universum, und gewinnen Sie kleine Preise – solange der Vorrat reicht! Geeignet ab 6 Jahren.",Astronomie,0,0,0,1,0,0,4,3,1,1768605895.4369116,19.27918004989624,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+10,Chatbots zur Stärkung der Demokratie,Haus der Forschung,0,0,0,1,0,0,3,2,1,1768605496.8297646,25.695664644241333,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+11,Live-Musik,Veranstaltung,0,0,0,0,0,1,5,2,1,1768605554.6751406,19.84789800643921,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+12,17:00-21:30 Uhr,Technische Universität Berlin,0,0,0,0,0,1,4,3,1,1768605604.405704,21.95020842552185,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+13,https://www.langenachtderwissenschaften.de/programm/detail/51498,https://www.langenachtderwissenschaften.de,0,0,0,0,0,1,2,2,1,1768605663.9516866,8.870960474014282,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+14,25,Lange Nacht der Wissenschaften 2025,0,0,0,0,0,1,4,2,1,1768605698.438689,12.568352460861206,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+15,https://www.langenachtderwissenschaften.de/programm/detail/51151,https://www.aerospacerendezvous.de,0,0,0,0,0,1,4,1,1,1768605735.494655,4.892214298248291,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+16,Juri Mertens,Frau [Name] vom [Institution],0,0,0,1,0,0,4,3,1,1768605760.9626195,19.902658224105835,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+17,"Wissensmarkt (HZA)
+Verlängerte Hertzallee
+10623 Berlin
+",,0,0,0,1,0,0,4,3,1,1768605812.1090653,21.416053771972656,0,0.0,1,formatog_d3_p3,1,llama3.1:8b,lndw25
+18,https://www.langenachtderwissenschaften.de/programm/detail/51348,berliner-weisse.de,0,0,0,1,0,0,1,2,1,1768605862.183236,12.317744731903076,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+19,17:30-23:15 Uhr,20:30-21:15 Uhr,0,0,0,0,0,1,4,3,1,1768605906.1896365,20.448872327804565,0,0.5,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+20,"Das Open-Battery-Projekt bietet eine offene Transferplattform für Software- und Hardwarekomponenten, die um ein batteriegestütztes Photovoltaiksystem mit Netzanschluss angesiedelt sind. Dieser quelloffene Ansatz des Projekts ermöglicht es Privatpersonen, Vereinen, Communitys oder Unternehmen auf der ganzen Welt, an der Energiewende teilzunehmen und sie mitzugestalten. Aktuell befindet sich das Open-Battery-Projekt in der Entwicklungsphase. Hardware- und Softwarekomponenten werden zusammen mit Student:innen ausgelegt, aufgebaut und getestet.",Energiewende,0,0,0,0,0,1,4,2,1,1768605500.889771,38.115782260894775,0,0.038461538461538464,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+21,23:30-00:00 Uhr,20:30,0,0,0,0,0,1,4,3,1,1768605591.0097113,32.01028299331665,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+22,Studentisches Projekt „Automatisiertes Fahren“,Lange Nacht der Wissenschaften 2025,0,0,0,0,0,1,5,3,1,1768605683.3187869,41.74040007591248,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+23,Science Slam – Brainpower mit Entertainment-Faktor,Kabarett der kleinen Lüge,0,0,0,1,0,0,4,2,1,1768605803.9279072,26.077943563461304,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+24,Turbulentes Chaos: Wie können numerische Simulationen helfen?,Turbulentes Chaos: Wie können numerische Simulationen helfen?,0,0,0,0,0,1,7,3,2,1768605877.976075,26.918564319610596,1,1.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+25,Science Slam – Brainpower mit Entertainment-Faktor,Late Night im ZDF,0,0,0,1,0,0,3,2,1,1768605935.604339,20.15351366996765,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+26,Turbulentes Chaos: Wie können numerische Simulationen helfen?,Conan,0,0,0,1,0,0,3,2,1,1768606021.6410809,9.229034423828123,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+27,⚡ Blitztastisch! Die elektrisierende Energieshow für Kinder,,0,0,0,1,0,0,3,2,1,1768606086.9467306,15.10770344734192,0,0.0,1,formatog_d3_p3,1,llama3.1:8b,lndw25
+28,Papier macht kreativ – Blumen basteln in der Gartenbaubibliothek,Universitätsbibliothek,0,0,0,0,0,1,4,2,1,1768606166.441355,20.29119324684143,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+29,Quantum Walks vs. Drunkard‘s Walk – wie Quantenteilchen schneller ans Ziel kommen,,0,0,0,1,0,0,3,2,1,1768606234.409544,16.491878032684326,0,0.0,1,formatog_d3_p3,1,llama3.1:8b,lndw25
+30,Lokfahren für Anfänger:innen,Einblicke in den modernen Bahnbetrieb,0,0,0,0,0,1,5,2,1,1768605547.7775772,55.48093390464783,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+31,Leseabenteuer im Zelt: altersgerechte Bücherwelten für kleine Entdecker:innen,Bücherregen,0,0,0,1,0,0,6,3,1,1768605665.310896,29.113032341003414,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+32,Leseabenteuer im Zelt: altersgerechte Bücherwelten für kleine Entdecker:innen,Hörsaal,0,0,0,1,0,0,3,2,1,1768605778.9234047,16.952399969100952,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+33,Eine „Lesepfote“ zu Gast in der Bibliothek,Ein Spiel,0,0,0,1,0,0,2,2,1,1768605881.3286908,11.67611837387085,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+34,Kopf trifft Körper: Teste deine Fitness und Motorik im TU-SportLab!,Turnier,0,0,0,1,0,0,3,2,1,1768605954.072472,18.49343490600586,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+35,"Haus des Lernens (MAR)
+Marchstraße 23
+10587 Berlin
+Raum MAR 0.011 (EG)",Deutscher Bundestag,0,0,0,1,0,0,6,3,1,1768606040.9725895,36.90420699119568,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+36,Roboter im öffentlichen Raum: Mensch und Maschine mitten im Leben,"Die Sendung 'Ist das schon ein Roboter? ist Teil der Sendereihe 'Hessenschau', die von Hessischer Rundfunk ausgestrahlt wird.",0,0,0,1,0,0,3,3,1,1768606152.4126651,33.08314609527588,0,0.08695652173913043,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+37,Tourismushistorischer Dia- und Filmabend,Campustour für kleine Entdecker:innen,0,0,0,0,0,1,6,3,1,1768606238.096034,30.794766664505005,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+38,5 Euro,,0,0,0,1,0,0,3,2,1,1768606336.789502,19.01741361618042,0,0.0,1,formatog_d3_p3,1,llama3.1:8b,lndw25
+39,jedes Alter,2-12 Jahre,0,0,0,1,0,0,3,2,1,1768606412.25718,14.735372066497805,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+40,Technische Universität Berlin,Lange Nacht der Wissenschaften 2025,0,0,0,0,0,1,3,1,1,1768605732.8004236,39.124470472335815,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+41,Lange Nacht der Wissenschaften e. V. (LNDW e. V.),Lange Nacht der Wissenschaften e. V. (LNDW e. V.),0,0,0,0,0,1,5,1,1,1768605804.6303308,10.54426884651184,1,1.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+42,New Practice in Art and Technology / Workshops,Lange Nacht der Wissenschaften 2025,0,0,0,0,0,1,11,5,2,1768605845.211871,80.53406500816345,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+43,Veranstaltung auf Englisch,Deutsch,0,0,0,1,0,0,6,3,1,1768606024.0384943,51.48917889595032,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+44,Unterhaltsame Live-Show – Sport und Musik für Kopf und Körper,19:30 Uhr,0,0,0,0,0,1,6,3,1,1768606133.6863475,30.08186984062195,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+45,21:00-21:20 Uhr,21:00-21:20 Uhr,0,0,0,0,0,1,4,3,1,1768606220.0536606,33.53524088859558,1,1.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+46,Unterhaltsame Live-Show – Sport und Musik für Kopf und Körper,Lichtschwert-Show,0,0,0,0,0,1,5,2,1,1768606312.4147298,29.310354471206665,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+47,Historisch-ökologische Exkursion über den Steglitzer Fichtenberg,Führung,0,0,0,0,0,1,5,3,1,1768606409.040069,33.38733100891113,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+48,Als Eichhörnchen-Detektiv:innen auf den Spuren kleiner Persönlichkeiten der Natur,Bismarck-Eiche und Soldatenehrenmal,0,0,0,1,0,0,9,5,2,1768606542.7901454,59.83807730674744,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+49,"Die verborgene Welt der Wurzeln: schätzen, messen, staunen","Karneval, Weihnachtsmärkte",0,0,0,1,0,0,6,3,1,1768606650.9773777,31.419682025909424,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+50,Zukunft der Energie: nachhaltig durch KI,Hackathon,0,0,0,1,0,0,3,2,1,1768605815.907542,41.92927694320679,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+51,über 1000,They are around 250-300 events,0,0,0,1,0,0,3,2,1,1768605947.0801375,14.544438362121582,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+52,etwa 50,17,0,0,0,1,0,0,3,2,1,1768606035.1476803,16.345075845718384,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+53,Science Slam – Brainpower mit Entertainment-Faktor,Science Slam – Brainpower mit Entertainment-Faktor,0,0,0,0,0,1,2,1,1,1768606117.2145383,7.837669610977173,1,1.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+54,Berlin,Berlin,0,0,0,0,0,1,5,1,1,1768606153.1020005,8.636277198791504,1,1.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+55,FaSTTUBe – das elektrische Rennauto des Formula Student Team TU Berlin,Formel-Rennautos,0,0,0,0,0,1,4,2,1,1768606198.0447445,18.24525761604309,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+56,Wie moderne Mobilfunknetze funktionieren – Identitätsmanagement in 6G-Netzwerken,DevOpsDays,0,0,0,1,0,0,4,3,1,1768606252.581095,69.4259090423584,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+57,"Die Lange Nacht der Wissenschaften in Berlin ist ein Gemeinschaftsprojekt wissenschaftlicher sowie wissenschaftsnaher Einrichtungen der Region und findet einmal jährlich statt. Veranstalter ist der Lange Nacht der Wissenschaften e. V. (LNDW e. V.), in dem sich wissenschaftliche Einrichtungen zusammengeschlossen haben. Finanziert wird die Lange Nacht der Wissenschaften weitgehend von den beteiligten wissenschaftlichen Einrichtungen selbst. Auch die Ticketeinnahmen werden vollständig für die Finanzierung der Gesamtveranstaltung verwendet. Die Lange Nacht der Wissenschaften wird von zahlreichen Partnern aus der Region unterstützt. Über den Einsatz der Mittel entscheidet die Mitgliederversammlung des LNDW e. V.",Lange Nacht der Forschung,0,0,0,1,0,0,3,2,1,1768606407.7502325,18.39040756225586,0,0.0547945205479452,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+58,"Haus der Ideen (H)
+Straße des 17. Juni 135
+10623 Berlin
+Wangari Maathai-Foyer (Foyer links, ehem. Cafébar, Bereich 0 H)",Haus der Ideen,0,0,0,0,0,1,2,2,1,1768606505.1424525,15.25476050376892,0,0.19999999999999998,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+59,17:30-23:20 Uhr,2023-11-03 17:30 bis 23:20 Uhr,0,0,0,0,0,1,4,2,1,1768606586.2033546,19.84792637825012,0,0.28571428571428575,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+60,Barrierefreier Rollstuhlzugang,Barrierefreier Rollstuhlzugang,0,0,0,0,0,1,4,3,1,1768605865.610283,52.1477415561676,1,1.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+61,Experiment,Thermischer Energiespeicher,0,0,0,1,0,0,6,3,1,1768605975.6789486,28.95371389389038,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+62,Demonstration,Lange Nacht der Wissenschaften 2025,0,0,0,0,0,1,5,2,1,1768606063.738666,18.7074511051178,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+63,Fluoreszierender Wärmeübertrager,Lange Nacht der Wissenschaften 2025,0,0,0,0,0,1,6,3,1,1768606136.5128992,36.08984446525574,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+64,Technische Universität Berlin,Karlsruher Institut für Technologie (KIT),0,0,0,1,0,0,3,2,1,1768606234.1878023,16.485845804214478,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+65,Technische Universität Berlin,Deutsches Museum,0,0,0,0,0,1,3,1,1,1768606309.4633608,8.089278221130371,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+66,"Zentrum (u.a. Mitte, Wedding, Moabit, Tiergarten)",Universitäten,0,0,0,1,0,0,5,3,1,1768606341.80271,37.20770716667175,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+67,Mitmachexperiment,Mitmachexperiment,0,0,0,0,0,1,6,2,1,1768606421.3530614,19.52592945098877,1,1.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+68,Ausstellung,Diskussion,0,0,0,0,0,1,6,2,1,1768606499.550985,16.771363973617554,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+69,Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management,Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management,0,0,0,0,0,1,3,1,1,1768606591.2862806,9.915786504745483,1,1.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+70,17:00-00:00 Uhr,2025,0,0,0,0,0,1,4,2,1,1768605955.463271,29.788904428482056,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+71,Geeignet für Kinder,Kinder,0,0,0,0,0,1,5,2,1,1768606005.7821934,16.094063997268677,0,0.5,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+72,17:00-17:15 Uhr,"Samstag, der 28. Juni 2025",0,0,0,0,0,1,4,2,1,1768606050.5554757,13.907763719558716,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+73,"Im Fahrsimulator erleben fahrende Personen realitätsnahes Fahrverhalten mit Rundumsicht. Eine Fahrdynamiksimulation erzeugt das realistische Lenkgefühl, die aktive Pedalerie ermöglicht zum Beispiel das bekannte ABS-Ruckeln. Beim Bremsen und Beschleunigen nickt das Fahrzeug, in Kurven wankt es. Kenngrößen der Mensch-Fahrzeug-Interaktion und des Fahrzustands werden aufgezeichnet und ermöglichen eine Bewertung von Fahrfunktionen und Fahrleistung. So können sicherheitskritische Situationen und deren Beherrschbarkeit bis in den Grenzbereich erprobt und untersucht werden. Geeignet ab 15 Jahren.",Dynamischer Fahrsimulator,0,0,0,1,0,0,5,3,1,1768606090.591129,23.91012740135193,0,0.031746031746031744,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+74,21:45-22:00 Uhr,Es gab keine Informationen zu den Veranstaltungsdaten finden.,0,0,0,1,0,0,3,2,1,1768606153.8069422,13.055827856063845,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+75,Demonstration,Demonstration,0,0,0,0,0,1,6,2,1,1768606199.6054115,11.93959617614746,1,1.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+76,Barrierefreier Rollstuhlzugang,Online,0,0,0,1,0,0,2,2,1,1768606247.7166884,10.918539047241213,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+77,17:00-22:00 Uhr,Juni,0,0,0,0,0,1,3,2,1,1768606285.348012,9.308063983917236,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+78,"Westen (u.a. Charlottenburg, Schöneberg, Spandau)",Berlin,0,0,0,0,0,1,3,2,1,1768606334.2592342,7.695326805114746,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+79,Mitmachexperiment,Festival,0,0,0,1,0,0,3,2,1,1768606362.6088226,9.329370975494385,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+80,Geeignet für Kinder,jedes Alter,0,0,0,0,0,1,4,2,1,1768605973.771651,49.44210147857666,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+81,Detektive im Heizungskeller: intelligente Messtechnik für die Wärmewende von „Delta Heat“,Haus der Energie,0,0,0,1,0,0,3,2,1,1768606083.144472,15.375598192214966,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+82,Future Security Lab – Sicherheitsforschung zum Anfassen,Future Security Lab,0,0,0,0,0,1,5,2,1,1768606156.5330558,26.167723655700684,0,0.6,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+83,"Zentrum (u.a. Mitte, Wedding, Moabit, Tiergarten)",Hertie School of Governance,0,0,0,1,0,0,3,2,1,1768606247.3595088,14.165657997131348,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+84,17:00-00:00 Uhr,2025,0,0,0,0,0,1,5,2,1,1768606336.4288104,19.40949320793152,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+85,Geeignet für Kinder,,0,0,0,1,0,0,2,2,1,1768606403.2680247,18.54124402999878,0,0.0,1,formatog_d3_p3,1,llama3.1:8b,lndw25
+86,Installation,Ausstellung,0,0,0,0,0,1,6,2,1,1768606480.5759332,19.869853496551514,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+87,Zukunft der Energie: nachhaltig durch KI,Haus der erlebbaren KI,0,0,0,0,0,1,5,2,1,1768606558.026549,24.58308744430542,0,0.25,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+88,Zukunft der Energie: nachhaltig durch KI,Zweitfront-Einheitstraining,0,0,0,1,0,0,3,2,1,1768606638.862925,16.5528507232666,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+89,Future Security Lab – Sicherheitsforschung zum Anfassen,Berliner Dom,0,0,0,1,0,0,2,2,1,1768606722.3313272,14.633896589279177,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+90,Stich für Stich nachhaltig – Sticken fürs Klima,Kunsthandwerksabende,0,0,0,1,0,0,4,3,1,1768606010.293815,76.19769167900085,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+91,Notfallpfeife aus Aluminium – dein Signal in der Wildnis,Haus des Lernens,0,0,0,0,0,1,4,1,1,1768606130.033316,9.061977863311768,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+92,Mitmachexperiment,Veranstaltung,0,0,0,0,0,1,3,2,1,1768606168.1397886,14.453283309936523,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+93,17:30-21:30 Uhr,28. Juni 2025,0,0,0,0,0,1,4,2,1,1768606245.6371963,18.59142756462097,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+94,"Westen (u.a. Charlottenburg, Schöneberg, Spandau)",Westen,0,0,0,0,0,1,4,2,1,1768606309.9796524,13.558813333511353,0,0.33333333333333337,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+95,Spiel,,0,0,0,1,0,0,6,3,1,1768606379.8088353,28.25669026374817,0,0.0,1,formatog_d3_p3,1,llama3.1:8b,lndw25
+96,Geeignet für Kinder,jedes Alter,0,0,0,0,0,1,4,2,1,1768606480.588997,17.786803483963013,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+97,17:00-22:00 Uhr,,0,0,0,1,0,0,10,6,2,1768606543.9944837,102.00760841369627,0,0.0,1,formatog_d3_p3,1,llama3.1:8b,lndw25
+98,Saturday SatelLight Fever – wofür braucht der Satellit Licht?,Mittelmicrogravitattraktor,0,0,0,1,0,0,3,2,1,1768606744.7964342,20.04291582107544,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+99,Karriere und Jobs an der TU Berlin,Infostand,0,0,0,0,0,1,6,2,1,1768606846.8230302,29.042335033416748,0,0.0,0,formatog_d3_p3,1,llama3.1:8b,lndw25
+0,https://www.langenachtderwissenschaften.de/programm/detail/51327,,0,0,1,1,0,0,1,2,1,1768605519.1258,5.186513185501099,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+1,"Im Kleinsten wird unsere Welt durch die Quantentheorie beschrieben, wie sie vor 100 Jahren formuliert wurde. Ihre Gesetze faszinieren heute nicht weniger als damals, denn sie widersprechen unserer Alltagserfahrung auf bizarre Weise: Teilchen können an verschiedenen Orten gleichzeitig sein sowie durch Barrieren „tunneln“. Und bei der Messung des einen Quantensystems verändert sich auch der Zustand eines anderen, wenn dieses mit dem ersten „verschränkt“ ist. Erkunden Sie die faszinierenden Eigenschaften der Quantenwelt mit Hilfe interaktiver Simulationen und Visualisierungen.",,0,0,1,1,0,0,3,4,1,1768605561.4205737,9.940298557281494,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+2,"Wie kann man Dinge zum Schweben bringen? Student:innen des Projektlabors Physik zeigen euch physikalische Zaubertricks, die Alltagsgegenstände schwerelos machen können. Auch lebendige Flüssigkeiten und optische Täuschungen laden zum Mitmachen und Anfassen ein. Geeignet für Kinder ab 6 Jahren.","Washington, D.C.",0,0,1,1,0,0,3,4,1,1768605604.0361755,15.656386852264404,0,0.0,0,tog_d3_p3,1,llama3.1:8b,lndw25
+3,Programmieren lernen für Kinder und Einsteiger:innen,,0,0,1,1,0,0,1,2,1,1768605657.2481644,5.009213924407959,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+4,"Im Kleinsten wird unsere Welt durch die Quantentheorie beschrieben, wie sie vor 100 Jahren formuliert wurde. Ihre Gesetze faszinieren heute nicht weniger als damals, denn sie widersprechen unserer Alltagserfahrung auf bizarre Weise: Teilchen können an verschiedenen Orten gleichzeitig sein sowie durch Barrieren „tunneln“. Und bei der Messung des einen Quantensystems verändert sich auch der Zustand eines anderen, wenn dieses mit dem ersten „verschränkt“ ist. Erkunden Sie die faszinierenden Eigenschaften der Quantenwelt mit Hilfe interaktiver Simulationen und Visualisierungen.","Washington, D.C.",0,0,1,1,0,0,1,2,1,1768605697.1742663,4.152784109115601,0,0.0,0,tog_d3_p3,1,llama3.1:8b,lndw25
+5,https://www.langenachtderwissenschaften.de/programm/detail/51248,,0,0,1,1,0,0,1,2,1,1768605724.5122492,4.017400026321411,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+6,"Unsere Forschungsgruppe baut Organoide, organähnliche Strukturen, aus humanen Stammzellen, um Tierexperimente in der Forschung zu reduzieren. Durch die Kombination von Organoiden simulieren wir in sogenannten Organ-Chips die komplexen Organ-Interaktionen des menschlichen Körpers. Wir erklären Konzept und Funktionsweise solcher Organ-Chips. Es werden Anwendungsgebiete in der Aufklärung pathologischer Prozesse und in der Medikamenten-Entwicklung zur Reduktion von Tierexperimenten dargestellt. Besucher:innen können Organ-Chips zusammenbauen und die magnetische Zellsortierung ausprobieren.",,0,0,1,1,0,0,2,3,1,1768605772.9957037,8.674279689788818,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+7,https://www.langenachtderwissenschaften.de/programm/detail/51514,,0,0,1,1,0,0,3,4,1,1768605824.3788302,12.094865322113035,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+8,"Gestalte Straßen, Radwege, Brücken und mehr mit Klemmbausteinen, und lerne spielerisch, wie moderne Verkehrsplanung funktioniert. Ihr lernt die Funktionen von Straßen kennen, die passenden Verkehrsmittel, um verschiedene Orte zu erreichen, sowie ein Konzept, wie Verkehr nachhaltiger werden kann. Für Kinder ab 6 Jahren und Erwachsene – für alle Altersgruppen ist etwas dabei! Jeder Gast erhält Bausteine, um unsere Stadt wachsen zu lassen. Komm vorbei, und werde Verkehrsplaner:in für einen Abend!",,0,0,1,1,0,0,2,3,1,1768605881.213826,8.182874917984009,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+9,"Testen Sie Ihr Wissen über das Universum, und gewinnen Sie kleine Preise – solange der Vorrat reicht! Geeignet ab 6 Jahren.","Washington, D.C.",0,0,1,1,0,0,1,2,1,1768605925.6638966,8.512941360473633,0,0.0,0,tog_d3_p3,1,llama3.1:8b,lndw25
+10,Chatbots zur Stärkung der Demokratie,,0,0,1,1,0,0,3,4,1,1768605533.5569656,13.693281412124634,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+11,Live-Musik,,0,0,1,1,0,0,2,3,1,1768605585.3014271,10.3698570728302,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+12,17:00-21:30 Uhr,"Washington, D.C.",0,0,1,1,0,0,1,2,1,1768605649.4549646,7.641783237457275,0,0.0,0,tog_d3_p3,1,llama3.1:8b,lndw25
+13,https://www.langenachtderwissenschaften.de/programm/detail/51498,,0,0,1,1,0,0,1,2,1,1768605686.5000074,3.0833542346954346,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+14,25,"Washington, D.C.",0,0,1,1,0,0,1,2,1,1768605721.527002,7.179158449172974,0,0.0,0,tog_d3_p3,1,llama3.1:8b,lndw25
+15,https://www.langenachtderwissenschaften.de/programm/detail/51151,,0,0,1,1,0,0,1,2,1,1768605745.7426,5.134814500808716,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+16,Juri Mertens,,0,0,1,1,0,0,1,2,1,1768605800.1584666,3.5644443035125732,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+17,"Wissensmarkt (HZA)
+Verlängerte Hertzallee
+10623 Berlin
+",,0,0,1,1,0,0,1,2,1,1768605851.1182494,4.362340688705444,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+18,https://www.langenachtderwissenschaften.de/programm/detail/51348,,0,0,1,1,0,0,1,2,1,1768605888.5176678,11.363510131835938,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+19,17:30-23:15 Uhr,,0,0,1,1,0,0,1,2,1,1768605945.4820876,3.297096014022827,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+20,"Das Open-Battery-Projekt bietet eine offene Transferplattform für Software- und Hardwarekomponenten, die um ein batteriegestütztes Photovoltaiksystem mit Netzanschluss angesiedelt sind. Dieser quelloffene Ansatz des Projekts ermöglicht es Privatpersonen, Vereinen, Communitys oder Unternehmen auf der ganzen Welt, an der Energiewende teilzunehmen und sie mitzugestalten. Aktuell befindet sich das Open-Battery-Projekt in der Entwicklungsphase. Hardware- und Softwarekomponenten werden zusammen mit Student:innen ausgelegt, aufgebaut und getestet.",,0,0,1,1,0,0,1,2,1,1768605562.1181445,17.826120853424072,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+21,23:30-00:00 Uhr,,0,0,1,1,0,0,1,2,1,1768605657.7854571,16.864287614822388,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+22,Studentisches Projekt „Automatisiertes Fahren“,,0,0,1,1,0,0,2,3,1,1768605762.5417504,25.624861001968384,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+23,Science Slam – Brainpower mit Entertainment-Faktor,,0,0,1,1,0,0,2,3,1,1768605855.5693824,14.580204010009766,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+24,Turbulentes Chaos: Wie können numerische Simulationen helfen?,,0,0,1,1,0,0,1,2,1,1768605921.0994158,5.976275444030762,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+25,Science Slam – Brainpower mit Entertainment-Faktor,Washington D.C.,0,0,1,1,0,0,3,4,1,1768605968.6272004,41.1273934841156,0,0.0,0,tog_d3_p3,1,llama3.1:8b,lndw25
+26,Turbulentes Chaos: Wie können numerische Simulationen helfen?,,0,0,1,1,0,0,3,4,1,1768606047.9527435,26.40959000587463,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+27,⚡ Blitztastisch! Die elektrisierende Energieshow für Kinder,,0,0,1,1,0,0,3,4,1,1768606117.6899962,38.40372371673584,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+28,Papier macht kreativ – Blumen basteln in der Gartenbaubibliothek,,0,0,1,1,0,0,1,2,1,1768606207.9830756,13.862319231033323,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+29,Quantum Walks vs. Drunkard‘s Walk – wie Quantenteilchen schneller ans Ziel kommen,,0,0,1,1,0,0,3,4,1,1768606292.0216494,23.65155816078186,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+30,Lokfahren für Anfänger:innen,,0,0,1,1,0,0,2,3,1,1768605631.126264,19.72336745262146,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+31,Leseabenteuer im Zelt: altersgerechte Bücherwelten für kleine Entdecker:innen,,0,0,1,1,0,0,3,4,1,1768605720.7611296,44.8893461227417,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+32,Leseabenteuer im Zelt: altersgerechte Bücherwelten für kleine Entdecker:innen,,0,0,1,1,0,0,3,4,1,1768605834.9503918,33.91171646118164,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+33,Eine „Lesepfote“ zu Gast in der Bibliothek,,0,0,1,1,0,0,2,3,1,1768605928.584684,19.108670949935913,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+34,Kopf trifft Körper: Teste deine Fitness und Motorik im TU-SportLab!,,0,0,1,1,0,0,3,4,1,1768605992.3120532,38.74716377258301,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+35,"Haus des Lernens (MAR)
+Marchstraße 23
+10587 Berlin
+Raum MAR 0.011 (EG)",,0,0,1,1,0,0,3,4,1,1768606120.2206032,23.691062450408936,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+36,Roboter im öffentlichen Raum: Mensch und Maschine mitten im Leben,,0,0,1,1,0,0,2,3,1,1768606203.3528848,21.516032934188843,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+37,Tourismushistorischer Dia- und Filmabend,,0,0,1,1,0,0,3,4,1,1768606304.7014458,24.20571994781494,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+38,5 Euro,,0,0,1,1,0,0,3,4,1,1768606372.3404362,27.20111107826233,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+39,jedes Alter,,0,0,1,1,0,0,3,4,1,1768606444.15722,33.327353715896606,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+40,Technische Universität Berlin,,0,0,1,1,0,0,1,2,1,1768605779.1251397,15.158787965774536,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+41,Lange Nacht der Wissenschaften e. V. (LNDW e. V.),,0,0,1,1,0,0,2,3,1,1768605820.8045285,15.126726388931274,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+42,New Practice in Art and Technology / Workshops,"Washington, D.C.",0,0,1,1,0,0,2,3,1,1768605988.766711,25.14305353164673,0,0.0,0,tog_d3_p3,1,llama3.1:8b,lndw25
+43,Veranstaltung auf Englisch,,0,0,1,1,0,0,3,4,1,1768606089.260573,35.756534814834595,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+44,Unterhaltsame Live-Show – Sport und Musik für Kopf und Körper,,0,0,1,1,0,0,3,4,1,1768606180.2294087,29.415757417678833,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+45,21:00-21:20 Uhr,,0,0,1,1,0,0,1,2,1,1768606285.137064,19.06705379486084,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+46,Unterhaltsame Live-Show – Sport und Musik für Kopf und Körper,,0,0,1,1,0,0,2,3,1,1768606373.1388395,26.13720989227295,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+47,Historisch-ökologische Exkursion über den Steglitzer Fichtenberg,,0,0,1,1,0,0,2,3,1,1768606510.2838058,23.01708722114563,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+48,Als Eichhörnchen-Detektiv:innen auf den Spuren kleiner Persönlichkeiten der Natur,,0,0,1,1,0,0,1,2,1,1768606626.3604076,12.078469514846802,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+49,"Die verborgene Welt der Wurzeln: schätzen, messen, staunen","Washington, D.C.",0,0,1,1,0,0,3,4,1,1768606699.3419456,34.69087195396423,0,0.0,0,tog_d3_p3,1,llama3.1:8b,lndw25
+50,Zukunft der Energie: nachhaltig durch KI,"Washington, D.C.",0,0,1,1,0,0,3,4,1,1768605891.926456,42.84498834609985,0,0.0,0,tog_d3_p3,1,llama3.1:8b,lndw25
+51,über 1000,"Washington, D.C.",0,0,1,1,0,0,3,4,1,1768605978.6702142,41.24094843864441,0,0.0,0,tog_d3_p3,1,llama3.1:8b,lndw25
+52,etwa 50,,0,0,1,1,0,0,3,4,1,1768606065.455784,40.68591094017029,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+53,Science Slam – Brainpower mit Entertainment-Faktor,,0,0,1,1,0,0,1,2,1,1768606131.9236112,11.59014654159546,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+54,Berlin,,0,0,1,1,0,0,2,3,1,1768606168.9963646,18.00097155570984,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+55,FaSTTUBe – das elektrische Rennauto des Formula Student Team TU Berlin,,0,0,1,1,0,0,1,2,1,1768606237.2444403,9.250081300735474,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+56,Wie moderne Mobilfunknetze funktionieren – Identitätsmanagement in 6G-Netzwerken,,0,0,1,1,0,0,1,2,1,1768606375.6339192,19.576738357543945,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+57,"Die Lange Nacht der Wissenschaften in Berlin ist ein Gemeinschaftsprojekt wissenschaftlicher sowie wissenschaftsnaher Einrichtungen der Region und findet einmal jährlich statt. Veranstalter ist der Lange Nacht der Wissenschaften e. V. (LNDW e. V.), in dem sich wissenschaftliche Einrichtungen zusammengeschlossen haben. Finanziert wird die Lange Nacht der Wissenschaften weitgehend von den beteiligten wissenschaftlichen Einrichtungen selbst. Auch die Ticketeinnahmen werden vollständig für die Finanzierung der Gesamtveranstaltung verwendet. Die Lange Nacht der Wissenschaften wird von zahlreichen Partnern aus der Region unterstützt. Über den Einsatz der Mittel entscheidet die Mitgliederversammlung des LNDW e. V.",,0,0,1,1,0,0,3,4,1,1768606445.4038026,46.599807262420654,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+58,"Haus der Ideen (H)
+Straße des 17. Juni 135
+10623 Berlin
+Wangari Maathai-Foyer (Foyer links, ehem. Cafébar, Bereich 0 H)",,0,0,1,1,0,0,1,2,1,1768606556.3327217,18.380801916122437,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+59,17:30-23:20 Uhr,,0,0,1,1,0,0,1,2,1,1768606625.8715167,15.913068532943726,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+60,Barrierefreier Rollstuhlzugang,,0,0,1,1,0,0,1,2,1,1768605937.3532772,15.970775127410889,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+61,Experiment,,0,0,1,1,0,0,3,4,1,1768606027.9497578,24.852742433547977,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+62,Demonstration,,0,0,1,1,0,0,2,3,1,1768606104.1689005,21.75257396697998,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+63,Fluoreszierender Wärmeübertrager,,0,0,1,1,0,0,3,4,1,1768606192.765264,30.864513635635376,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+64,Technische Universität Berlin,,0,0,1,1,0,0,3,4,1,1768606270.071936,27.688956260681152,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+65,Technische Universität Berlin,,0,0,1,1,0,0,1,2,1,1768606324.9017627,7.757948875427246,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+66,"Zentrum (u.a. Mitte, Wedding, Moabit, Tiergarten)",,0,0,1,1,0,0,2,3,1,1768606394.1170378,19.849886417388916,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+67,Mitmachexperiment,,0,0,1,1,0,0,3,4,1,1768606459.5769591,30.933582544326782,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+68,Ausstellung,,0,0,1,1,0,0,3,4,1,1768606545.768521,27.967297077178955,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+69,Wissenschaftliche Ergebnisse offen zugänglich machen durch Information Management,,0,0,1,1,0,0,1,2,1,1768606608.7588131,21.648720026016235,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+70,17:00-00:00 Uhr,,0,0,1,1,0,0,1,2,1,1768605994.4634128,4.145817995071411,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+71,Geeignet für Kinder,,0,0,1,1,0,0,2,3,1,1768606034.343212,10.135570287704468,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+72,17:00-17:15 Uhr,,0,0,1,1,0,0,1,2,1,1768606076.8478894,6.974421501159668,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+73,"Im Fahrsimulator erleben fahrende Personen realitätsnahes Fahrverhalten mit Rundumsicht. Eine Fahrdynamiksimulation erzeugt das realistische Lenkgefühl, die aktive Pedalerie ermöglicht zum Beispiel das bekannte ABS-Ruckeln. Beim Bremsen und Beschleunigen nickt das Fahrzeug, in Kurven wankt es. Kenngrößen der Mensch-Fahrzeug-Interaktion und des Fahrzustands werden aufgezeichnet und ermöglichen eine Bewertung von Fahrfunktionen und Fahrleistung. So können sicherheitskritische Situationen und deren Beherrschbarkeit bis in den Grenzbereich erprobt und untersucht werden. Geeignet ab 15 Jahren.",,0,0,1,1,0,0,2,3,1,1768606135.403366,9.534307479858398,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+74,21:45-22:00 Uhr,,0,0,1,1,0,0,3,4,1,1768606182.1630497,9.19974684715271,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+75,Demonstration,,0,0,1,1,0,0,3,4,1,1768606230.0910275,10.013258695602415,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+76,Barrierefreier Rollstuhlzugang,,0,0,1,1,0,0,2,3,1,1768606270.6458275,8.789376258850098,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+77,17:00-22:00 Uhr,,0,0,1,1,0,0,2,3,1,1768606319.1449816,7.705972671508789,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+78,"Westen (u.a. Charlottenburg, Schöneberg, Spandau)",,0,0,1,1,0,0,2,3,1,1768606349.3858626,5.95717191696167,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+79,Mitmachexperiment,,0,0,1,1,0,0,3,4,1,1768606392.038887,11.626586198806764,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+80,Geeignet für Kinder,"Washington, D.C.",0,0,1,1,0,0,1,2,1,1768606040.683755,32.30085515975952,0,0.0,0,tog_d3_p3,1,llama3.1:8b,lndw25
+81,Detektive im Heizungskeller: intelligente Messtechnik für die Wärmewende von „Delta Heat“,"Washington, D.C.",0,0,1,1,0,0,3,4,1,1768606113.547855,32.024097204208374,0,0.0,0,tog_d3_p3,1,llama3.1:8b,lndw25
+82,Future Security Lab – Sicherheitsforschung zum Anfassen,,0,0,1,1,0,0,2,3,1,1768606210.399891,25.259273052215576,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+83,"Zentrum (u.a. Mitte, Wedding, Moabit, Tiergarten)",Washington D.C.,0,0,1,1,0,0,3,4,1,1768606288.182199,38.91796588897705,0,0.0,0,tog_d3_p3,1,llama3.1:8b,lndw25
+84,17:00-00:00 Uhr,,0,0,1,1,0,0,2,3,1,1768606374.0928676,19.818280696868896,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+85,Geeignet für Kinder,,0,0,1,1,0,0,2,3,1,1768606441.011784,27.155695915222168,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+86,Installation,,0,0,1,1,0,0,3,4,1,1768606516.5208912,32.21646499633789,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+87,Zukunft der Energie: nachhaltig durch KI,"Washington, D.C.",0,0,1,1,0,0,2,3,1,1768606608.5875106,19.995821714401245,0,0.0,0,tog_d3_p3,1,llama3.1:8b,lndw25
+88,Zukunft der Energie: nachhaltig durch KI,"Washington, D.C.",0,0,1,1,0,0,3,4,1,1768606671.6524065,42.357179164886475,0,0.0,0,tog_d3_p3,1,llama3.1:8b,lndw25
+89,Future Security Lab – Sicherheitsforschung zum Anfassen,,0,0,1,1,0,0,2,3,1,1768606750.5021667,25.351852655410767,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+90,Stich für Stich nachhaltig – Sticken fürs Klima,,0,0,1,1,0,0,1,2,1,1768606103.232078,15.10074496269226,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+91,Notfallpfeife aus Aluminium – dein Signal in der Wildnis,,0,0,1,1,0,0,1,2,1,1768606144.6514893,11.93592357635498,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+92,Mitmachexperiment,,0,0,1,1,0,0,2,3,1,1768606215.4513285,19.587791919708252,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+93,17:30-21:30 Uhr,,0,0,1,1,0,0,1,2,1,1768606282.988309,13.213991403579712,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+94,"Westen (u.a. Charlottenburg, Schöneberg, Spandau)",,0,0,1,1,0,0,3,4,1,1768606343.5250485,28.739908933639526,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+95,Spiel,,0,0,1,1,0,0,3,4,1,1768606445.1841946,26.350152730941772,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+96,Geeignet für Kinder,,0,0,1,1,0,0,1,2,1,1768606520.257674,12.594431161880491,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+97,17:00-22:00 Uhr,,0,0,1,1,0,0,1,2,1,1768606722.0112915,12.804908990859984,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+98,Saturday SatelLight Fever – wofür braucht der Satellit Licht?,,0,0,1,1,0,0,3,4,1,1768606805.894642,26.599813222885132,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25
+99,Karriere und Jobs an der TU Berlin,,0,0,1,1,0,0,3,4,1,1768606893.4124908,25.851702451705933,0,0.0,1,tog_d3_p3,1,llama3.1:8b,lndw25

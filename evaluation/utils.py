@@ -20,8 +20,6 @@ from graphs.Graph import Graph
 import re
 from pathlib import Path
 import string
-import argparse
-import os
 
 
 # ---------------------------------------------------------------------------- #
@@ -139,25 +137,6 @@ DATA_TYPE_MAP = {
     "has_err_instruction": int,
     "has_err_other": int,
 }
-
-
-def get_exp_and_dir_from_arg():
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--exp",
-        type=str,
-        help="the name of the experiment folder in results/",
-        required=True,
-    )
-
-    args = parser.parse_args()
-    exp_name = args.exp
-
-    current_dir = os.path.dirname(__file__)
-    exp_dir = os.path.abspath(os.path.join(current_dir, "..", "results", exp_name))
-    if not os.path.exists(exp_dir):
-        raise NotADirectoryError("No such directory", exp_dir)
-    return exp_name, exp_dir
 
 
 def extract_meta_from_result_path(path: str):

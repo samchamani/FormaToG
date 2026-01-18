@@ -1,0 +1,18 @@
+(
+   export QUESTIONS="qald_10-en"
+   export QUESTIONS_BATCH_LENGTH=9
+   export MODEL="llama3.1:8b"
+   export GRAPH="wikidata"
+   export METHODS="formatog_d1_p1 formatog_d2_p1 formatog_d3_p1 formatog_d4_p1 formatog_d1_p2 formatog_d2_p2 formatog_d3_p2 formatog_d4_p2 formatog_d1_p3 formatog_d2_p3 formatog_d3_p3 formatog_d4_p3 formatog_d1_p4 formatog_d2_p4 formatog_d3_p4 formatog_d4_p4"
+   export GRAPH_USER_AGENT="FormaToG/1.0 (https://samchamani.com; contact@samchamani.com)"
+   sbatch \
+      --job-name=dp_qald \
+      --array=0-36 \
+      --partition=gpu \
+      --gres=gpu:1 \
+      --mem=60G \
+      --cpus-per-task=4 \
+      --time=02:00:00 \
+      --export=ALL \
+      ~/FormaToG/evaluation/hpc/job.sbatch
+)

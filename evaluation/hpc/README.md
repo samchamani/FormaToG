@@ -15,7 +15,7 @@
    --exclude='results' \
    --exclude='ui' \
    --exclude='.env' \
-   --exclude-'.DS_Store' \
+   --exclude='.DS_Store' \
    $REPO_PARENT_DIR/FormaToG \
    $HPC_USER@gateway.hpc.tu-berlin.de:~/
    ```

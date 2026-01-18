@@ -1,5 +1,5 @@
 {
-    "title": "slm_on_cwq",
+    "title": "slm_on_lndw",
     "experiment": "question answering",
     "methods": [
         "formatog_d3_p3",
@@ -10,13 +10,13 @@
     ],
     "agent": "llama3.1:8b",
     "provider": "ollama",
-    "graph": "wikidata",
-    "questions": "cwq",
+    "graph": "neo4j",
+    "questions": "lndw25",
     "q_range": [
         0,
-        3531
+        100
     ],
     "repetitions": null,
     "env_note": "Merged data | Executed on TUB HPC in separate jobs using a Tesla P100 GPU with 16GB",
-    "timestamp": 1768734559.725715
+    "timestamp": 1768734585.0431821
 }

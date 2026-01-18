@@ -92,4 +92,5 @@ __marimo__/
 *.csv
 !results.csv
 !agg_results.csv
+!figures/*
 .DS_Store

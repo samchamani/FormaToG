@@ -1,0 +1,17 @@
+(
+   export QUESTIONS="lndw25"
+   export QUESTIONS_BATCH_LENGTH=10
+   export MODEL="llama3.1:8b"
+   export GRAPH="neo4j"
+   export METHODS="formatog_d3_p3 formatog_noctx_d3_p3 tog_d3_p3 cot io_simple"
+   sbatch \
+      --job-name=slm_on_lndw25 \
+      --array=0-9 \
+      --partition=gpu \
+      --gres=gpu:1 \
+      --mem=60G \
+      --cpus-per-task=4 \
+      --time=05:00:00 \
+      --export=ALL \
+      ~/FormaToG/evaluation/hpc/job.sbatch
+)

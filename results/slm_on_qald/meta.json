@@ -1,5 +1,5 @@
 {
-    "title": "slm_on_cwq",
+    "title": "slm_on_qald",
     "experiment": "question answering",
     "methods": [
         "formatog_d3_p3",
@@ -11,12 +11,12 @@
     "agent": "llama3.1:8b",
     "provider": "ollama",
     "graph": "wikidata",
-    "questions": "cwq",
+    "questions": "qald_10-en",
     "q_range": [
         0,
-        3531
+        333
     ],
     "repetitions": null,
     "env_note": "Merged data | Executed on TUB HPC in separate jobs using a Tesla P100 GPU with 16GB",
-    "timestamp": 1768734559.725715
+    "timestamp": 1768734612.273067
 }

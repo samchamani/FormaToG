@@ -1,0 +1,33 @@
+{
+    "title": "dp_qald",
+    "experiment": "question answering",
+    "methods": [
+        "formatog_d1_p1",
+        "formatog_d2_p1",
+        "formatog_d3_p1",
+        "formatog_d4_p1",
+        "formatog_d1_p2",
+        "formatog_d2_p2",
+        "formatog_d3_p2",
+        "formatog_d4_p2",
+        "formatog_d1_p3",
+        "formatog_d2_p3",
+        "formatog_d3_p3",
+        "formatog_d4_p3",
+        "formatog_d1_p4",
+        "formatog_d2_p4",
+        "formatog_d3_p4",
+        "formatog_d4_p4"
+    ],
+    "agent": "llama3.1:8b",
+    "provider": "ollama",
+    "graph": "wikidata",
+    "questions": "qald_10-en",
+    "q_range": [
+        0,
+        333
+    ],
+    "repetitions": null,
+    "env_note": "Merged data | Tesla P100 GPU with 16GB",
+    "timestamp": 1768686816.983701
+}
